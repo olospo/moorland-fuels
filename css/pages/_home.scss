@@ -1,0 +1,209 @@
+// Home
+.home.hero {
+  padding: 0;
+  text-align: center;
+  // Uploaded Video
+  &.video-link {
+    padding: 160px 0;
+  }
+  .video-upload {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    @include aspect-ratio(1,1);
+    padding-top: 100% !important;
+    @media (min-width: $breakpoint-tablet) {
+      @include aspect-ratio(2,1);
+      padding-top: 35% !important;
+    }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      padding-top: 50%; // Fix video sizing issue in IE
+    }
+    
+    video {
+      min-width: 100%; 
+      min-height: 100%; 
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: -1;
+      overflow: hidden;
+    }
+  }
+  // Linked Video
+  .video-area {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    iframe {
+      width: 100vw;
+      height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+      min-height: 100vh;
+      min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .float {
+    padding: $padding-half 0;
+    &.video {
+      text-align: center;
+      display: block !important;
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      padding: $padding 0;
+      z-index: 1 !important;
+      width: 100% !important;
+      transform: translate3d(-50%, -50%, 0) !important;
+    }
+  }
+  .button {
+    margin: 10px;
+  }
+}
+
+.quick_links {
+  padding: $padding-half 0px !important;
+  background: url('../img/rough_border_green.svg') center bottom -14px no-repeat;
+  background-size: auto;
+  @media (min-width: $breakpoint-desktop) {
+    padding: $padding 0px !important;
+    background: url('../img/rough_border_green.svg') center bottom -17px no-repeat;
+    background-size: contain;
+  }
+}
+
+.testimonial {
+  text-align: center;
+  background: $green;
+  padding: $padding 0;
+  background: $green url('../img/testimonial_bg.svg') center center no-repeat;
+  @media (min-width: $breakpoint-tablet) {
+    background: $green url('../img/testimonial_bg.svg') 120% 70px no-repeat;
+  }
+  blockquote {
+    border: none;
+    p {
+      display: inline-block;
+      font: $bold 2.4rem/3.2rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 5.2rem/5.6rem $headline;
+        text-transform: uppercase;
+      }
+      
+      margin-bottom: 20px;
+    }
+    footer {
+      font: $normal 2.0rem/2.8rem $regular;
+      @media (min-width: $breakpoint-tablet) {
+        font: $normal 2.4rem/3.2rem $regular;
+      }
+    }
+  }
+  .slick-prev, .slick-next {
+    @media (max-width: $breakpoint-tablet) {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
+  }
+  .slick-prev {
+    left: -100px;
+    background: url('../img/slider_left_white.svg') center center no-repeat;
+  }
+  
+  .slick-next {
+    right: -100px;
+    background: url('../img/slider_right_white.svg') center center no-repeat;
+  }
+}
+
+.activities-list {
+  text-align: center;
+  
+  color: $red;
+  padding: $padding 0 $padding-half 0;
+  background: url('../img/rough_border_green.svg') center top -14px no-repeat;
+  background-size: auto;
+  @media (min-width: $breakpoint-desktop) {
+    padding: $padding 0;
+    background: url('../img/rough_border_green.svg') center top -20px no-repeat;
+    background-size: contain;
+  }
+  h2 {
+    color: $red;
+    font: $normal 5.2rem/5.6rem $headline;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  p {
+    font: $normal 3.0rem/3.8rem $regular;
+  }
+  .activity-scroll {
+    margin: 40px 0px 60px 0px;
+    font: $normal 3.0rem/3.6rem $headline;
+    text-transform: uppercase;
+    a:hover .circle {
+      transition: transform 0.5s;
+      transform: scale(1.0);
+    }
+    .circle {
+      transition: transform 0.5s;
+      transform: scale(0.9);
+      margin: 20px auto;
+      height: 180px;
+      width: 180px;
+      background: $white;
+      @include border-radius(50%);
+      svg {
+        max-width: 70%;
+        max-height: 100%;
+        path {
+          fill: $red;
+        }
+      }
+    }
+    a {
+      color: $red;
+      border-bottom: none;
+      &:hover {
+        .circle {
+          background: $red;
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+  .slick-prev, .slick-next {
+    top: 45%;
+    z-index: 2;
+  }
+  .slick-prev {
+    left: -80px;
+    background: url('../img/slider_left_red.svg') center center no-repeat;
+    @media (max-width: $breakpoint-tablet) {
+      left: 0;
+    }
+  }
+  
+  .slick-next {
+    right: -80px;
+    background: url('../img/slider_right_red.svg') center center no-repeat;
+    @media (max-width: $breakpoint-tablet) {
+      right: 0;
+    }
+  }
+}

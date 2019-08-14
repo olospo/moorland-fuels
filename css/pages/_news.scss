@@ -1,0 +1,126 @@
+// News
+
+section.news, .component--articles {
+  .title {
+    background: $black;
+    font-size: 2.6rem;
+    line-height: 4rem;
+    padding: 140px 0px 40px 0px;
+    @media (min-width: $breakpoint-tablet) {
+      padding: 160px 0px 60px 0px;
+    }
+    h1 {
+      font: $normal 5rem/6rem $headline;
+      text-transform: uppercase;
+      font-size: 5rem;
+      line-height: 6rem;
+      text-align: center;
+      color: $white;
+    }
+    p {
+      color: $white;
+    }
+  }
+  article.standard {
+    padding: $padding-half 0px 0px 0px;
+    &:nth-child(3n+4) {
+      margin-left: 0;
+    }
+    .date {
+      color: $red;
+      font: $normal 1.2rem/1.4rem $regular;
+      // text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .item_image {
+      margin-bottom: 0;
+    }
+    .item_content {
+      background: $white;
+      .content {
+        padding: 20px;
+      }
+      h3 {
+        background: $red;
+        text-align: center;
+        margin-bottom: $padding-half;
+        color: $white;
+        z-index: 2;
+        margin: 0;
+        padding: 20px;
+        font: $normal 2.8rem/3.4rem $headline;
+        text-transform: uppercase;
+        a {
+          text-decoration: none;
+          border-bottom: none;
+          color: $white;
+        }
+      }
+      
+    }
+    &:nth-child(6n+6) {
+      h3 {
+        background: $blue;
+      }
+    }
+    &:nth-child(2n+3) {
+      h3 {
+        background: $green;
+      }
+    }
+    &:nth-child(6n+1) {
+      h3 {
+        background: $blue;
+      }
+    }
+  }  
+    
+  .pagination {
+    margin-top: 0px;
+    padding: 20px 0px;
+    ul {
+      text-align: center;
+      li {
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        a {
+          @extend.button;
+          padding: 15px 30px;
+          
+        }
+        &.next {
+          position: absolute;
+          right: 0;
+        }
+        &.prev {
+          position: absolute;
+          left: 0;
+        }
+        &.active {
+          a {
+            background: $white;
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.article.hero {
+  p.date {
+    font: $normal 1.2rem/1.8rem $regular;
+  }
+  .profile {
+    img.photo {
+      @include border-radius(50%);
+      float: left;
+      margin-right: 40px;
+    }
+    h3 {
+      color: $white;
+    }
+  }
+}
+
