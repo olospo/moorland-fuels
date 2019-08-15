@@ -62,8 +62,8 @@ if (has_post_thumbnail( $post_id ) ):
     </a>
     <!-- Main Menu -->
     <nav class="primary nine columns">
-      <ul class="book">
-        <li><?php echo the_field('individual_button_code','options'); ?></li>
+      <ul class="extra">
+        <li class="quote"><a href="#">Order or get a quote</a></li><li class="login"><a href="#">Log in</a></li>
       </ul>
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
     </nav>

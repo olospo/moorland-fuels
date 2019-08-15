@@ -1,5 +1,17 @@
 // Home
 
-.quick_links {
+.quick_quote {
+  text-align: center;
+  padding: 20px;
+  background: $green;
+  color: $white;
+  h3 {
+    display: inline-block;
+    margin-right: 30px;
+  }
+}
+
+.services_slider {
   padding: $padding 0px;
+  text-align: center;
 }

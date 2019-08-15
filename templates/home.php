@@ -5,24 +5,19 @@ while ( have_posts() ) : the_post(); ?>
 
 <?php get_template_part( 'inc/hero' ); ?>
 
-<?php if( have_rows('quick_links') ): ?>
-<section class="quick_links">
+<section class="quick_quote">
   <div class="container">
-	<?php while( have_rows('quick_links') ): the_row(); 
-    $post_object = get_sub_field('link'); if( $post_object ): 
-    	// override $post
-    	$post = $post_object;
-    	setup_postdata( $post ); 
-    
-      get_template_part( 'inc/article' );
-    
-    wp_reset_postdata(); ?>
-    <?php endif; ?>
-	<?php endwhile; ?>
-
-	</div>
+    <h3>Looking for a quick fuel price?</h3><a href="#" class="button secondary reversed">Get a quote</a>
+  </div>
 </section>
-<?php endif; ?>
+
+<section class="services_slider">
+  <div class="container">
+    <div class="content eight columns offset-by-two">
+    <p>Moorland Fuels’ tankers are a familiar sight throughout the Devon community. During the cold winter months we consider ourselves the fifth emergency service, providing customers with the efficient heating oil delivery, when they need it.</p>
+    </div>
+  </div>
+</section>
 
 <?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

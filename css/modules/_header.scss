@@ -9,11 +9,13 @@
 header {
   background: $green;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.62);
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
   .logo {
-
-    
     .site-title {
-      margin: 20px 0px;
+      margin: 20px 0px 20px 20px;
       line-height: 0;
       svg {
         height: 60px;
@@ -27,15 +29,15 @@ header {
     letter-spacing: 1px;
     ul {
       line-height:1em;
-      text-align: right;
+      text-align: left;
       
       li {
         display: inline-block;
         // padding: 45px 5px;
         &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
           color: $white;
-          border-bottom: 3px solid $white;
-          margin: 28px 5px;
+          border-bottom: 2px solid $white;
+          margin: 25px 5px;
           padding: 15px 5px;
         }
         &.menu-item-has-children a {
@@ -49,9 +51,9 @@ header {
           display: block;
           color: $white;
           text-decoration: none;
-          margin: 28px 5px;
+          margin: 25px 5px;
           padding: 15px 5px;
-          border-bottom: 3px solid transparent;
+          border-bottom: 2px solid transparent;
           text-transform: uppercase;
         }
         &.button {
@@ -72,12 +74,23 @@ header {
         }
       }
     }
-    ul.book {
+    ul.extra {
+      position: absolute;
       float: right;
+      right: 0;
+      text-decoration: none;
       li {
-        margin: 28px 5px;
-        .tngbh-btn {
-          padding: 10px 20px;
+        a {
+          margin: 0;
+          padding: 40px 30px;
+          text-decoration: none;
+          text-transform: none;
+        }
+        &.quote {
+          background: $blue;
+        }
+        &.login {
+          background: $darkGreen;
         }
       }
     }
@@ -164,7 +177,7 @@ nav.mobile {
 nav.primary ul ul {
   display: none; 
   position: absolute;
-  top: 111px;
+  top: 100px;
   z-index: 9999;
   background: $white;
   margin: 0;
