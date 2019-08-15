@@ -601,43 +601,8 @@
         [
             {
                 "param": "post_type",
-                "operator": "==",
-                "value": "activities"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "groups"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "adventure-days"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "families"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
                 "operator": "!=",
-                "value": "templates\/booking.php"
+                "value": "page"
             }
         ]
     ],
@@ -658,5 +623,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1565084617
+    "modified": 1565801006
 }

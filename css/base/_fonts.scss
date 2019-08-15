@@ -1,34 +1,24 @@
 // Fonts 
 
 @font-face {
-    font-family: 'Headline One';
-    src: url('../fonts/headline-one.eot');
-    src: url('../fonts/headline-one.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/headline-one.woff2') format('woff2'),
-        url('../fonts/headline-one.woff') format('woff'),
-        url('../fonts/headline-one.ttf') format('truetype');
+    font-family: 'hk_groteskbold';
+    src: url('../fonts/hkgrotesk-bold-webfont.eot');
+    src: url('../fonts/hkgrotesk-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/hkgrotesk-bold-webfont.woff2') format('woff2'),
+        url('../fonts/hkgrotesk-bold-webfont.woff') format('woff'),
+        url('../fonts/hkgrotesk-bold-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Stag';
-    src: url('../fonts/Stag-Book.eot');
-    src: url('../fonts/Stag-Book.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Stag-Book.woff2') format('woff2'),
-        url('../fonts/Stag-Book.woff') format('woff'),
-        url('../fonts/Stag-Book.ttf') format('truetype');
-    font-weight: 300;
+    font-family: 'hk_groteskmedium';
+    src: url('../fonts/hkgrotesk-medium-webfont.eot');
+    src: url('../fonts/hkgrotesk-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hkgrotesk-medium-webfont.woff2') format('woff2'),
+         url('../fonts/hkgrotesk-medium-webfont.woff') format('woff'),
+         url('../fonts/hkgrotesk-medium-webfont.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
-}
 
-@font-face {
-    font-family: 'Stag';
-    src: url('../fonts/Stag-Semibold.eot');
-    src: url('../fonts/Stag-Semibold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Stag-Semibold.woff2') format('woff2'),
-        url('../fonts/Stag-Semibold.woff') format('woff'),
-        url('../fonts/Stag-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
 }

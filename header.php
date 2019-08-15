@@ -46,7 +46,7 @@ if (has_post_thumbnail( $post_id ) ):
 <div class="fixed_header">
 <header>
   <div class="container"> 
-    <div class="logo two columns">  
+    <div class="logo three columns">  
       <?php if ( is_front_page() ) { echo '<h1 class="site-title">'; } else { echo '<p class="site-title">'; } ?>
       <a href="<?php echo get_site_url(); ?>">
         <img src="<?php bloginfo('template_directory'); ?>/img/logo.svg" alt="Logo" class="logo">
@@ -61,7 +61,7 @@ if (has_post_thumbnail( $post_id ) ):
       <span></span>
     </a>
     <!-- Main Menu -->
-    <nav class="primary ten columns">
+    <nav class="primary nine columns">
       <ul class="book">
         <li><?php echo the_field('individual_button_code','options'); ?></li>
       </ul>

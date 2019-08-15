@@ -1,6 +1,6 @@
 // Avenir
-$regular: 'Stag', Helvetica, Arial, sans-serif;
-$headline: 'Headline One', Oswald, Helvetica, Arial, sans-serif; 
+$regular: 'hk_groteskmedium', Helvetica, Arial, sans-serif;
+$headline: 'hk_groteskbold', Helvetica, Arial, sans-serif; 
 
 // Weights
 $normal: 300;
@@ -8,14 +8,17 @@ $bold: 600;
 
 // Colours
 $white: #fff;
-$black: #090018;
-$red: #D3205C;
-$green: #80b048;
-$blue: #393C8D;
+$black: #0A1418;
+$green: #87C849;
+$blue: #277BE3;
+$darkGreen: #00733B;
+// Decoration
+$border: #DCE0E4;
+$buff: #F1F2F2;
+$info: #FBFCFC;
 
-// Secondary
-$grey: #ACA9B1;
-$buff: #F2EAE5;
+// To Remove
+$red: #D3205C;
 
 // Breakpoints
 $breakpoint-mobile: 400px;
@@ -68,15 +71,13 @@ body {
   font-family: $regular;
   color: $black;
   -webkit-font-smoothing: antialiased; // Fix fonts looking rubbish in Chrome
-  background: $buff;
+  background: $white;
 }
 
 h1, h2, h3 {
   font-family: $headline;
   letter-spacing: 1px;
   font-kerning: normal;
-  text-rendering: optimizeLegibility;
-  text-transform: uppercase;
 }
 
 h4 {

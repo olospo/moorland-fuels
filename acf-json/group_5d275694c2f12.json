@@ -60,39 +60,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "templates\/home.php"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "activities"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "groups"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "adventure-days"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "families"
             }
         ],
         [
@@ -111,5 +78,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1564756034
+    "modified": 1565800977
 }

@@ -18,7 +18,7 @@
       	$height = $imageOne['sizes'][ $size . '-height' ];
     
     		?>
-    		<article class="blue">
+    		<article>
           <img src="<?php echo $thumb; ?>" />
           <div class="content">
             <h3><?php echo $title; ?></h3>
@@ -47,7 +47,7 @@
       	$height = $imageTwo['sizes'][ $size . '-height' ];
     
     		?>
-    		<article class="red">
+    		<article>
           <img src="<?php echo $thumb;  ?>" />
           <div class="content">
             <h3><?php echo $title; ?></h3>
@@ -76,7 +76,7 @@
       	$height = $imageThree['sizes'][ $size . '-height' ];
     
     		?>
-    		<article class="green">
+    		<article>
           <img src="<?php echo $thumb; ?>" />
           <div class="content">
             <h3><?php echo $title; ?></h3>
@@ -90,84 +90,33 @@
 
   </div>
 </section>
-<section class="social">
-  <div class="container">
-    <h3>Get Social</h3>
-    <div class="row">
-      <div class="instagram six columns">
-        <?php echo do_shortcode('[instagram-feed]'); ?>
-      </div>
-      <div class="facebook six columns">
-        <h4>Facebook</h4>
-        <div class="feed">
-        <?php echo do_shortcode('[custom-facebook-feed]'); ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 <section class="newsletter">
   <div class="container">
     <h3>Sign up to our newsletter</h3>
     <!-- Begin Mailchimp Signup Form -->
-    <div id="mc_embed_signup">
-    <form action="https://adventureokehampton.us3.list-manage.com/subscribe/post?u=77a2f94a6858eaf8a9b1e3cad&amp;id=6a2dfb80d9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-      <div id="mc_embed_signup_scroll">
-    	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_77a2f94a6858eaf8a9b1e3cad_6a2dfb80d9" tabindex="-1" value=""></div>
-      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-      </div>
-    </form>
-    </div>
-    
+
     <!--End mc_embed_signup-->
   </div>
 </section>
 
-<footer class="links">
+<section class="enquiry">
   <div class="container">
-    <div class="about three columns">
-      <img src="<?php bloginfo('template_directory'); ?>/img/logo_full.png" />
-      <ul class="social-icons">
-        <li><a href="<?php the_field('facebook_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/facebook_icon.svg" /></a></li>
-        <li><a href="<?php the_field('twitter_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/twitter_icon.svg" /></a></li>
-        <li><a href="<?php the_field('instagram_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/instagram_icon.svg" /></a></li>
-        <li><a href="<?php the_field('linkedin_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/linkedin_icon.svg" /></a></li>
-        <li><a href="<?php the_field('tripadvisor_link','options'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/tripadvisor_icon.svg" /></a></li>
-      </ul>
-      <?php get_search_form(); ?>
+    
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="about six columns">
+      <img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.svg" />
+    </div>
+  
+    <div class="contactsix columns">
       <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
     </div>
-    <div class="follow four-half columns">
-      <h4>Follow us</h4>
-      <?php echo do_shortcode('[custom-twitter-feeds]'); ?>
-    </div>
-    <div class="find four-half columns">
-      <h4>How to find us</h4>
-      <a href="<?php echo the_field('map_link','options');?>"><img src="<?php bloginfo('template_directory'); ?>/img/map.png" /></a>
-      <?php echo the_field('map_text','options'); ?>
-    </div>
-    <div class="copyright-links twelve columns ">
-      Part of the English National Park Experience Collection <?php wp_nav_menu( array( 'theme_location' => 'extra_footer' ) ); ?> &copy; <?php the_time('Y'); ?> Adventure Okehampton all rights reserved
-      <ul class="contact_details"><li><?php the_field('address','options'); ?></li><li>E: <a href="mailto:<?php the_field('email','options'); ?>"><?php the_field('email','options'); ?></a></li><li>T: <a href="tel:<?php the_field('phone_number','options'); ?>"><?php the_field('phone_number','options'); ?></a></li></ul>
-    </div>
   </div>
 </footer>
-<?php if( have_rows('accreditations','options') ): ?>
-<footer class="accreditations">
-  <div class="container">
-    <?php while( have_rows('accreditations','options') ): the_row(); 
-    // vars
-    $image = get_sub_field('accreditation_image','options');
-    ?>
-    <div class="accreditation">
-      <img src="<?php echo $image['url']; ?>" />
-    </div>
-    <?php endwhile; ?>
-  </div>
-</footer>
-<?php endif; wp_reset_postdata(); ?>
 <a href="#" class="back_to_top">Back to Top</a>
 <?php wp_footer(); ?>
 </body>
