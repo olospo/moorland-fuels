@@ -8,18 +8,28 @@
 }
 header {
   background: $green;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.62);
+  // box-shadow: 0px 5px 10px rgba(140,140,140, 0.8);
   .container {
     max-width: 100%;
     width: 100%;
   }
   .logo {
     .site-title {
-      margin: 20px 0px 20px 20px;
+      margin: 15px 0px 15px 20px;
+      @media (min-width: $breakpoint-desktop) {
+        margin: 15px 0px 15px 20px;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        margin: 15px 0px 15px 0px;
+      }
       line-height: 0;
       svg {
-        height: 60px;
+        height: 40px;
         width: auto;
+        @media (min-width: $breakpoint-desktop) {
+          height: 55px;
+          width: auto;
+        }
       }
     }
   }
@@ -38,7 +48,7 @@ header {
           color: $white;
           border-bottom: 2px solid $white;
           margin: 25px 5px;
-          padding: 15px 5px;
+          padding: 10px 5px;
         }
         &.menu-item-has-children a {
           // background: url('../img/dropdown_icon.svg') center right no-repeat;
@@ -52,7 +62,7 @@ header {
           color: $white;
           text-decoration: none;
           margin: 25px 5px;
-          padding: 15px 5px;
+          padding: 10px 5px;
           border-bottom: 2px solid transparent;
           text-transform: uppercase;
         }
@@ -82,7 +92,7 @@ header {
       li {
         a {
           margin: 0;
-          padding: 40px 30px;
+          padding: 35px 30px;
           text-decoration: none;
           text-transform: none;
         }
@@ -108,11 +118,8 @@ header {
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     position: absolute;
-    top: 20px;
-    right: 20px;
-    @media (min-width: $breakpoint-tablet) {
-      right: 0;
-    }
+    top: 25px;
+    right: 25px;
     cursor: pointer;
     z-index: 30;
     span{
@@ -142,33 +149,41 @@ header {
 nav.mobile {
   display: none;
   position: fixed;
-  top: 60px;
+  top: 70px;
   background: $white;
   z-index: 1000;
   width: 100%;
-  border-bottom: 10px solid $red;
+  border-top: 1px solid $white;
+  border-bottom: 10px solid $blue;
   ul {
     text-align: left;
     margin: 30px 0px;
+    padding: 0px 20px;
     li {
-      text-align: center;
+      text-align: left;
       display: block;
-      margin: 15px 0px;
+      margin: 10px 0px;
       &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
-        color: $black;
+        color: $blue;
         padding: 15px 0px;
-        border-bottom: 1px solid $black;
+        border-bottom: 2px solid $blue;
         font-weight: bold;
       }
       a {
         @include transition(all 0.2s ease-out);
         line-height: 1.4rem;
         display: inline-block;
-        color: $red;
+        color: $green;
         text-decoration: none;
         margin: 0px 10px;
         padding: 15px 0px;
-        border-bottom: 1px solid $white;
+        border-bottom: 2px solid $green;
+      }
+      &:first-child {
+        margin: 0px 0px 15px 0px;
+        a {
+          padding: 0px 0px 15px 0px;
+        }
       }
     }
   }
@@ -177,8 +192,8 @@ nav.mobile {
 nav.primary ul ul {
   display: none; 
   position: absolute;
-  top: 100px;
-  z-index: 9999;
+  top: 89px;
+  z-index: 8888;
   background: $white;
   margin: 0;
 }
@@ -186,6 +201,9 @@ nav.primary ul ul {
 nav.primary ul li:hover > ul {
   display: block; /* show sub menus when hovering over a parent */
   padding: 10px 25px;
+  background: $white;
+  border: 1px solid $border;
+  border-top: 0px;
   li {
     float: none;
     display: block;

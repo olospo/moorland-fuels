@@ -1,21 +1,13 @@
 <article class="one-third column">
+  <a href="<?php the_permalink(); ?>">
   <div class="image">
-    <a href="<?php the_permalink(); ?>">
-    <?php if( have_rows('overlay') ): ?>
-    <div class="overlay">
-      <ul>
-      <?php while( have_rows('overlay') ): the_row(); 
-        // vars
-        $overlayText = get_sub_field('overlay_text');
-		  ?>
-      <li><?php echo $overlayText; ?></li>
-      <?php endwhile; ?>
-      </ul>
-    </div>
-    <?php endif; ?> 
     <img src="<?php the_post_thumbnail_url( 'featured-img' ); ?>" />
   </div>
+  </a>
   <div class="content">
-    <h3><?php the_title(); ?></h3></a>
+    <span class="date">Posted on <?php the_time('j F Y'); ?></span>
+    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+    <?php the_excerpt(); ?>
+    <a href="<?php the_permalink(); ?>" class="read-more">Read more ></a>
   </div>
 </article>

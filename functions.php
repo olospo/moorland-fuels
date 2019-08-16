@@ -120,7 +120,7 @@ function numeric_posts_nav() {
 	echo '<div class="pagination"><ul>' . "\n";
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )
-		printf( '<li class="prev">%s</li>' . "\n", get_previous_posts_link('Previous Page') );
+		printf( '<li class="prev">%s</li>' . "\n", get_previous_posts_link('< Previous Page') );
 	/**	Link to first page, plus ellipses if necessary */
 	if ( ! in_array( 1, $links ) ) {
 		$class = 1 == $paged ? ' class="active"' : '';
@@ -143,7 +143,7 @@ function numeric_posts_nav() {
 	}
 	/**	Next Post Link */
 	if ( get_next_posts_link() )
-		printf( '<li class="next">%s</li>' . "\n", get_next_posts_link('Next Page') );
+		printf( '<li class="next">%s</li>' . "\n", get_next_posts_link('Next Page >') );
 	echo '</ul></div>' . "\n";
 }
 // This stuff fixes the pagination issue with custom posts. 

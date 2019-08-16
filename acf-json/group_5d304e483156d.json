@@ -1,11 +1,11 @@
 {
     "key": "group_5d304e483156d",
-    "title": "Activity",
+    "title": "Service",
     "fields": [
         {
             "key": "field_5d304e50f396a",
-            "label": "Activity Icon",
-            "name": "activity_icon",
+            "label": "Service Icon",
+            "name": "service_icon",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -32,7 +32,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "activities"
+                "value": "services"
             }
         ]
     ],
@@ -44,5 +44,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1563446881
+    "modified": 1565956496
 }
