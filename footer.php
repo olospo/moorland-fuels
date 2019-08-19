@@ -14,7 +14,7 @@
     		$imageOne = get_sub_field('image_one','options');
     		$title = get_sub_field('title','options');
     		$content = get_sub_field('description','options');
-    		$link = get_sub_field('button_link','options');
+    		$linkOne = get_sub_field('button_link','options');
     		$linkText = get_sub_field('button_text','options');
     		
     		// thumbnail
@@ -26,12 +26,12 @@
     		?>
     		<article>
       		<div class="image">
-            <a href="<?php echo $link; ?>"><img src="<?php echo $thumbOne; ?>" /></a>
+            <a href="<?php echo $linkOne; ?>"><img src="<?php echo $thumbOne; ?>" /></a>
       		</div>
           <div class="content">
-            <h3><a href="<?php echo $link; ?>"><?php echo $title; ?></a></h3>
+            <h3><a href="<?php echo $linkOne; ?>"><?php echo $title; ?></a></h3>
             <p><?php echo $content; ?></p>
-            <a href="<?php echo $link; ?>" class="button primary"><?php echo $linkText; ?></a>
+            <a href="<?php echo $linkOne; ?>" class="button primary"><?php echo $linkText; ?></a>
           </div>
         </article>
     	<?php endwhile; ?>
@@ -45,7 +45,7 @@
     		$imageTwo = get_sub_field('image_two','options');
     		$title = get_sub_field('title','options');
     		$content = get_sub_field('description','options');
-    		$link = get_sub_field('button_link','options');
+    		$link = get_sub_field('button_link_two','options');
     		$linkText = get_sub_field('button_text','options');
     		
     		// thumbnail
@@ -76,7 +76,7 @@
     		$imageThree = get_sub_field('image_three','options');
     		$title = get_sub_field('title','options');
     		$content = get_sub_field('description','options');
-    		$link = get_sub_field('button_link','options');
+    		$link = get_sub_field('button_link_three','options');
     		$linkText = get_sub_field('button_text','options');
     		
         // thumbnail

@@ -8,9 +8,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory'); ?>/img/apple-touch-icon.png"/>
 <link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory'); ?>/img/favicon-32x32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory'); ?>/img/favicon-16x16.png"/>
-<?php if( get_field('google_analytics', 'options') ): // Google Analytics Code ?>
-  <?php the_field('google_analytics', 'options'); ?>
-<?php endif; ?>
+<?php if( get_field('social_metadata', 'options') ): the_field('social_metadata', 'options'); endif; // Social Metadata ?>
+<?php if( get_field('google_analytics', 'options') ): the_field('google_analytics', 'options'); endif; // Google Analytics Code ?>
 </head>
 <body <?php body_class(); ?>>
 <div class="fixed_header">
