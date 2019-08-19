@@ -3,7 +3,8 @@ get_header();
 
 while ( have_posts() ) : the_post(); ?>
 
-<section class="hero single" style="background: url(' <?php the_post_thumbnail_url( 'featured-img' ); ?> ') center center no-repeat; background-size: cover;">
+<section class="hero single">
+  <div class="background" style="background: url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center no-repeat; background-size: cover;">
 </section>
 
 <?php

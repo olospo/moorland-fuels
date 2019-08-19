@@ -344,6 +344,7 @@ body.home {
   background: #000;
 }
 section.hero{
+  overflow: hidden;
   position: relative;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -351,6 +352,7 @@ section.hero{
   padding: 100px 0px;
   overflow: hidden;
   margin-top: 60px;
+
   @media (min-width: $breakpoint-desktop) {
     margin-top: 90px;
   }
@@ -398,12 +400,35 @@ section.hero{
     }
   }
   &.single, &.service {
-    padding: 220px 0px;
+    overflow: hidden; 
+    padding: 0px;
+
+    
+    .background {
+      transform: scale(1.1);
+      animation: bgZoom 2s;
+      padding: 220px 0px;
+      overflow: hidden;
+      position: relative;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+      
+    }
   }
   &.not_found {
     background: $black;
     text-align: center;
   } 
+}
+
+@keyframes bgZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 // Form

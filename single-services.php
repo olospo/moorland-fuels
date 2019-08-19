@@ -5,7 +5,8 @@ $icon = get_field('service_icon');
 
 ?>
 
-<section class="hero service" style="background: url(' <?php the_post_thumbnail_url( 'featured-img' ); ?> ') center center no-repeat; background-size: cover;">
+<section class="hero service">
+  <div class="background" style="background: url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center no-repeat; background-size: cover;">
 </section>
 
 <section class="post">
