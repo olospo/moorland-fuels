@@ -5,7 +5,7 @@ while ( have_posts() ) : the_post(); ?>
 
 <?php get_template_part( 'inc/hero' ); ?>
 
-<section class="quick_quote">
+<section class="small_cta">
   <div class="container">
     <h3>Looking for a quick fuel price?</h3><a href="#" class="button secondary reversed">Get a quote</a>
   </div>

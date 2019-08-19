@@ -1,14 +1,92 @@
 // Footer
+.quick-links {
+  padding: $padding-half 0;
+  article {
+    text-align: center;
+    border: 1px solid #dee2e5;
+    @include border-radius(10px);
+    margin-bottom: $padding-half;
+    @media (min-width: $breakpoint-tablet) {
+      margin-bottom: 0;
+    }
+    
+    &:nth-child(3n+4) {
+      margin-left: 0;
+      clear: left;
+    }
+    a {
+      color: $black;
+    }
+    .date {
+      display: block;
+      color: $green;
+      font: $normal 1.6rem/2.0rem $regular;
+      margin-bottom: 10px;
+    }
+    .image {
+      overflow: hidden;
+      @include border-radius(10px 10px 0px 0px);
+      margin-bottom: 0;
+      img {
+        transition: transform .5s;
+        transform: scale(1.02);
+      }
+    }
+    &:hover {
+      .image {
+        img {
+          transition: transform .5s;
+          transform: scale(1.1);
+        }
+      }
+    }
+    .content {
+      @include border-radius(0px 0px 10px 10px);
+      background: $buff;
+      color: $black;
+      padding: 25px;
+      h3 {
+        margin-bottom: 20px;
+      }
+      a.read-more {
+        color: $green;
+        text-decoration: underline;
+      }
+    }
+  }
+  .quick-three { // Remove extra margin on mobile
+    article {
+      margin-bottom: 0;
+    }
+  }
+}
+.full-width {
+  position: relative;
+  @media (min-width: $breakpoint-tablet) {
+    .background {
+      background: linear-gradient(90deg, $green 50%, $blue 50%);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+      z-index: 0;
+    }
+  }
+}
 .newsletter {
-  padding: $padding 0;
+  z-index: 1;
+  padding: $padding-half;
+  margin-bottom: $padding-half;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding $padding $padding 0;
+    margin-bottom: 0;
+  }
   background: $green;
-  text-align: center;
+  color: $white;
   h3 {
     color: $white;
-    font: $normal 3.2rem/4.0rem $headline;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
   }
   input {
     font: $normal 1.8rem/2.8rem $regular;
@@ -23,6 +101,24 @@
     &.email {
       max-width: 300px;
     }
+  }
+}
+.latest-news {
+  z-index: 1;
+  color: $white;
+  background: $blue;
+  padding: $padding-half;
+  margin-bottom: $padding-half;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0 $padding $padding;
+    margin-bottom: 0;
+  }
+}
+.newsletter, .latest-news {
+  h3 {
+    color: $white;
+    margin-bottom: 40px;
+    font: $normal 3.6rem/4.4rem $headline;
   }
 }
 

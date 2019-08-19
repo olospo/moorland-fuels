@@ -236,6 +236,19 @@ section {
   }
 }
 
+// Small CTA
+
+.small_cta {
+  text-align: center;
+  padding: 20px;
+  background: $green;
+  color: $white;
+  h3 {
+    display: inline-block;
+    margin-right: 30px;
+  }
+}
+
 // Aside
 aside {
   .services-list {
@@ -339,7 +352,7 @@ section.hero{
   overflow: hidden;
   margin-top: 60px;
   @media (min-width: $breakpoint-desktop) {
-    margin-top: 100px;
+    margin-top: 90px;
   }
   
   .content {

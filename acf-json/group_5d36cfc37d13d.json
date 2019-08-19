@@ -3,10 +3,10 @@
     "title": "Quick Links",
     "fields": [
         {
-            "key": "field_5d36cfcaa8ee5",
+            "key": "field_5d5a5524e31bf",
             "label": "Quick Link One",
             "name": "quick_link_one",
-            "type": "repeater",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,14 +15,10 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
             "layout": "block",
-            "button_label": "Add Quick Link Section",
             "sub_fields": [
                 {
-                    "key": "field_5d36d003a8ee6",
+                    "key": "field_5d5a5524e31c0",
                     "label": "Image",
                     "name": "image_one",
                     "type": "image",
@@ -46,7 +42,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5d36d00fa8ee7",
+                    "key": "field_5d5a5524e31c1",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -65,7 +61,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5d36d059a8ee8",
+                    "key": "field_5d5a5524e31c2",
                     "label": "Description",
                     "name": "description",
                     "type": "textarea",
@@ -84,7 +80,7 @@
                     "new_lines": ""
                 },
                 {
-                    "key": "field_5d36d064a8ee9",
+                    "key": "field_5d5a5524e31c3",
                     "label": "Button Link",
                     "name": "button_link",
                     "type": "page_link",
@@ -98,11 +94,7 @@
                     },
                     "post_type": [
                         "post",
-                        "page",
-                        "activities",
-                        "groups",
-                        "adventure-days",
-                        "families"
+                        "page"
                     ],
                     "taxonomy": "",
                     "allow_null": 0,
@@ -110,7 +102,7 @@
                     "multiple": 0
                 },
                 {
-                    "key": "field_5d36d074a8eea",
+                    "key": "field_5d5a5524e31c4",
                     "label": "Button Text",
                     "name": "button_text",
                     "type": "text",
@@ -131,10 +123,10 @@
             ]
         },
         {
-            "key": "field_5d36d09aa8eeb",
+            "key": "field_5d5a5485bc33b",
             "label": "Quick Link Two",
             "name": "quick_link_two",
-            "type": "repeater",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -143,144 +135,12 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
             "layout": "block",
-            "button_label": "Add Quick Link Section",
-            "sub_fields": [
-                {
-                    "key": "field_5d36d09aa8eec",
-                    "label": "Image",
-                    "name": "image_two",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_5d36d09aa8eed",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5d36d09aa8eee",
-                    "label": "Description",
-                    "name": "description",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
-                },
-                {
-                    "key": "field_5d36d09aa8eef",
-                    "label": "Button Link",
-                    "name": "button_link",
-                    "type": "page_link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "post",
-                        "page",
-                        "groups",
-                        "activities",
-                        "families",
-                        "adventure-days"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "allow_archives": 1,
-                    "multiple": 0
-                },
-                {
-                    "key": "field_5d36d09aa8ef0",
-                    "label": "Button Text",
-                    "name": "button_text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5d36d0a2a8ef1",
-            "label": "Quick Link Three",
-            "name": "quick_link_three",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Quick Link Section",
             "sub_fields": [
                 {
                     "key": "field_5d36d0a2a8ef2",
                     "label": "Image",
-                    "name": "image_three",
+                    "name": "image_two",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -385,6 +245,126 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_5d5a5527e31c5",
+            "label": "Quick Link Three",
+            "name": "quick_link_three",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5d5a5527e31c6",
+                    "label": "Image",
+                    "name": "image_three",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5d5a5527e31c7",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d5a5527e31c8",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5d5a5527e31c9",
+                    "label": "Button Link",
+                    "name": "button_link",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "post",
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "allow_archives": 1,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5d5a5527e31ca",
+                    "label": "Button Text",
+                    "name": "button_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -404,5 +384,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565078785
+    "modified": 1566201222
 }

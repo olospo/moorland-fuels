@@ -3,7 +3,7 @@
 .service_listing {
   padding: $padding-half 0 0 0;
   .grid {
-    padding: 0;
+  padding: 0;
   margin: 0;
   list-style: none;
   display: -webkit-box;
@@ -14,11 +14,11 @@
   -webkit-flex-flow: row wrap;
   justify-content: center;
     article {
-      display: block;
-      padding: 5px;
-      width: 180px;
-      margin: 20px;
-      text-align: center;
+    display: block;
+    padding: 5px;
+    width: 180px;
+    margin: 20px;
+    text-align: center;
       h3 {
         color: $green;
         z-index: 2;
@@ -27,7 +27,6 @@
         font: $normal 2.0rem/3.0rem $regular;
       }
       .image {
-        // display: inline-flex;
         border: 3px solid $green;
         @include border-radius(50%);
         .border {
@@ -43,14 +42,11 @@
         }
       }
       &:hover {
-        h3 {
-          color: $blue;
-        }
         .image {
-          border: 3px solid $blue;
+          background: $green;
           svg {
             path {
-              fill: $blue;
+              fill: $white;
             }
           }
         }
