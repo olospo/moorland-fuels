@@ -3,4 +3,46 @@
 .services_slider {
   padding: $padding 0px;
   text-align: center;
+  .service-scroll {
+    padding-top: $padding-half;
+  }
+  article {
+  display: block;
+  padding: 5px;
+  width: 180px;
+  margin: 20px;
+  text-align: center;
+    h3 {
+      color: $green;
+      z-index: 2;
+      margin: 0;
+      padding: 20px 0px;
+      font: $normal 2.0rem/3.0rem $regular;
+    }
+    .image {
+      border: 3px solid $green;
+      @include border-radius(50%);
+      .border {
+        padding: 30px;
+        display: block;
+      }
+      svg {
+        max-width: 100%;
+        height: auto;
+        path {
+          fill: $green;
+        }
+      }
+    }
+    &:hover {
+      .image {
+        background: $green;
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
 }

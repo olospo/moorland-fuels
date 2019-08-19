@@ -1,20 +1,24 @@
 <?php /* Archive */
 get_header(); ?>
 
-<section class="post archive_listing">
+<section class="hero small">
+  <div class="container">
+    <div class="content ten columns offset-by-one">
+      <h1><?php the_archive_title() ?></h1>
+    </div>
+  </div>
+</section>
+
+<section class="news">
   <div class="container">
     <div class="twelve columns">
-      <div class="intro_content">
-        <div class="content twelve columns">
-          <h1><?php single_cat_title(); ?></h1>
-        </div>
-      </div>
       <div class="main_content">
-        <div class="ten columns offset-by-one">
-        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-          <?php get_template_part( 'inc/post' ); ?>
-        <?php endwhile; ?>
-        
+        <div class="twelve columns">
+          <?php if ( have_posts() ) : while (have_posts()) : the_post();  ?>
+            <?php get_template_part('inc/article'); ?>
+          <?php endwhile; ?>
+        </div>
+        <div class="twelve columns">
         <?php numeric_posts_nav(); ?>
         </div>
         <?php else : ?>

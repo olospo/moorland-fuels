@@ -1,15 +1,14 @@
-<?php /* Template name: FAQ */
+<?php /* FAQ Topic */
 get_header(); ?>
 
-<section class="hero small">
+<section class="hero small faq">
   <div class="container">
     <div class="content ten columns offset-by-one">
-      <h1><?php the_title(); ?></h1>
-      <?php the_content(); ?>
+      <h1>FAQs</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae purus non orci sollicitudin vestibulum. Maecenas nulla metus, feugiat eu dictum quis, vestibulum viverra erat. Vestibulum ac porttitor nulla. Nam at elementum felis, id rhoncus mauris. Nulla eget ipsum quis felis accumsan condimentum. Pellentesque nec imperdiet urna. Praesent id quam feugiat, eleifend risus ac, volutpat quam. Maecenas sodales dictum tempus.</p>
     </div>
   </div>
 </section>
-
 <section class="faq_topics">
   <div class="container">
     <div class="twelve columns">
@@ -25,10 +24,21 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
 <section class="faq_listing">
   <div class="container">
-  <div class="twelve columns">
+  <aside class="three columns">
+    <div class="more-help">
+      <div class="content">
+        <h4>Need more help?</h4>
+        <p>Our friendly team will help you make an informed choice to best suit your specific needs:</p>
+        <p>Sales: 01837 55700<br />
+          Out of hours: 01837 55700<br />
+        info@moorlandfuels.co.uk
+        </p>
+      </div>
+    </div>
+  </aside>
+  <div class="nine columns">
     <?php endif;  wp_reset_query();?>
     <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
       <div class="tab">

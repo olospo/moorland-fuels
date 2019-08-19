@@ -307,7 +307,7 @@ aside {
   }
   .more-help {
     background: $green;
-    @include border-radius(25px);
+    @include border-radius(10px);
     .content {
       padding: 30px;
       color: $white;

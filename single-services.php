@@ -10,7 +10,7 @@ $icon = get_field('service_icon');
 
 <section class="post">
   <div class="container">
-    <aside class="four columns">
+    <aside class="three columns">
       <div class="services-list">
         <div class="content">
           <?php $current_post = $post->ID;        
@@ -42,7 +42,7 @@ $icon = get_field('service_icon');
         </div>
       </div>
     </aside>
-    <div class="content eight columns">
+    <div class="content nine columns">
       <h1><?php the_title(); ?></h1>
       <?php the_content(); ?>
     </div>

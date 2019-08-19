@@ -133,6 +133,15 @@
   
     <div class="contact six columns">
       <h4>Contact us</h4>
+      <div class="one-half column">
+        <p>Sales: 01837 55700<br />
+          Out of hours: 01837 55700<br />
+          info@moorlandfuels.co.uk
+        </p>
+      </div>
+      <div class="one-half column">
+        <p>Moorlands House<br /> North Road Industrial Estate Okehampton, Devon EX20 1BQ</p>
+      </div>
       <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
     </div>
   </div>

@@ -1,8 +1,6 @@
 <?php /* Template Name: News */
 get_header();
 
-
-
 while ( have_posts() ) : the_post(); ?>
 
 <section class="hero small">
@@ -29,7 +27,7 @@ while ( have_posts() ) : the_post(); ?>
                 'paged'          => $paged
               ); 
               query_posts($args); ?>
-          <?php if ( have_posts() ) : while (have_posts()) : the_post(); $icon = get_field('service_icon'); ?>
+          <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           
           <?php get_template_part('inc/article'); ?>
           

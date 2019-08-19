@@ -131,10 +131,22 @@ footer {
   padding: $padding 0px;
   color: $white;
   background: $black;
+  h4 {
+    font: $normal 2.8rem/3.6rem $regular;
+    margin-bottom: 20px;
+  }
   a {
-    color: #8e8996;
+    color: $white;
     &:hover {
       color: $white;
+    }
+  }
+  ul#menu-footer {
+    margin-top: 40px;
+    display: inline-block;
+    li {
+      display: inline-block;
+      margin-right: 20px;
     }
   }
 }

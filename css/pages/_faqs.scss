@@ -1,0 +1,52 @@
+.hero {
+  &.faq {
+    background: #fbfcfc;
+    padding: $padding 0 !important;
+  }
+}
+
+.faq_topics {
+  border-bottom: 1px solid #e8ecee;
+  ul.topics {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    // border: 1px solid #e8ecee;
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      a {
+        margin-bottom: -1px;
+        border-top: 1px solid #e8ecee;
+        border-right: 1px solid #e8ecee;
+        display: block;
+        padding: 15px 40px;
+        background: #fbfcfc;
+        color: $black;
+      }
+      &.current {
+        a {
+          border-bottom: 1px solid $white;
+          background: $white;
+          color: $green;
+        }
+      }
+      &:first-child {
+        a {
+          border-left: 1px solid #e8ecee;
+          @include border-radius(10px 0px 0px 0px);
+        }
+      }
+      &:last-child {
+        a {
+          @include border-radius(0px 10px 0px 0px);
+        }
+      }
+    }
+  }
+}
+
+.faq_listing {
+  padding: $padding 0;
+}

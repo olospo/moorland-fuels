@@ -199,6 +199,7 @@ nav.primary ul ul {
 }
 
 nav.primary ul li:hover > ul {
+  min-width: 300px;
   display: block; /* show sub menus when hovering over a parent */
   padding: 10px 25px;
   background: $white;

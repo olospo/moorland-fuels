@@ -11,7 +11,23 @@ $thecontent = get_the_content();
 if(!empty($thecontent)) { ?>
 <section class="post">
   <div class="container">
-    <aside class="four columns">
+    <aside class="three columns">
+      <div class="news-dates">
+        <ul class="archive">
+        <?php $args = array(
+        	'type'            => 'yearly',
+        	'limit'           => '',
+        	'format'          => 'html', 
+        	'before'          => '',
+        	'after'           => '',
+        	'show_post_count' => false,
+        	'echo'            => 1,
+        	'order'           => 'DESC',
+                'post_type'     => 'post'
+        );
+        wp_get_archives( $args ); ?>
+        </ul>
+      </div>
       <div class="more-help">
         <div class="content">
           <h4>Need more help?</h4>
@@ -23,9 +39,10 @@ if(!empty($thecontent)) { ?>
         </div>
       </div>
     </aside>
-    <div class="content eight columns">
+    <div class="content nine columns">
+      <p class="date">Posted on <?php the_time('j F Y'); ?></p>
       <h1><?php the_title(); ?></h1>
-      <p><?php the_time('d/m/y'); ?></p>
+      
       <?php the_content(); ?>
     </div>
   </div>
