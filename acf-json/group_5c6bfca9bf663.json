@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5d5aaaff60f65",
+            "label": "Social Metadata",
+            "name": "social_metadata",
+            "type": "textarea",
+            "instructions": "Add in the social metadata to go inside the header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_5c6bfcbf3877e",
             "label": "Google Analytics",
             "name": "google_analytics",
@@ -38,67 +57,6 @@
             "new_lines": ""
         },
         {
-            "key": "field_5d3704f45c014",
-            "label": "Accreditations",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5d3705005c015",
-            "label": "Accreditations",
-            "name": "accreditations",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Accreditation",
-            "sub_fields": [
-                {
-                    "key": "field_5d3705085c016",
-                    "label": "Accreditation Image",
-                    "name": "accreditation_image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                }
-            ]
-        },
-        {
             "key": "field_5d3711a6f7431",
             "label": "Contact Details",
             "name": "",
@@ -113,25 +71,6 @@
             },
             "placement": "top",
             "endpoint": 0
-        },
-        {
-            "key": "field_5d3711aff7432",
-            "label": "Address",
-            "name": "address",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         },
         {
             "key": "field_5d3711c0f7433",
@@ -172,9 +111,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d4add8a30c4e",
-            "label": "Map Link",
-            "name": "map_link",
+            "key": "field_5d5ac9ce1eec2",
+            "label": "Out of hours number",
+            "name": "out_of_hours_number",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -191,9 +130,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5d442f9a36305",
-            "label": "Map Text",
-            "name": "map_text",
+            "key": "field_5d3711aff7432",
+            "label": "Address",
+            "name": "address",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -207,7 +146,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop"
+            "new_lines": "br"
         },
         {
             "key": "field_5d3711ccf7435",
@@ -243,82 +182,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_5d44366aef6de",
-            "label": "Twitter Link",
-            "name": "twitter_link",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5d44366bef6df",
-            "label": "Instagram Link",
-            "name": "instagram_link",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5d44366def6e0",
-            "label": "LinkedIn Link",
-            "name": "linkedin_link",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5d44366fef6e1",
-            "label": "Trip Advisor Link",
-            "name": "trip_advisor_link",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -338,5 +201,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1565187497
+    "modified": 1566289183
 }

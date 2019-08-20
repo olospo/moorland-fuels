@@ -31,6 +31,16 @@ $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 7
   }
 });
 
+$('.news-slider').slick({
+  autoplay:true,
+  dots: true,
+  infinite: true,
+  cssEase: 'linear',
+  speed: 700,
+  slidesToShow: 1,
+  slidesToScroll: 1,  
+});
+
 $('.service-scroll').slick({
   autoplay:true,
   dots: false,
@@ -61,9 +71,6 @@ $('.service-scroll').slick({
         slidesToScroll: 1
       }
     }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
   ]
 });
 

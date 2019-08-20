@@ -12,6 +12,7 @@ section.news {
     }
     a {
       color: $black;
+      text-decoration: none;
     }
     .date {
       display: block;
@@ -107,8 +108,24 @@ ul.archive {
     a {
       display: block;
       color: $green;
+      text-decoration: none;
       padding: 10px 0px;
       border-bottom: 1px solid $border;
     }
+  }
+}
+
+.previous_post {
+  text-align: left;
+}
+.next_post {
+  text-align: right;
+}
+
+.previous_post, .next_post {
+  a {
+    color: $green;
+    text-decoration: underline;
+    font: $normal 1.6rem/2.4rem $regular;
   }
 }

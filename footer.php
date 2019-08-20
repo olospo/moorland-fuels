@@ -114,7 +114,19 @@
     </div>
     <div class="latest-news one-half column">
       <h3>Latest news</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="news-slider">
+      <?php $args = array('post_type'=> 'post','order' => 'DESC','post_status' => 'publish','posts_per_page'=> 3); query_posts($args); ?>
+        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+          <article>
+            <div class="content">
+              <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+              <?php the_excerpt(); ?>
+              <a href="<?php the_permalink(); ?>" class="button secondary reversed">Read more</a>
+            </div>
+          </article>
+        <?php endwhile; ?>
+      <?php else : endif; wp_reset_query(); ?>
+      </div>
     </div>
   </div>
 </section>
@@ -134,13 +146,13 @@
     <div class="contact six columns">
       <h4>Contact us</h4>
       <div class="one-half column">
-        <p>Sales: 01837 55700<br />
-          Out of hours: 01837 55700<br />
-          info@moorlandfuels.co.uk
+        <p>Sales: <?php the_field('phone_number','options'); ?><br />
+          Out of hours: <?php the_field('out_of_hours_number','options'); ?><br />
+          <a href="mailto:<?php the_field('email','options'); ?>"><?php the_field('email','options'); ?></a>
         </p>
       </div>
       <div class="one-half column">
-        <p>Moorlands House<br /> North Road Industrial Estate Okehampton, Devon EX20 1BQ</p>
+        <p><?php the_field('address','options'); ?></p>
       </div>
       <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
     </div>

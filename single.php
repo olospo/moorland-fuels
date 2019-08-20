@@ -45,6 +45,12 @@ if(!empty($thecontent)) { ?>
       <h1><?php the_title(); ?></h1>
       
       <?php the_content(); ?>
+      <div class="previous_post one-half column">
+        <?php previous_post_link( '%link', '< Previous post'); ?>
+      </div>
+      <div class="next_post one-half column">
+        <?php next_post_link( '%link', 'Next post >'); ?>
+      </div>
     </div>
   </div>
 </section>

@@ -34,13 +34,13 @@ $padding-quarter: 20px;
 
 ::selection {
   color: $white;
-  background: $red !important;
+  background: $green !important;
   text-shadow: none !important;
 }
     
 ::-moz-selection {
   color: $white;
-  background: $red;
+  background: $green;
   text-shadow: none !important;
 }
 
@@ -156,11 +156,11 @@ section {
     font-style: italic;
   }
   a {
-    color: $red;
-    text-decoration: none;
+    color: $green;
+    text-decoration: underline;
     &:hover {
       color: $black;
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
   ul {
@@ -269,6 +269,7 @@ aside {
             color: $black;
             border-bottom: 1px solid $border;
             font: $normal 1.8rem/2.6rem $regular;
+            text-decoration: none;
             @media (min-width: $breakpoint-tablet) {
               font: $normal 2.2rem/3.6rem $regular;
             }

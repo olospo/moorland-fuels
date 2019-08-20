@@ -16,6 +16,7 @@
     }
     a {
       color: $black;
+      text-decoration: none;
     }
     .date {
       display: block;
@@ -112,6 +113,18 @@
   @media (min-width: $breakpoint-tablet) {
     padding: $padding 0 $padding $padding;
     margin-bottom: 0;
+  }
+  h4 {
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+  .slick-slide {
+    padding: 0;
+  }
+  .slick-dots {
+    text-align: left;
   }
 }
 .newsletter, .latest-news {
