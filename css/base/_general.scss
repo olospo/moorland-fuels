@@ -316,30 +316,6 @@ aside {
   }
 }
 
-
-
-// Home transparent header
-body.home {
-  section.hero {
-    margin-top: 0;
-    padding: 240px 0px 140px 0px;
-  }
-  header {
-    background: transparent;
-    box-shadow: none;
-    ul.extra {
-      li {
-        &.quote {
-          background: transparent !important;
-        }
-        &.login {
-          background: transparent !important;
-        }
-      }
-    }
-  }
-}
-
 // Hero
 .overlay {
   background: #000;
@@ -403,8 +379,6 @@ section.hero{
   &.single, &.service {
     overflow: hidden; 
     padding: 0px;
-
-    
     .background {
       transform: scale(1.1);
       animation: bgZoom 2s;
