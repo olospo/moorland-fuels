@@ -6,6 +6,7 @@
 }
 
 .faq_topics {
+  background: #fbfcfc;
   border-bottom: 1px solid #e8ecee;
   ul.topics {
     display: flex;
@@ -26,7 +27,7 @@
         background: #fbfcfc;
         color: $black;
       }
-      &.current {
+      &.current, &:hover {
         a {
           border-bottom: 1px solid $white;
           background: $white;

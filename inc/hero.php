@@ -10,7 +10,7 @@
   $buttonLink = get_field('button_link');
 ?>
 
-<section class="home hero <?php if ( $videoType == 'link' && $heroType == 'video' ): // Video Link ?>video-link<?php endif; ?> <?php if ( $videoType == 'upload' && $heroType == 'video' ): // Video Link ?>upload<?php endif; ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45))<?php if( $heroType == 'image' ): ?>, url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;<?php endif; ?>">
+<section class="home hero <?php if ( $videoType == 'link' && $heroType == 'video' ): // Video Link ?>video-link<?php endif; ?> <?php if ( $videoType == 'upload' && $heroType == 'video' ): // Video Link ?>upload<?php endif; ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20))<?php if( $heroType == 'image' ): ?>, url(' <?php echo $image['url']; ?> ') center center no-repeat; background-size: cover;<?php endif; ?>">
   <?php if( $heroType == 'video' ): ?>
     <?php if ( $videoType == 'link' ): // Video Link ?>
     <div class="video-area">

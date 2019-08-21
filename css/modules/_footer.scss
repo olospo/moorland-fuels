@@ -108,7 +108,7 @@
   z-index: 1;
   color: $white;
   background: $blue;
-  padding: $padding-half;
+  padding: $padding-half $padding-half $padding $padding-half;
   margin-bottom: $padding-half;
   @media (min-width: $breakpoint-tablet) {
     padding: $padding 0 $padding $padding;
@@ -152,6 +152,11 @@ footer {
     color: $white;
     &:hover {
       color: $white;
+    }
+  }
+  .about {
+    svg {
+      max-width: 100%;
     }
   }
   ul#menu-footer {

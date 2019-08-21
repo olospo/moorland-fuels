@@ -48,5 +48,28 @@ while ( have_posts() ) : the_post(); ?>
   </div>
 </section>
 
+<section class="home_cta">  
+    <div class="cta_bg" style="background: url('http://localhost:8888/seven/moorland-fuels/wp-content/uploads/2019/08/unsplash_1.jpg') center center no-repeat; background-size: cover;">
+    </div>
+    <div class="cta_content cta_slider">
+        <div class="slide">
+        <div class="content">
+          <h3>Lorem ipsum dolor sit amet</h3>
+          <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <a href="#" class="button secondary reversed">Read more</a>
+        </div>
+        </div>
+        <div class="slide">
+          <div class="content">
+            <h3>Duis aute irure dolor in repre henderit</h3>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#" class="button secondary reversed">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

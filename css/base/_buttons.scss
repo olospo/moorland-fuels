@@ -27,12 +27,12 @@
     text-decoration: none;
     background: $green;
     color: $white;
-    border: 1px solid $green;
+    // border: 1px solid $green;
     @include border-radius(25px);
     &:hover {
       color: $white;
       // background: $blue;
-      border: 1px solid $blue;
+      // border: 1px solid $blue;
       transition: border ease-in 0.3s;
       &:before {
         -webkit-transform: scaleY(1);
