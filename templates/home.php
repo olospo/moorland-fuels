@@ -1,6 +1,12 @@
 <?php /* Template Name: Home */
 get_header();
 
+// Vars
+$serviceText = get_field('services_text');
+$ctaBG = get_field('cta_background_image');
+
+
+
 while ( have_posts() ) : the_post(); ?>
 
 <?php get_template_part( 'inc/hero' ); ?>
@@ -14,9 +20,9 @@ while ( have_posts() ) : the_post(); ?>
 <section class="services_slider">
   <div class="container">
     <div class="content eight columns offset-by-two">
-    <p>Moorland Fuels’ tankers are a familiar sight throughout the Devon community. During the cold winter months we consider ourselves the fifth emergency service, providing customers with the efficient heating oil delivery, when they need it.</p>
+    <?php echo $serviceText; ?>
     </div>
-    <div class="content twelve columns">
+    <div class="content ten columns offset-by-one">
       <?php       
       query_posts(array( 
         'post_type' => 'services',
@@ -49,23 +55,20 @@ while ( have_posts() ) : the_post(); ?>
 </section>
 
 <section class="home_cta">  
-    <div class="cta_bg" style="background: url('http://localhost:8888/seven/moorland-fuels/wp-content/uploads/2019/08/unsplash_1.jpg') center center no-repeat; background-size: cover;">
+    <div class="cta_bg" style="background: url('<?php echo $ctaBG['url'] ?>') center center no-repeat; background-size: cover;">
     </div>
     <div class="cta_content cta_slider">
-        <div class="slide">
-        <div class="content">
-          <h3>Lorem ipsum dolor sit amet</h3>
-          <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a href="#" class="button secondary reversed">Read more</a>
-        </div>
-        </div>
+      
+      <?php if( have_rows('slide_content') ):
+        while ( have_rows('slide_content') ) : the_row(); ?>
         <div class="slide">
           <div class="content">
-            <h3>Duis aute irure dolor in repre henderit</h3>
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="#" class="button secondary reversed">Read more</a>
+            <h3><?php the_sub_field('title'); ?></h3>
+            <?php the_sub_field('content'); ?>
+            <a href="<?php the_sub_field('button_link'); ?>" class="button secondary reversed"><?php the_sub_field('button_text'); ?></a>
           </div>
         </div>
+      <?php endwhile; else : endif; ?>
       </div>
     </div>
   </div>
