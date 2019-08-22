@@ -141,6 +141,7 @@
   <div class="container">
     <div class="about six columns">
       <img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.svg" />
+      <a href="#" class="button primary fb">Follow us on Facebook</a>
     </div>
   
     <div class="contact six columns">

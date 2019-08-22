@@ -141,9 +141,17 @@
 }
 
 footer {
-  padding: $padding 0px;
+  overflow-wrap: break-word;
+  padding: $padding-half 0px;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0px;
+  }
   color: $white;
   background: $black;
+  text-align: center;
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left;  
+  }
   h4 {
     font: $normal 2.8rem/3.6rem $regular;
     margin-bottom: 20px;
@@ -155,8 +163,29 @@ footer {
     }
   }
   .about {
+    margin-bottom: $padding-half;
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0; 
+    }
     svg {
       max-width: 100%;
+      margin-bottom: $padding-half;
+    }
+    a.button {
+      &.fb {
+        color: $black;
+        display: inline-block;
+        background: $green url('../img/fb_icon.svg') no-repeat 15px center;
+        padding: 15px 30px 15px 50px;
+        &:hover {
+          background: #3a5899 url('../img/fb_icon_hover.svg') no-repeat 15px center;
+          &:before {
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+          }
+        }
+        
+      }
     }
   }
   ul#menu-footer {
