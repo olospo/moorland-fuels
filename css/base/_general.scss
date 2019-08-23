@@ -312,6 +312,15 @@ aside {
     .content {
       padding: 30px;
       color: $white;
+      word-wrap: break-word;
+      h4 {
+        font: $normal 2.6rem/3.6rem $regular;
+        margin-bottom: 20px;
+      }
+      a {
+        color: $white;
+        text-decoration: underline;
+      }
     }
   }
 }

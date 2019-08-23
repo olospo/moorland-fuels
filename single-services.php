@@ -32,16 +32,7 @@ $icon = get_field('service_icon');
           <?php else : endif; wp_reset_query(); ?>
         </div>
       </div>
-      <div class="more-help">
-        <div class="content">
-          <h4>Need more help?</h4>
-          <p>Our friendly team will help you make an informed choice to best suit your specific needs:</p>
-          <p>Sales: 01837 55700<br />
-            Out of hours: 01837 55700<br />
-          info@moorlandfuels.co.uk
-          </p>
-        </div>
-      </div>
+      <?php get_template_part('inc/help'); ?>
     </aside>
     <div class="content nine columns">
       <h1><?php the_title(); ?></h1>
