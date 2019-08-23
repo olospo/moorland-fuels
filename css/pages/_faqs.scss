@@ -52,3 +52,118 @@
 .faq_listing {
   padding: $padding 0;
 }
+
+// FAQ
+
+.open .accordionItemHeading {
+  border-bottom: none;
+}
+.accordionItemHeading {
+  color: $black;
+  font: $normal 2.4rem/3.4rem $regular;
+  border-bottom: 1px solid $border;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  cursor:pointer;
+  position: relative;
+  .content {
+    max-width: 90%;
+  }
+  &:before {
+    content: "";
+    background: url('../img/faq_arrow.svg') 0 0 no-repeat;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    right: 0;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+  }
+}
+
+
+
+.open .accordionItemHeading {
+  position: relative;
+  &:before {
+    content: "";
+    background: url('../img/faq_arrow.svg') 0 0 no-repeat;
+    transform-origin: 0px 0px;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-animation:spin 0.3s linear forwards;
+    -moz-animation:spin 0.3s linear forwards;
+    animation:spin 0.3s linear forwards;
+  } 
+}
+
+.close .accordionItemHeading {
+  &:before {
+    transform-origin: -20px -20px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-animation:return 0.3s linear forwards;
+    -moz-animation:return 0.3s linear forwards;
+    animation:return 0.3s linear forwards;
+  }
+}
+
+@keyframes spin { 
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% { 
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  } 
+}
+
+@keyframes return {
+  0% {
+    transform-origin: 0px 0px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  100% { 
+    transform-origin: 0px 0px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  } 
+}
+.close .accordionItemContent{
+  height:0px;
+  transition:height 10s ease-out;
+  -webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+  float:left;
+  display:block;   
+}
+.open .accordionItemContent{
+  border-bottom: 1px solid $border;
+  margin: 0px 0px 10px 0px;
+  padding-bottom: 20px;
+  display:block;
+  -webkit-transform: scaleY(1);
+	-o-transform: scaleY(1);
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+  -webkit-transform-origin: top;
+	-o-transform-origin: top;
+	-ms-transform-origin: top;
+	transform-origin: top;
+	-webkit-transition: -webkit-transform 0.5s ease-out;
+	-o-transition: -o-transform 0.5s ease;
+	-ms-transition: -ms-transform 0.5s ease;
+	transition: transform 0.5s ease;
+  box-sizing: border-box;
+  .content {
+    max-width: 90%;
+  }
+  img {
+    margin-bottom: 30px;
+  }
+}

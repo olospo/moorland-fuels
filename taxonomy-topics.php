@@ -43,9 +43,13 @@ get_header(); ?>
     <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
       <div class="tab">
         <div class="accordionItem close">
-        <h3 class="accordionItemHeading"><?php the_title(); ?></h3>
+        <h3 class="accordionItemHeading">
+          <div class="content"><?php the_title(); ?></div>
+        </h3>
           <div class="accordionItemContent">
+            <div class="content">
             <?php the_content(); ?>        
+            </div>
           </div>
         </div>
       </div>
