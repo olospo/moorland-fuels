@@ -6,7 +6,7 @@ get_header(); ?>
   <div class="container">
     <div class="content ten columns offset-by-one">
       <h1><?php the_title(); ?></h1>
-      
+      <?php the_content(); ?>
     </div>
   </div>
 </section>
@@ -15,11 +15,19 @@ get_header(); ?>
   <div class="container">
     <aside class="three columns">
       <?php get_template_part('inc/help'); ?>
+      <div class="map">
+        <a href="#">
+        <div class="content">
+          <img src="<?php bloginfo('template_directory'); ?>/img/map.jpg">
+        </div>
+        <div class="find_us">
+          <h4>How to find us</h4>
+        </div>
+        </a>
+      </div>
     </aside>
     <div class="content nine columns">
-      <?php $content = get_the_content(); if($content) { ?>
-        <?php echo $content; ?>
-      <?php } ?>
+      <?php echo do_shortcode('[ninja_form id=1]'); ?>
     </div>
   </div>
 </section>

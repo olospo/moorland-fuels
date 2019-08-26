@@ -7,8 +7,10 @@ $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 7
   var width = $(this).width(); // The window width
   if (width > 768) {
     $('nav.mobile').hide();
-    
-    // Back to Top Scroll 
+  }
+});
+
+// Back to Top Scroll 
     var amountScrolled = 100;
     
     $(window).scroll(function() {
@@ -22,12 +24,9 @@ $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 7
     $('a.back_to_top').click(function() {
     	$('html, body').animate({
     		scrollTop: 0
-    	}, 700);
+    	}, 400);
     	return false;
     });
-
-  }
-});
 
 $(function () {
   $(document).scroll(function () {
@@ -145,3 +144,22 @@ var accItem = document.getElementsByClassName('accordionItem');
           this.parentNode.className = 'accordionItem open';
       }
   }
+  
+  
+// ------------------------------------------------------------
+// Animation Javascript
+// ------------------------------------------------------------
+
+var componentVisible = (function ($) {
+  
+  var $components = $('section');
+
+  var componentsWaypoints = $components.waypoint({
+    handler: function() {
+      $(this.element).addClass("visible");
+    },
+    offset: '80%'
+  });
+
+  
+})(jQuery);

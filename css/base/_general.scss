@@ -197,25 +197,32 @@ section {
   }
   .nf-form-layout {
     form {
+      .nf-field-container {
+        margin-bottom: 15px;
+      }
+      .nf-form-fields-required {
+        display: none;
+      }
       label {
         font: $normal 1.8rem/2.6rem $regular;
         @media (min-width: $breakpoint-tablet) {
           font: $normal 2.4rem/3.4rem $regular;
         }
         font-weight: 300 !important;
-        color: $red;
+        color: $black;
       }
       
       select, input, textarea {
         font: $normal 1.8rem/2.6rem $regular;
         @media (min-width: $breakpoint-tablet) {
-          font: $normal 2.4rem/3.4rem $regular;
+          font: $normal 2.2rem/3.4rem $regular;
         }
+        @include border-radius(5px);
         background: transparent;
         border: 1px solid $black;
         padding: 10px;
         &:focus {
-          border: 1px solid $red;
+          border: 1px solid $green;
         }
       }
       select {
@@ -223,14 +230,23 @@ section {
         padding-right: 40px;
       }
       input[type="button"] {
-        margin: 0;
-        @extend .button
+        cursor: pointer;
+        margin: 20px 0 0 0;
+        @extend .button;
+        @extend .primary;
+        border: none;
+        &:hover {
+          background: $blue;
+        }
       }
       input.datepicker {
         background: url('../img/date_icon.svg') 94% center no-repeat;
       }
       .submit-wrap {
         text-align: left;
+      }
+      .nf-after-field .nf-error-msg {
+        font: $normal 1.6rem/2.2rem $regular;
       }
     }
   }
@@ -246,6 +262,13 @@ section {
   h3 {
     display: inline-block;
     margin-right: 30px;
+    margin-top: 10px;
+  }
+  a.button {
+    margin-top: 10px;
+    @media (min-width: $breakpoint-tablet) {
+    margin-top: -10px;
+    }
   }
 }
 
@@ -406,6 +429,28 @@ section.hero{
   } 
 }
 
+.map {
+  margin-top: $padding-half;
+  .find_us {
+    background: $green url('../img/round_arrow.svg') right 20px center no-repeat;
+    h4 {
+      font: $normal 2.4rem/3.2rem $regular;
+      padding: 20px;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+    h4 {
+      text-decoration: none;
+    }
+  }
+}
+
 @keyframes bgZoom {
   0% {
     transform: scale(1);
@@ -415,37 +460,6 @@ section.hero{
   }
 }
 
-// Form
-form {
-  text-align: center;
-  select {
-    display: inline-block;
-    font-size: 16px;
-    font-family: sans-serif;
-    font-weight: 700;
-    color: #444;
-    padding: .7em 5.4em .7em .7em;
-    box-sizing: border-box;
-    margin: 10px 10px 10px 0;
-    font: $normal 2.4rem/3.2rem $headline;
-    text-transform: uppercase;
-    border-radius: 0;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #fff;
-  }
-  input[type="submit"] {
-    margin: 10px 10px 10px 0;
-    padding: .7em 3.4em .7em .7em;
-    font: $normal 2.4rem/3.2rem $headline;
-    text-transform: uppercase;
-    border: none;
-    background: $red;
-    color: $white;
-    -webkit-appearance: none;
-  }
-}
 
 @keyframes opacity {
 	to {

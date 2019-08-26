@@ -206,7 +206,7 @@ a.back_to_top {
 	z-index: 999;
 	right: 0px;
 	top: 75%;
-	background: $white url("../img/back_to_top_icon.svg") no-repeat center center;	
+	background: $green url("../img/back_to_top_icon.svg") no-repeat center center;	
 	@media (max-width: $breakpoint-tablet) {
   	display: none !important;
   }
