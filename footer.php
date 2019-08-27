@@ -134,6 +134,7 @@
 <section class="enquiry">
   <div class="container">
     <h3>Make an enquiry</h3>
+    <?php echo do_shortcode('[ninja_form id=2]'); ?>
   </div>
 </section>
 

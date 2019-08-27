@@ -137,7 +137,41 @@
 
 .enquiry {
   background: $buff;
-  padding: $padding 0;
+  padding: $padding-half 0;
+  h3 {
+    font: $normal 3.6rem/4.0rem $headline;
+    text-align: center;
+    color: $green;
+    margin-bottom: $padding-half;
+  }
+  form {
+    .nf-form-content {
+      select, input, textarea {
+        background: $white !important;
+      }
+      input[type="button"] {
+        background: $green !important;
+      }
+      input[type="checkbox"] {
+        font: $normal 3.6rem/4.0rem $headline;
+        margin-right: 10px;
+        width: 2px;
+        height: 2px;
+        background-color: white;
+        border-radius: 50%;
+        vertical-align: middle;
+        border: 5px solid $white;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: 0px 1px $black;
+      }
+      input.nf-checked {
+        background-color: $black !important;
+      }
+    }
+    
+  }
 }
 
 footer {

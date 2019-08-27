@@ -197,6 +197,9 @@ section {
   }
   .nf-form-layout {
     form {
+      .nf-cell:first-child {
+        padding-right: 20px;
+      }
       .nf-field-container {
         margin-bottom: 15px;
       }
