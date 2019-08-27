@@ -14,14 +14,12 @@ $icon = get_field('service_icon');
     <aside class="three columns">
       <div class="services-list">
         <div class="content">
-          <?php $current_post = $post->ID;        
-  
+          <?php $current_post = $post->ID;
               query_posts(array( 
                 'post_type' => 'services',
                 'showposts' => -1,
                 'orderby'   => 'title',
                 'order'     => 'ASC',
-                
               ));  
             ?>
           <ul>
@@ -37,6 +35,95 @@ $icon = get_field('service_icon');
     <div class="content nine columns">
       <h1><?php the_title(); ?></h1>
       <?php the_content(); ?>
+      
+      <!-- Tabs -->
+      <?php if( have_rows('tab') ): ?>
+        <div class="tab">
+          <?php while( have_rows('tab') ): the_row(); 
+
+      		// vars
+      		$tabHeader = get_sub_field('tab_header');
+      		$tabContent = get_sub_field('tab_content');
+      
+      		?>
+      		<div class="accordionItem close">
+            <h3 class="accordionItemHeading"><?php echo $tabHeader; ?></h3>
+            <div class="accordionItemContent">
+              <?php // check if the flexible content field has rows of data
+              if( have_rows('tab_content') ):
+                while ( have_rows('tab_content') ) : the_row();
+              
+                  if( get_row_layout() == 'content' ):
+              
+                    the_sub_field('content');
+              
+                  elseif( get_row_layout() == 'image' ):
+                    
+                    // display a sub field value
+                    $image = get_sub_field('image'); 
+                        
+                    // thumbnail
+                    $size = 'featured-img';
+                    $thumb = $image['sizes'][ $size ];
+                    $width = $image['sizes'][ $size . '-width' ];
+                    $height = $image['sizes'][ $size . '-height' ];
+                    ?>
+                            
+                    <img src="<?php echo $thumb; ?>" />
+                        
+                  <?php
+
+                    endif;
+              
+                endwhile;
+            
+              else :
+                // no layouts found
+              endif; ?>
+            </div>
+          </div>
+
+      	  <?php endwhile; ?>
+        </div>
+        <?php endif; ?>
+        
+        <!-- Related Info/Documents -->
+        <?php if( have_rows('related_info_documents') ): ?>
+        <div class="related">
+          <h3>Related Info/Documents</h3>
+          <ul>
+          <?php while( have_rows('related_info_documents') ): the_row(); 
+
+      		// vars
+      		$title = get_sub_field('title');
+      		$url = get_sub_field('url');
+      		$upload = get_sub_field('upload');
+      		
+      		$ext = pathinfo($upload, PATHINFO_EXTENSION);
+      
+      		?>
+      		
+      		<?php if( $url ): ?>
+          <li class="link">
+            <a href="<?php echo $url; ?>" target="_blank">
+              <?php echo $title; ?>
+				    </a>
+          </li>
+          <?php endif; ?>
+          
+          <?php if( $upload ): ?>
+          <li class="<?php echo $ext; ?>">
+            <a href="<?php echo $upload; ?>">
+              <?php echo $title; ?>
+				    </a>
+          </li>
+          <?php endif; ?>
+
+      	  <?php endwhile; ?>
+      	  </ul>
+        </div>
+        <?php endif; ?> 
+        
     </div>
   </div>
 </section>
