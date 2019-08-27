@@ -40,11 +40,9 @@ $icon = get_field('service_icon');
       <?php if( have_rows('tab') ): ?>
         <div class="tab">
           <?php while( have_rows('tab') ): the_row(); 
-
       		// vars
       		$tabHeader = get_sub_field('tab_header');
       		$tabContent = get_sub_field('tab_content');
-      
       		?>
       		<div class="accordionItem close">
             <h3 class="accordionItemHeading"><?php echo $tabHeader; ?></h3>
@@ -90,7 +88,8 @@ $icon = get_field('service_icon');
         <!-- Related Info/Documents -->
         <?php if( have_rows('related_info_documents') ): ?>
         <div class="related">
-          <h3>Related Info/Documents</h3>
+          <div class="content">
+          <h3>More information</h3>
           <ul>
           <?php while( have_rows('related_info_documents') ): the_row(); 
 
@@ -123,7 +122,6 @@ $icon = get_field('service_icon');
       	  </ul>
         </div>
         <?php endif; ?> 
-        
     </div>
   </div>
 </section>

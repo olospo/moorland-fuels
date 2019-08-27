@@ -66,30 +66,36 @@
 }
 
 .related {
-  padding: $padding-half 0 0 0;
+  margin: $padding-half 0 0 0;
+  .content {
+    @include border-radius(10px);
+    padding: 15px 25px;
+    background: $info;
+    border: 1px solid $border;
+  }
   h3 {
-    color: $red;
-    font: $normal 3.6rem/4.4rem $headline;
-    text-transform: uppercase;
+    color: $black;
+    font: $normal 2.2rem/3.4rem $regular;
+    
   }
   ul {
-    color: $red;
+    color: $green;
+    margin: 0;
     li {
       margin: 0px;
-      padding: 12px 0px;
+      padding: 15px 0px;
       list-style: none;
-      border-bottom: 1px solid #e0d1c8;
-      &:first-child {
-        margin: 10px 0px 0px 0px;
-        border-top: 1px solid #e0d1c8;
+      border-bottom: 1px solid $border;
+      &:last-child {
+        border-bottom: 0px solid $border;
       }
       a {
         background: url('../img/document_icon.svg') center left no-repeat;
         background-size: contain;
-        color: $red;
+        color: $green;
         text-decoration: underline;
         border-bottom: none;
-        padding-left: 35px;
+        padding-left: 40px;
         &:hover {
           color: $black;
         }
