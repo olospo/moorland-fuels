@@ -167,7 +167,7 @@ body.home {
   }
   .slick-prev {
     
-    background: url('../img/arrow_left_small.svg') center center no-repeat;
+    background: url('../img/arrow/left_small.svg') center center no-repeat;
     height: 33px;
     width: 20px;
     
@@ -178,7 +178,7 @@ body.home {
       left: -20px;
     }
     @media (min-width: $breakpoint-tablet) {
-      background: url('../img/arrow_left.svg') center center no-repeat;
+      background: url('../img/arrow/left.svg') center center no-repeat;
       height: 66px;
       width: 40px;
       top: 38%;
@@ -191,7 +191,7 @@ body.home {
   
   .slick-next {
     z-index: 2;
-    background: url('../img/arrow_right_small.svg') center center no-repeat;
+    background: url('../img/arrow/right_small.svg') center center no-repeat;
     height: 33px;
     width: 20px;
     top: 44%;
@@ -200,7 +200,7 @@ body.home {
       right: -20px;
     }
     @media (min-width: $breakpoint-tablet) {
-      background: url('../img/arrow_right.svg') center center no-repeat;
+      background: url('../img/arrow/right.svg') center center no-repeat;
       height: 66px;
       width: 40px;
       top: 38%;

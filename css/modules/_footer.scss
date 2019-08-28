@@ -1,9 +1,15 @@
 // Footer
 .quick-links {
   padding: $padding-half 0;
+  .links {
+    @media (min-width: $breakpoint-tablet) {
+      display: flex;
+    }
+  }
   article {
     text-align: center;
     border: 1px solid #dee2e5;
+    background: $buff;
     @include border-radius(10px);
     margin-bottom: $padding-half;
     @media (min-width: $breakpoint-tablet) {
@@ -43,7 +49,7 @@
     }
     .content {
       @include border-radius(0px 0px 10px 10px);
-      background: $buff;
+      
       color: $black;
       padding: 25px;
       h3 {
@@ -125,6 +131,28 @@
   }
   .slick-dots {
     text-align: left;
+  }
+  .slick-prev {
+    background: url('../img/arrow/left_white.svg') center center no-repeat;
+    height: 18px;
+    width: 21px;
+    z-index: 2;
+    top: 30%;
+    left: -35px;
+    @media (min-width: $breakpoint-tablet) {
+      left: -45px;
+    }
+  }
+  .slick-next {
+    z-index: 2;
+    background: url('../img/arrow/right_white.svg') center center no-repeat;
+    height: 18px;
+    width: 21px;
+    top: 30%;
+    right: -35px;
+    @media (min-width: $breakpoint-tablet) {
+      right: -45px;
+    }
   }
 }
 .newsletter, .latest-news {
@@ -263,7 +291,7 @@ a.back_to_top {
 	z-index: 999;
 	right: 0px;
 	top: 75%;
-	background: $green url("../img/back_to_top_icon.svg") no-repeat center center;	
+	background: $green url("../img/arrow/back_to_top.svg") no-repeat center center;	
 	@media (max-width: $breakpoint-tablet) {
   	display: none !important;
   }

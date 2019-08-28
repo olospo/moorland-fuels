@@ -12,7 +12,7 @@ get_header(); ?>
 </section>
 
 <section class="post">
-  <div class="container">
+  <div class="container flex">
     <aside class="three columns">
       <?php get_template_part('inc/help'); ?>
       <div class="map">
@@ -26,7 +26,7 @@ get_header(); ?>
         </a>
       </div>
     </aside>
-    <div class="content nine columns">
+    <div class="content nine columns extra_gutter">
       <?php echo do_shortcode('[ninja_form id=1]'); ?>
     </div>
   </div>

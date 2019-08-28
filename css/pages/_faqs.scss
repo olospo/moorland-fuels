@@ -72,7 +72,7 @@
   }
   &:before {
     content: "";
-    background: url('../img/faq_arrow.svg') 0 0 no-repeat;
+    background: url('../img/arrow/faq.svg') 0 0 no-repeat;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     right: 0;
@@ -89,7 +89,7 @@
   position: relative;
   &:before {
     content: "";
-    background: url('../img/faq_arrow.svg') 0 0 no-repeat;
+    background: url('../img/arrow/faq.svg') 0 0 no-repeat;
     transform-origin: 0px 0px;
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);

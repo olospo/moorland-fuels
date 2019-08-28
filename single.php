@@ -11,7 +11,7 @@ while ( have_posts() ) : the_post(); ?>
 $thecontent = get_the_content();
 if(!empty($thecontent)) { ?>
 <section class="post">
-  <div class="container">
+  <div class="container flex">
     <aside class="three columns">
       <div class="news-dates">
         <ul class="archive">
@@ -31,7 +31,7 @@ if(!empty($thecontent)) { ?>
       </div>
       <?php get_template_part('inc/help'); ?>
     </aside>
-    <div class="content nine columns">
+    <div class="content nine columns extra_gutter">
       <p class="date">Posted on <?php the_time('j F Y'); ?></p>
       <h1><?php the_title(); ?></h1>
       

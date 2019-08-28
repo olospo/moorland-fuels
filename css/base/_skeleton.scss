@@ -72,6 +72,10 @@
   }
   .nine.columns {
     width: 74.0%;
+    &.extra_gutter {
+      width: 70%;
+      margin-left: 8%;
+    }
   }
   .ten.columns {
     width: 82.6666666667%;

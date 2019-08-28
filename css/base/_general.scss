@@ -84,6 +84,20 @@ h4 {
   font-family: 'Stag';
 }
 
+@media (max-width: $breakpoint-tablet) {
+  .flex {
+    display: flex;
+    flex-flow: column;
+    aside {
+      order: 2;
+      margin-top: $padding-half;
+    }
+    .content {
+      order: 1;
+    }
+  }
+}
+
 // Page 
 section {
   &.page, &.post, &.search {
@@ -290,7 +304,7 @@ aside {
           a {
             position: relative;
             display: block;
-            padding: 15px 0px;
+            padding: 12px 0px;
             margin: 0;
             color: $black;
             border-bottom: 1px solid $border;
@@ -298,15 +312,6 @@ aside {
             text-decoration: none;
             @media (min-width: $breakpoint-tablet) {
               font: $normal 2.2rem/3.6rem $regular;
-            }
-            &:after {
-              background: url('../img/white_arrow_icon.svg') center right no-repeat;
-              content: "";
-              height: 34px;
-              width: 34px;
-              position: absolute;
-              margin: auto 0;
-              top: 0; bottom: 0; right: 0;
             }
           }
           &:first-child {
@@ -438,7 +443,7 @@ section.hero{
 .map {
   margin-top: $padding-half;
   .find_us {
-    background: $green url('../img/round_arrow.svg') right 20px center no-repeat;
+    background: $green url('../img/arrow/round.svg') right 20px center no-repeat;
     h4 {
       font: $normal 2.4rem/3.2rem $regular;
       padding: 20px;

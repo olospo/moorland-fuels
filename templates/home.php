@@ -13,7 +13,7 @@ while ( have_posts() ) : the_post(); ?>
 
 <section class="small_cta">
   <div class="container">
-    <h3>Looking for a quick fuel price?</h3><a href="#" class="button secondary reversed">Get a quote</a>
+    <h3>Looking for a quick fuel price?</h3><a href="<?php the_field('order_quote_link','option'); ?>" target="_blank" class="button secondary reversed">Get a quote</a>
   </div>
 </section>
 

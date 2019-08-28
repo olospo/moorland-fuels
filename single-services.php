@@ -10,7 +10,7 @@ $icon = get_field('service_icon');
 </section>
 
 <section class="post">
-  <div class="container">
+  <div class="container flex">
     <aside class="three columns">
       <div class="services-list">
         <div class="content">
@@ -32,7 +32,7 @@ $icon = get_field('service_icon');
       </div>
       <?php get_template_part('inc/help'); ?>
     </aside>
-    <div class="content nine columns">
+    <div class="content nine columns extra_gutter">
       <h1><?php the_title(); ?></h1>
       <?php the_content(); ?>
       

@@ -29,7 +29,7 @@ get_header(); ?>
   <aside class="three columns">
     <?php get_template_part('inc/help'); ?>
   </aside>
-  <div class="nine columns">
+  <div class="nine columns extra_gutter">
     <?php endif;  wp_reset_query();?>
     <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
       <div class="tab">

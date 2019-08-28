@@ -7,8 +7,9 @@
 
 <section class="quick-links">
   <div class="container">
+    <div class="links">
     <?php if( have_rows('quick_link_one','options') ): ?>
-    <div class="quick-one one-third column">
+    <article class="quick-one one-third column">
     	<?php while( have_rows('quick_link_one','options') ): the_row(); 
     		// vars
     		$imageOne = get_sub_field('image_one','options');
@@ -24,7 +25,6 @@
       	$height = $imageOne['sizes'][ $size . '-height' ];
     
     		?>
-    		<article>
       		<div class="image">
             <a href="<?php echo $linkOne; ?>"><img src="<?php echo $thumbOne; ?>" /></a>
       		</div>
@@ -33,13 +33,12 @@
             <p><?php echo $content; ?></p>
             <a href="<?php echo $linkOne; ?>" class="button primary"><?php echo $linkText; ?></a>
           </div>
-        </article>
     	<?php endwhile; ?>
-    </div>
+    </article>
     <?php endif; wp_reset_postdata(); ?>
     
     <?php if( have_rows('quick_link_two','options') ): ?>
-    <div class="quick-two one-third column">
+    <article class="quick-two one-third column">
     	<?php while( have_rows('quick_link_two','options') ): the_row(); 
     		// vars
     		$imageTwo = get_sub_field('image_two','options');
@@ -55,7 +54,7 @@
       	$height = $imageTwo['sizes'][ $size . '-height' ];
     
     		?>
-    		<article>
+    		
       		<div class="image">
             <a href="<?php echo $link; ?>"><img src="<?php echo $thumbTwo; ?>" /></a>
       		</div>
@@ -64,13 +63,12 @@
             <p><?php echo $content; ?></p>
             <a href="<?php echo $link; ?>" class="button primary"><?php echo $linkText; ?></a>
           </div>
-        </article>
     	<?php endwhile; ?>
-    </div>
+    </article>
     <?php endif; wp_reset_postdata(); ?>
     
     <?php if( have_rows('quick_link_three','options') ): ?>
-    <div class="quick-three one-third column">
+    <article class="quick-three one-third column">
     	<?php while( have_rows('quick_link_three','options') ): the_row(); 
     		// vars
     		$imageThree = get_sub_field('image_three','options');
@@ -86,7 +84,6 @@
       	$height = $imageThree['sizes'][ $size . '-height' ];
     
     		?>
-    		<article>
       		<div class="image">
             <a href="<?php echo $link; ?>"><img src="<?php echo $thumbThree; ?>" /></a>
       		</div>
@@ -95,11 +92,10 @@
             <p><?php echo $content; ?></p>
             <a href="<?php echo $link; ?>" class="button primary"><?php echo $linkText; ?></a>
           </div>
-        </article>
     	<?php endwhile; ?>
-    </div>
+    </article>
     <?php endif; wp_reset_postdata(); ?>
-
+    </div>
   </div>
 </section>
 
@@ -141,15 +137,15 @@
 <footer>
   <div class="container">
     <div class="about six columns">
-      <img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.svg" />
-      <a href="#" class="button primary fb">Follow us on Facebook</a>
+      <img src="<?php bloginfo('template_directory'); ?>/img/logo-footer.svg" alt="Moorland Fuels Logo"/>
+      <a href="<?php the_field('facebook_link','options'); ?>" class="button primary fb">Follow us on Facebook</a>
     </div>
   
     <div class="contact six columns">
       <h4>Contact us</h4>
       <div class="one-half column">
-        <p>Sales: <?php the_field('phone_number','options'); ?><br />
-          Out of hours: <?php the_field('out_of_hours_number','options'); ?><br />
+        <p>Sales: <a href="tel:<?php the_field('phone_number','options'); ?>"><?php the_field('phone_number','options'); ?></a><br />
+          Out of hours: <a href="tel:<?php the_field('out_of_hours_number','options'); ?>"><?php the_field('out_of_hours_number','options'); ?></a><br />
           <a href="mailto:<?php the_field('email','options'); ?>"><?php the_field('email','options'); ?></a>
         </p>
       </div>

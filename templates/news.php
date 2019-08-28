@@ -17,8 +17,7 @@ while ( have_posts() ) : the_post(); ?>
 <section class="news">
   <div class="container">
     <div class="twelve columns">
-      <div class="main_content">
-        <div class="twelve columns">
+      <div class="news_listing">
           <?php $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
               $args = array(
                 'post_type'      => 'post',
@@ -39,7 +38,6 @@ while ( have_posts() ) : the_post(); ?>
         <?php else : ?>
         <!-- No posts found -->
         <?php endif; wp_reset_query(); ?>
-      </div>
     </div>
   </div>
 </section>
