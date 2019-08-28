@@ -192,6 +192,9 @@
       }
       input[type="button"] {
         background: $green !important;
+        &:hover {
+          background: $blue !important;
+        }
       }
       label {
         font: $normal 1.8rem/2.6rem $regular;
@@ -283,6 +286,7 @@ footer {
   }
 }
 a.back_to_top {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 	display: none;
 	width: 60px;
 	height: 60px;

@@ -16,9 +16,9 @@ get_header(); ?>
     <aside class="three columns">
       <?php get_template_part('inc/help'); ?>
       <div class="map">
-        <a href="#">
+        <a href="<?php the_field('map_link'); ?>" target="_blank">
         <div class="content">
-          <img src="<?php bloginfo('template_directory'); ?>/img/map.jpg">
+          <img src="<?php the_field('map_image'); ?>">
         </div>
         <div class="find_us">
           <h4>How to find us</h4>

@@ -30,7 +30,7 @@
         font: $normal 2.0rem/3.0rem $regular;
       }
       .image {
-        border: 3px solid $green;
+        border: 2px solid $green;
         @include border-radius(50%);
         .border {
           padding: 30px;
