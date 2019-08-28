@@ -32,7 +32,7 @@
     <!-- Main Menu -->
     <nav class="primary nine columns">
       <ul class="extra">
-        <li class="quote"><a href="#">Order or get a quote</a></li><li class="login"><a href="#">Log in</a></li>
+        <li class="quote"><a href="<?php the_field('order_quote_link','option'); ?>" target="_blank">Order or get a quote</a></li><li class="login"><a href="<?php the_field('log_in_link','option'); ?>" target="_blank">Log in</a></li>
       </ul>
       <?php wp_nav_menu( array( 'theme_location' => 'main', 'container'=> false, 'menu_class'=> false ) ); ?>
     </nav>

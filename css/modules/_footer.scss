@@ -111,7 +111,7 @@
   padding: $padding-half $padding-half $padding $padding-half;
   margin-bottom: $padding-half;
   @media (min-width: $breakpoint-tablet) {
-    padding: $padding 0 $padding $padding;
+    padding: $padding 0 120px $padding;
     margin-bottom: 0;
   }
   h4 {
@@ -146,13 +146,30 @@
   }
   form {
     .nf-form-content {
+      .nf-cell:first-child {
+        padding-right: 0px;
+        @media (min-width: $breakpoint-tablet) {
+          padding-right: 20px;
+        }
+      }
+      .nf-cell:last-child {
+        padding-left: 0px;
+        @media (min-width: $breakpoint-tablet) {
+          padding-left: 20px;
+        }
+      }
       select, input, textarea {
         background: $white !important;
+        font: $normal 1.8rem/2.6rem $regular;
       }
       input[type="button"] {
         background: $green !important;
       }
+      label {
+        font: $normal 1.8rem/2.6rem $regular;
+      }
       input[type="checkbox"] {
+        clear: left;
         font: $normal 3.6rem/4.0rem $headline;
         margin-right: 10px;
         width: 2px;
@@ -168,6 +185,11 @@
       }
       input.nf-checked {
         background-color: $black !important;
+      }
+      ul {
+        li {
+          margin: 10px 0 30px auto !important;
+        }
       }
     }
     
@@ -204,6 +226,7 @@ footer {
     svg {
       max-width: 100%;
       margin-bottom: $padding-half;
+      display: block;
     }
     a.button {
       &.fb {

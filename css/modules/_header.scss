@@ -39,7 +39,7 @@ header {
     letter-spacing: 1px;
     ul {
       line-height:1em;
-      text-align: left;
+      text-align: center;
       
       li {
         display: inline-block;
@@ -85,7 +85,7 @@ header {
       }
     }
     ul.extra {
-      position: absolute;
+      // position: absolute;
       float: right;
       right: 0;
       text-decoration: none;

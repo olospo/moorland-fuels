@@ -57,6 +57,44 @@
             "new_lines": ""
         },
         {
+            "key": "field_5d6645b99bdad",
+            "label": "Order of get a quote link",
+            "name": "order_quote_link",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d6645dd9bdae",
+            "label": "Log in link",
+            "name": "log_in_link",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5d3711a6f7431",
             "label": "Contact Details",
             "name": "",
@@ -201,5 +239,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566289183
+    "modified": 1566984447
 }
