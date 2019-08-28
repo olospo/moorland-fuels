@@ -214,76 +214,11 @@ function custom_post_type() {
 		'capability_type'     => 'post',
 	);
 	register_post_type( 'services', $args );
-	
-	// FAQ Post Type
-	$labels = array(
-		'name'                => _x( 'FAQs', 'Post Type General Name', 'text_domain' ),
-		'singular_name'       => _x( 'FAQ', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'           => __( 'FAQs', 'text_domain' ),
-		'all_items'           => __( 'All FAQs', 'text_domain' ),
-		'view_item'           => __( 'View FAQ', 'text_domain' ),
-		'add_new_item'        => __( 'Add New FAQ', 'text_domain' ),
-		'add_new'             => __( 'Add New', 'text_domain' ),
-		'edit_item'           => __( 'Edit FAQ', 'text_domain' ),
-		'update_item'         => __( 'Update FAQ', 'text_domain' ),
-		'search_items'        => __( 'Search FAQs', 'text_domain' ),
-		'not_found'           => __( 'Not found', 'text_domain' ),
-		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
-	);
-	$args = array(
-		'label'               => __( 'FAQs', 'text_domain' ),
-		'description'         => __( 'Moorland Fuels FAQs', 'text_domain' ),
-		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom fields' ),
-		'hierarchical'        => false,
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'show_in_nav_menus'   => true,
-		'show_in_admin_bar'   => true,
-		'menu_position'       => 20,
-		'menu_icon'           => 'dashicons-welcome-comments',
-		'can_export'          => true,
-		'has_archive'         => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-		'capability_type'     => 'post',
-	);
-	register_post_type( 'faq', $args );
+
 		
 }
 // Hook into the 'init' action
 add_action( 'init', 'custom_post_type', 0 );
-
-add_action( 'init', 'custom_taxonomy', 0 );
- 
-//create a custom taxonomy name it "type" for your posts
-function custom_taxonomy() {
- 
-  $labels = array(
-    'name' => _x( 'Topics', 'taxonomy general name' ),
-    'singular_name' => _x( 'Topic', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Topics' ),
-    'all_items' => __( 'All Topics' ),
-    'parent_item' => __( 'Parent Topic' ),
-    'parent_item_colon' => __( 'Parent Topic:' ),
-    'edit_item' => __( 'Edit Topic' ), 
-    'update_item' => __( 'Update Topic' ),
-    'add_new_item' => __( 'Add New Topic' ),
-    'new_item_name' => __( 'New Topic Name' ),
-    'menu_name' => __( 'Topics' ),
-  ); 	
- 
-  register_taxonomy('topics',array('faq'), array(
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
-    'show_admin_column' => true,
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'topic' ),
-  ));
-}
-
 
 // CPT Menu Item
 

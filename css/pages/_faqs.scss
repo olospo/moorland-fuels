@@ -15,14 +15,20 @@
     text-align: center;
     // border: 1px solid #e8ecee;
     li {
-      display: inline-block;
+      display: block;
+      @media (min-width: $breakpoint-tablet) {
+        display: inline-block;
+      }
       margin: 0;
       padding: 0;
       a {
         text-decoration: none;
         margin-bottom: -1px;
-        border-top: 1px solid #e8ecee;
-        border-right: 1px solid #e8ecee;
+        border: 1px solid #e8ecee;
+        @media (min-width: $breakpoint-tablet) {
+          border-top: 1px solid #e8ecee;
+          border-right: 1px solid #e8ecee;
+        }
         display: block;
         padding: 15px 40px;
         background: #fbfcfc;
@@ -61,10 +67,10 @@
 }
 .accordionItemHeading {
   color: $black;
-  font: $normal 2.4rem/3.4rem $regular;
+  font: $normal 2.0rem/3.4rem $regular;
   border-bottom: 1px solid $border;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
   cursor:pointer;
   position: relative;
   .content {
