@@ -248,7 +248,7 @@ body.home {
         
         max-width: 100%;
         @media (min-width: $breakpoint-mobile) {
-          padding: $padding-half $padding-half $padding $padding-half;
+          padding: $padding ;
         }
         @media (min-width: $breakpoint-desktop) {
           max-width: 600px;
@@ -264,14 +264,14 @@ body.home {
       }
     }
     .slick-dots {
-      width: 90%;
+      width: 80%;
       margin-left: 20px;
       bottom: 30px;
       text-align: left;
       @media (min-width: $breakpoint-mobile) {
         bottom: 40px;
-        margin-left: $padding-half;
-        margin-right: -$padding-half;
+        margin-left: $padding;
+        margin-right: -$padding;
       }
     }
   }

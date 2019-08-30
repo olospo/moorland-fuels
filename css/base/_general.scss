@@ -193,6 +193,27 @@ section {
       margin-left: 20px;
     }
   }
+  table {
+    overflow-x: scroll;
+    display: block;
+    font: $normal 1.6rem/2.6rem $regular;
+    tr {
+      &:first-child {
+        border: 1px solid $green;
+        background: $green;
+        td {
+          background: $green;
+          border: 1px solid $black;
+          font-weight: bold;
+        }
+      }
+      td {
+        background: $info;
+        padding: 10px 20px;
+        border: 1px solid $black;
+      }
+    }
+  }
   blockquote {
     border-left: 10px solid $white;
     color: $white;
@@ -288,9 +309,12 @@ section {
 // Aside
 aside {
   .services-list {
-    color: $white;
+    color: $green;
     margin-bottom: 60px;
     .content {
+      h3 {
+        font: $normal 2.8rem/3.8rem $headline;
+      }
       ul {
         margin: 20px 0;
         li {
@@ -312,7 +336,7 @@ aside {
           }
           &:first-child {
             a {
-              padding-top: 0px;
+              border-top: 1px solid $border;
             }
           }
           &.current, &.current_page_item, &.current_page_parent, &:hover {
@@ -322,11 +346,6 @@ aside {
               @media (min-width: $breakpoint-tablet) {
                 font: $normal 2.2rem/3.6rem $regular;
               }
-            }
-          }
-          &.current_page_item, &.current_page_parent {
-            a {
-              border-bottom: 1px solid $white;
             }
           }
         }
@@ -368,7 +387,6 @@ section.hero{
   padding: 100px 0px;
   overflow: hidden;
   margin-top: 60px;
-
   @media (min-width: $breakpoint-desktop) {
     margin-top: 90px;
   }

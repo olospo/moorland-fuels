@@ -2,18 +2,15 @@
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-<section class="hero small">
-  <div class="container">
-    <div class="content ten columns offset-by-one">
-      <h1><?php the_title(); ?></h1>
-    </div>
-  </div>
+<section class="hero single">
+  <div class="background" style="background: url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center no-repeat; background-size: cover;">
 </section>
 
 <section class="post">
   <div class="container flex">
     <aside class="three columns">
       <?php global $post;
+        $parent = get_post($post->post_parent);
         $current_post = $post->ID;
       if ( $post->post_parent ) :  // if it's a child
         $siblings = new WP_Query( array(
@@ -24,10 +21,11 @@ get_header(); ?>
       ?>
       <div class="services-list">
         <div class="content">
+          <h3><?php echo $parent ->post_title; ?></h3>
           <ul>
-              <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
-              <li <?php if( $current_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-              <?php endwhile; wp_reset_postdata(); ?>
+            <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
+            <li <?php if( $current_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; wp_reset_postdata(); ?>
           </ul>
         </div>
       </div>
@@ -43,6 +41,7 @@ get_header(); ?>
       ?>
       <div class="services-list">
         <div class="content">
+          <h3><?php the_title(); ?></h3>
           <ul>
               <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
               <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
@@ -54,6 +53,7 @@ get_header(); ?>
       <?php get_template_part('inc/help'); ?>
     </aside>
     <div class="content nine columns extra_gutter">
+       <h1><?php the_title(); ?></h1>
       <?php $content = get_the_content(); if($content) { ?>
         <?php echo $content; ?>
       <?php } ?>

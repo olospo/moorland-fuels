@@ -14,6 +14,7 @@ $icon = get_field('service_icon');
     <aside class="three columns">
       <div class="services-list">
         <div class="content">
+          <h3>Our Services</h3>
           <?php $current_post = $post->ID;
               query_posts(array( 
                 'post_type' => 'services',
