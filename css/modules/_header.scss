@@ -9,18 +9,21 @@
 header {
   background: $green;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  &.open {
+    box-shadow: none;
+  }
   .container {
     max-width: 100%;
     width: 100%;
   }
   .logo {
     .site-title {
-      margin: 15px 0px 15px 20px;
+      margin: 10px 0px 10px 20px;
       @media (min-width: $breakpoint-desktop) {
         margin: 15px 0px 15px 20px;
       }
       @media (max-width: $breakpoint-mobile) {
-        margin: 15px 0px 15px 0px;
+        margin: 10px 0px 10px 0px;
       }
       line-height: 0;
       svg {
@@ -32,14 +35,31 @@ header {
         }
       }
     }
-  }
-  nav.primary {
+    .des {
+      display: none;
+      @media (min-width: $breakpoint-tablet) {
+        display: block;
+      } 
+    }
+    .mob {
     display: none;
+    text-align: center;
+    margin: 0px auto;
+      @media (max-width: $breakpoint-tablet) {
+        display: block; 
+      }
+    }
+  }
+  
+  nav.primary {
     font: $normal 1.8em/3rem $regular;
     ul {
+      display: none;
       line-height:1em;
       text-align: center;
-      
+      @media (min-width: $breakpoint-desktop) {
+        display: block;
+      } 
       li {
         display: inline-block;
         // padding: 45px 5px;
@@ -84,6 +104,10 @@ header {
       }
     }
     ul.extra {
+      @media (max-width: $breakpoint-tablet) {
+        display: block;
+      } 
+      
       // position: absolute;
       float: right;
       right: 0;
@@ -92,32 +116,60 @@ header {
         a {
           margin: 0;
           padding: 35px 30px;
+          @media (max-width: $breakpoint-tablet) {
+            padding: 0;
+            width: 70px;
+            height: 70px;
+            border: none;
+            &:hover {
+              border: none;
+            }
+          }
           text-decoration: none;
           text-transform: none;
         }
         &.quote {
           background: $blue;
+          @media (max-width: $breakpoint-tablet) {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 60px;
+            top: 0;
+            background: $blue url('../img/quote_icon.svg') center center no-repeat;
+            text-indent: -9999px;
+          } 
         }
         &.login {
           background: $darkGreen;
+          @media (max-width: $breakpoint-tablet) {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: $darkGreen url('../img/login_icon.svg') center center no-repeat;
+            text-indent: -9999px;
+          } 
         }
       }
     }
-    @media (min-width: $breakpoint-desktop) {
-      display: block;
-    } 
+    
   }
   a.menu-toggle {
     display: block;
     @media (min-width: $breakpoint-desktop) {
       display: none;
     } 
+    @media (max-width: $breakpoint-tablet) {
+      left: 25px;
+    } 
     height: 30px;
     width: 30px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: 25px;
     cursor: pointer;
     z-index: 30;
@@ -148,42 +200,53 @@ header {
 nav.mobile {
   display: none;
   position: fixed;
-  top: 70px;
+  top: 60px;
   background: $white;
   z-index: 1000;
   width: 100%;
   border-top: 1px solid $white;
-  border-bottom: 10px solid $blue;
   ul {
     text-align: left;
-    margin: 30px 0px;
+    margin: 10px 0px;
     padding: 0px 20px;
     li {
       text-align: left;
       display: block;
-      margin: 10px 0px;
+      // margin: 10px 0px;
       &.current_page_item a, &.current-menu-item a, &.current-page-ancestor a, &.current-post-ancestor a, &.current-menu-parent a, &.current-category-ancestor a, &.current_page_parent a, &:hover a {
+        font: $normal 1.8rem/1.8rem $regular !important;
         color: $blue;
         padding: 15px 0px;
-        border-bottom: 2px solid $blue;
+        border-bottom: 1px solid $blue;
         font-weight: bold;
       }
       a {
+        font: $normal 1.8rem/1.8rem $regular !important;
         @include transition(all 0.2s ease-out);
         line-height: 1.4rem;
-        display: inline-block;
+        display: block;
         color: $green;
         text-decoration: none;
         margin: 0px 10px;
         padding: 15px 0px;
-        border-bottom: 2px solid $green;
+        border-bottom: 1px solid $green;
       }
-      &:first-child {
-        margin: 0px 0px 15px 0px;
+      &:last-child {
         a {
-          padding: 0px 0px 15px 0px;
+          border-bottom: none;
         }
       }
+    }
+  }
+  .facebook {
+    padding: 30px 30px 30px 30px;
+    background: $green;
+    a {
+      padding-left: 30px;
+      display: block;
+      background: $green url('../img/fb_header.svg') no-repeat left center;
+      color: $white;
+      text-decoration: none;
     }
   }
 }

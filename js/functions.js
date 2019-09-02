@@ -1,23 +1,19 @@
 $(".mobile_menu").click(function() {
   $('nav.mobile').fadeToggle();
   $(this).toggleClass("open");
+  $(header).toggleClass("open");
 });
 
 
 $(".mobile_enquiry").click(function() {
   var link = $(this);
   $('.enquiry form').slideToggle('slow',function() {
-  if ($(this).is(':visible')) {
-  link.text('Hide form');                
-  } else {
-  link.text('View form');                
-  }        
-});
-  
-  
-  
-  // $('.enquiry form').fadeToggle();
-  // $(this).toggleClass("open");
+    if ($(this).is(':visible')) {
+    link.text('Hide form');                
+    } else {
+    link.text('View form');                
+    }        
+  });
 });
 
 

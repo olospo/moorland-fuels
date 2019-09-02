@@ -18,7 +18,8 @@
     <div class="logo three columns">  
       <?php if ( is_front_page() ) { echo '<h1 class="site-title">'; } else { echo '<p class="site-title">'; } ?>
       <a href="<?php echo get_site_url(); ?>">
-        <img src="<?php bloginfo('template_directory'); ?>/img/logo.svg" alt="Moorland Fuels Logo" class="logo">
+        <img src="<?php bloginfo('template_directory'); ?>/img/logo.svg" alt="Moorland Fuels Logo" class="des">
+        <img src="<?php bloginfo('template_directory'); ?>/img/mobile_logo.svg" alt="Moorland Fuels Logo" class="mob">
       </a>
       <?php if ( is_front_page() ) { echo '</h1>'; } else { echo '</p>'; } ?>
     </div>
@@ -42,4 +43,7 @@
 <!-- Mobile Menu -->
 <nav class="mobile">
   <?php wp_nav_menu( array( 'theme_location' => 'mobile_main' ) ); ?>
+  <div class="facebook">
+    <a href="<?php the_field('facebook_link','options'); ?>" class="fb">Follow us on Facebook</a>
+  </div>
 </nav>
