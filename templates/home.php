@@ -49,6 +49,24 @@ while ( have_posts() ) : the_post(); ?>
         <?php endwhile; ?>
         </div>
         <?php else : endif; wp_reset_query(); ?>
+        
+        
+        <?php query_posts(array( 
+        'post_type' => 'services',
+        'showposts' => -1,
+        'orderby'   => 'rand',
+        'order'     => 'ASC',
+        ));  
+        ?>
+        <div class="service-list">
+        <?php if ( have_posts() ) : ?>
+        <ul>
+        <?php while (have_posts()) : the_post(); ?>
+          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <?php endwhile; ?>
+        </ul>
+        <?php else : endif; wp_reset_query(); ?>
+        
     <a href="<?php echo get_site_url(); ?>/services" class="button primary">View all Services</a>
     </div>
   </div>

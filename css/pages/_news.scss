@@ -1,7 +1,10 @@
 // News
 
 section.news {
-  padding: $padding 0 $padding-half 0;
+  padding: $padding-half 0;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0 $padding-half 0;
+  }
   .news_listing {
     @media (min-width: $breakpoint-tablet) {
       display: flex;

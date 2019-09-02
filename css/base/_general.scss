@@ -120,6 +120,12 @@ section {
         clear: left;
       }
     }
+    &.no_hero {
+      padding: 100px 0 $padding-half 0px;
+      @media (min-width: $breakpoint-tablet) {
+        padding: 140px 0px $padding 0px;
+      }
+    }
   }
   h1, h2, h3 {
     font-family: $headline;
@@ -394,9 +400,9 @@ section.hero{
   .content {
     h1 {
       text-align: center;
-      font: $normal 4.2rem/5.0rem $headline;
-      font-size: 4.2rem;
-      line-height: 5.0rem;
+      font: $normal 3.6rem/3.6rem $headline;
+      font-size: 3.6rem;
+      line-height: 4.6rem;
       color: $white;
       margin-bottom: 10px;
       @media (min-width: $breakpoint-tablet) {
@@ -423,7 +429,10 @@ section.hero{
     }
   }
   &.small {
-    padding: $padding 0px 0px 0px;
+    padding: $padding-half 0px 0px 0px;
+    @media (min-width: $breakpoint-tablet) {
+      padding: $padding 0px 0px 0px;
+    }
     .content {
       h1 {
         color: $green;
@@ -439,7 +448,10 @@ section.hero{
     .background {
       transform: scale(1.1);
       animation: bgZoom 2s;
-      padding: 220px 0px;
+      padding: $padding-half 0px;
+      @media (min-width: $breakpoint-tablet) {
+        padding: 220px 0px;
+      }
       overflow: hidden;
       position: relative;
       background-repeat: no-repeat;

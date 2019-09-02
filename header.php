@@ -23,7 +23,7 @@
       <?php if ( is_front_page() ) { echo '</h1>'; } else { echo '</p>'; } ?>
     </div>
     <!-- Mobile Menu Trigger -->
-    <a href="#" class="menu-toggle mobile_menu" aria-controls="primary-menu">
+    <a class="menu-toggle mobile_menu" aria-controls="primary-menu">
       <span></span>
       <span></span>
       <span></span>

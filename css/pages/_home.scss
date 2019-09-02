@@ -54,14 +54,14 @@ body.home {
     top: 0;
     bottom: 0;
     overflow: hidden;
-    @include aspect-ratio(1,1);
-    padding-top: 100% !important;
+    @include aspect-ratio(2,1);
+    padding-top: 75% !important;
     @media (min-width: $breakpoint-tablet) {
       @include aspect-ratio(2,1);
-      padding-top: 40% !important;
+      padding-top: 35% !important;
     }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      padding-top: 40%; // Fix video sizing issue in IE
+      padding-top: 35%; // Fix video sizing issue in IE
     }
     
     video {
@@ -108,7 +108,7 @@ body.home {
       position: absolute !important;
       top: 50% !important;
       left: 50% !important;
-      padding: $padding 0;
+      padding: $padding-half 0;
       z-index: 1 !important;
       width: 100% !important;
       transform: translate3d(-50%, -50%, 0) !important;
@@ -118,10 +118,42 @@ body.home {
 
 // Services
 .services_slider {
-  padding: $padding 0px;
+  padding: $padding-half 0px;
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding 0px;
+  }
   text-align: center;
-  .service-scroll {
+  .service-list { // Mobile
+    display: block;
+    @media (min-width: $breakpoint-tablet) {
+      display: none;
+    }
+    ul {
+      text-align: left;
+      li {
+        display: block;
+        list-style: none;
+        a {
+          display: block;
+          padding: 8px 20px 8px 0px;
+          text-decoration: none;
+          background: url('../img/arrow/faq.svg') center right no-repeat;
+          border-bottom: 1px solid $green;
+        }
+        &:first-child {
+          a {
+            border-top: 1px solid $green;
+          }
+        }
+      }
+    }
+  }
+  .service-scroll { // Desktop Slider
     padding-top: $padding-half;
+    display: none;
+    @media (min-width: $breakpoint-tablet) {
+      display: block;
+    }
   }
   article {
   display: block;
@@ -166,11 +198,9 @@ body.home {
     }
   }
   .slick-prev {
-    
     background: url('../img/arrow/left_small.svg') center center no-repeat;
     height: 33px;
     width: 20px;
-    
     z-index: 2;
     top: 44%;
     left: -15px;
@@ -234,8 +264,10 @@ body.home {
   .cta_content {
     // flex: 1;
     width: 100%;
+    text-align: center;
     @media (min-width: $breakpoint-desktop) {
       width: 40%;
+      text-align: left;
     }
     background: $green;
     color: $white;
@@ -264,11 +296,13 @@ body.home {
       }
     }
     .slick-dots {
-      width: 80%;
-      margin-left: 20px;
+      width: 100%;
+      margin-left: 0px;
       bottom: 30px;
       text-align: left;
+      text-align: center;
       @media (min-width: $breakpoint-mobile) {
+        width: 80%;
         bottom: 40px;
         margin-left: $padding;
         margin-right: -$padding;

@@ -2,11 +2,15 @@
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
+
+<?php if ( has_post_thumbnail() ) { ?>
 <section class="hero single">
   <div class="background" style="background: url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center no-repeat; background-size: cover;">
 </section>
-
 <section class="post">
+<?php } else { ?>
+<section class="post no_hero">
+<?php } ?>
   <div class="container flex">
     <aside class="three columns">
       <?php global $post;

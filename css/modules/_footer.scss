@@ -104,18 +104,44 @@
     color: $white;
   }
   input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
     font: $normal 1.8rem/2.8rem $regular;
-    background: $white;
-    border: 3px solid $white;
-    padding: 10px;
+    
     display: inline-block;
     margin: 0;
-    &:focus {
-      border: 3px solid $red;
-    }
+    border: none;
+    
+    
     &.email {
-      max-width: 300px;
+      float: left;
+      width: 60%;
+      padding: 10px 0px;
+      color: $white;
+      background: $green;
+      border-bottom: 2px solid $white;
     }
+    &.button {
+      width: 30px;
+      float: left;
+      margin: 0;
+      line-height: 2.8rem;
+      background: transparent url(../img/arrow/round.svg) right center no-repeat;
+      text-indent: -99999px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      padding: 10px 0;
+    }
+  }
+  a {
+    color: $white;
+  }
+  p.privacy {
+    display: inline-block;
+    margin-top: 40px;
+    clear: both;
   }
 }
 .latest-news {
@@ -179,7 +205,23 @@
     color: $green;
     margin-bottom: $padding-half;
   }
+  .mobile {
+    text-align: center;
+    margin-bottom: $padding-half;
+    a.button {
+      cursor: pointer;
+      display: inline-block;
+      @media (min-width: $breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
+  
   form {
+    display: none;
+    @media (min-width: $breakpoint-tablet) {
+      display: block; 
+    }
     .nf-form-content {
       .nf-cell:first-child {
         padding-right: 0px;
@@ -263,9 +305,14 @@ footer {
       margin: 0; 
     }
     svg {
-      max-width: 100%;
-      margin-bottom: $padding-half;
+      max-width: 70%;
       display: block;
+      margin: 0px auto 20px auto;
+      
+      @media (min-width: $breakpoint-tablet) {
+        margin: 0px 0px $padding-half 0px;
+        max-width: 100%;
+      }
     }
     a.button {
       &.fb {
@@ -290,6 +337,12 @@ footer {
     li {
       display: inline-block;
       margin-right: 20px;
+    }
+  }
+  .address {
+    margin-top: $padding-half;
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0; 
     }
   }
 }
