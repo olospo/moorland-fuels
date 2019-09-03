@@ -1,7 +1,6 @@
 $(".mobile_menu").click(function() {
   $('nav.mobile').fadeToggle();
   $(this).toggleClass("open");
-  $(header).toggleClass("open");
 });
 
 

@@ -25,7 +25,7 @@ get_header(); ?>
       ?>
       <div class="services-list">
         <div class="content">
-          <h3><?php echo $parent ->post_title; ?></h3>
+          <h3><a href="<?php the_permalink($parent); ?>"><?php echo $parent->post_title; ?></a></h3>
           <ul>
             <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
             <li <?php if( $current_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
@@ -45,7 +45,7 @@ get_header(); ?>
       ?>
       <div class="services-list">
         <div class="content">
-          <h3><?php the_title(); ?></h3>
+          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
           <ul>
               <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
               <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>

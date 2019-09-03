@@ -5,8 +5,6 @@ get_header();
 $serviceText = get_field('services_text');
 $ctaBG = get_field('cta_background_image');
 
-
-
 while ( have_posts() ) : the_post(); ?>
 
 <?php get_template_part( 'inc/hero' ); ?>
@@ -39,7 +37,7 @@ while ( have_posts() ) : the_post(); ?>
             <a href="<?php the_permalink(); ?>">
             <div class="image">
               <div class="border">
-              <img src="<?php echo $icon['url']; ?>" />
+              <img src="<?php echo $icon['url']; ?>"/>
               </div>
             </div>
             <div class="content">
@@ -67,28 +65,24 @@ while ( have_posts() ) : the_post(); ?>
         </ul>
         <?php else : endif; wp_reset_query(); ?>
         
-    <a href="<?php echo get_site_url(); ?>/services" class="button primary">View all Services</a>
+      <a href="<?php echo get_site_url(); ?>/services" class="button primary">View all Services</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="home_cta">  
-    <div class="cta_bg" style="background: url('<?php echo $ctaBG['url'] ?>') center center no-repeat; background-size: cover;">
-    </div>
-    <div class="cta_content cta_slider">
-      
-      <?php if( have_rows('slide_content') ):
-        while ( have_rows('slide_content') ) : the_row(); ?>
-        <div class="slide">
-          <div class="content">
-            <h3><?php the_sub_field('title'); ?></h3>
-            <?php the_sub_field('content'); ?>
-            <a href="<?php the_sub_field('button_link'); ?>" class="button secondary reversed"><?php the_sub_field('button_text'); ?></a>
-          </div>
+  <div class="cta_bg" style="background: url('<?php echo $ctaBG['url'] ?>') center center no-repeat; background-size: cover;"></div>
+  <div class="cta_content cta_slider">
+    <?php if( have_rows('slide_content') ): while ( have_rows('slide_content') ) : the_row(); ?>
+      <div class="slide">
+        <div class="content">
+          <h3><?php the_sub_field('title'); ?></h3>
+          <?php the_sub_field('content'); ?>
+          <a href="<?php the_sub_field('button_link'); ?>" class="button secondary reversed"><?php the_sub_field('button_text'); ?></a>
         </div>
-      <?php endwhile; else : endif; ?>
       </div>
-    </div>
+    <?php endwhile; else : endif; ?>
   </div>
 </section>
 

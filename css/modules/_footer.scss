@@ -103,6 +103,9 @@
   h3 {
     color: $white;
   }
+  ::placeholder {
+    color: $white;
+  }
   input {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -112,14 +115,17 @@
     margin: 0;
     border: none;
     
-    
     &.email {
       float: left;
       width: 60%;
       padding: 10px 0px;
       color: $white;
       background: $green;
-      border-bottom: 2px solid $white;
+      border-bottom: 2px solid $white
+    }
+    &:email::placeholder, &:email::-webkit-input-placeholder {
+      color: $white;
+      opacity: 1;
     }
     &.button {
       width: 30px;
@@ -144,6 +150,7 @@
     clear: both;
   }
 }
+
 .latest-news {
   z-index: 1;
   color: $white;

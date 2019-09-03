@@ -132,12 +132,12 @@ section {
   }
   h1 {
     font: $normal 3.6rem/5rem $headline;
-    margin-bottom: 20px;
+    margin-bottom: 0.5em;
     font-size: 3.6rem;
   }
   h2 {
     font: $normal 3.6rem/5rem $headline;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     font-size: 3.6rem;
     line-height: 5rem;
     
@@ -320,6 +320,9 @@ aside {
     .content {
       h3 {
         font: $normal 2.8rem/3.8rem $headline;
+        a {
+          text-decoration: none;
+        }
       }
       ul {
         margin: 20px 0;
@@ -404,7 +407,7 @@ section.hero{
       font-size: 3.6rem;
       line-height: 4.6rem;
       color: $white;
-      margin-bottom: 10px;
+      margin-bottom: 0.5em;
       @media (min-width: $breakpoint-tablet) {
         font: $normal 5.0rem/6.2rem $headline;
         font-size: 5.0rem;
@@ -448,7 +451,7 @@ section.hero{
     .background {
       transform: scale(1.1);
       animation: bgZoom 2s;
-      padding: $padding-half 0px;
+      padding: 100px 0px;
       @media (min-width: $breakpoint-tablet) {
         padding: 220px 0px;
       }

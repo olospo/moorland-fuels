@@ -103,6 +103,17 @@ header {
         }
       }
     }
+    
+    #menu-main {
+      @media (min-width: 1400px) {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+   
     ul.extra {
       @media (max-width: $breakpoint-tablet) {
         display: block;
