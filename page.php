@@ -25,8 +25,8 @@ get_header(); ?>
       ?>
       <div class="services-list">
         <div class="content">
-          <h3><a href="<?php the_permalink($parent); ?>"><?php echo $parent->post_title; ?></a></h3>
           <ul>
+            <li><a href="<?php the_permalink($parent); ?>"><?php echo $parent->post_title; ?></a></li>
             <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
             <li <?php if( $current_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
             <?php endwhile; wp_reset_postdata(); ?>
@@ -45,11 +45,11 @@ get_header(); ?>
       ?>
       <div class="services-list">
         <div class="content">
-          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
           <ul>
-              <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
-              <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-              <?php endwhile; wp_reset_postdata(); ?>
+            <li class="current"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php while ( $siblings->have_posts() ) : $siblings->the_post(); ?>
+            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; wp_reset_postdata(); ?>
           </ul>
         </div>
       </div>
