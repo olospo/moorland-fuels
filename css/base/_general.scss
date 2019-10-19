@@ -409,15 +409,16 @@ section.hero{
       color: $white;
       margin-bottom: 0.5em;
       @media (min-width: $breakpoint-tablet) {
-        font: $normal 5.0rem/6.2rem $headline;
-        font-size: 5.0rem;
-        line-height: 6.2rem;
+        font: $normal 5.0rem/5.5rem $headline;
+        font-size: 5rem;
+        line-height: 5.5rem;
       }
       @media (min-width: $breakpoint-desktop) {
-        font: $normal 7.2rem/7.2rem $headline;
-        font-size: 7.2rem;
-        line-height: 7.2rem;
-        margin-bottom: 40px;
+        font: $normal 9rem/9rem $headline;
+        font-size: 9rem;
+        line-height: 9rem;
+        letter-spacing: -1px;
+        margin-bottom: 50px;
       }
     }
     p {

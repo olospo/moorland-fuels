@@ -172,6 +172,7 @@
         <p><?php the_field('address','options'); ?></p>
       </div>
       <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+      Company Reg No. 03070843 / VAT No. 712 0979 44
     </div>
   </div>
 </footer>

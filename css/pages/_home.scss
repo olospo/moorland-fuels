@@ -39,6 +39,16 @@ body.home {
   .faq_cta.small_cta {
     display: none;
   }
+  .small_cta {
+    background: $blue;
+    .button.secondary.reversed:hover {
+      border: 1px solid $white;
+      color: $blue;
+    }
+    .button.secondary.reversed:before {
+      background: $white;
+    }
+  }
 }
 
 // Hero
