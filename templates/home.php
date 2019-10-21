@@ -30,8 +30,9 @@ while ( have_posts() ) : the_post(); ?>
               
       ));  
       ?>
-        <div class="service-scroll">
+        <div class="service-scroll row">
         <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+        
           <?php $icon = get_field('service_icon'); ?>
           <article>
             <a href="<?php the_permalink(); ?>">
@@ -44,6 +45,7 @@ while ( have_posts() ) : the_post(); ?>
               <h3><?php the_title(); ?></h3>
             </div></a>
           </article>
+        
         <?php endwhile; ?>
         </div>
         <?php else : endif; wp_reset_query(); ?>
