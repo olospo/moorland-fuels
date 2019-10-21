@@ -81,7 +81,8 @@ while ( have_posts() ) : the_post(); ?>
         <div class="content">
           <h3><?php the_sub_field('title'); ?></h3>
           <?php the_sub_field('content'); ?>
-          <a href="<?php the_sub_field('button_link'); ?>" class="button secondary reversed"><?php the_sub_field('button_text'); ?></a>
+          <?php $link = get_sub_field('button_link'); $link_url = $link['url']; ?>
+          <a href="<?php echo $link_url; ?>" class="button secondary reversed"><?php the_sub_field('button_text'); ?></a>
         </div>
       </div>
     <?php endwhile; else : endif; ?>

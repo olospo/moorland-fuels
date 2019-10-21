@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', 'theme_setup' );
 // Enqueue styles
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
-  wp_enqueue_style( 'main', get_stylesheet_directory_uri().'/css/main.css', false, '1.01' );
+  wp_enqueue_style( 'main', get_stylesheet_directory_uri().'/css/main.css', false, '1.02' );
 }
 
 // Enqueue scripts
