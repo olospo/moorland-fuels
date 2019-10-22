@@ -95,6 +95,7 @@ $icon = get_field('service_icon');
           <?php while( have_rows('related_info_documents') ): the_row(); 
 
       		// vars
+      		$select = get_sub_field('url_or_upload');
       		$title = get_sub_field('title');
       		$url = get_sub_field('url');
       		$upload = get_sub_field('upload');
@@ -103,7 +104,7 @@ $icon = get_field('service_icon');
       
       		?>
       		
-      		<?php if( $url ): ?>
+      		<?php if( $select == 'url' ): ?>
           <li class="link">
             <a href="<?php echo $url; ?>" target="_blank">
               <?php echo $title; ?>
@@ -111,7 +112,7 @@ $icon = get_field('service_icon');
           </li>
           <?php endif; ?>
           
-          <?php if( $upload ): ?>
+          <?php if( $select == 'upload' ): ?>
           <li class="<?php echo $ext; ?>">
             <a href="<?php echo $upload; ?>">
               <?php echo $title; ?>
