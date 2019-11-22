@@ -9,9 +9,19 @@ while ( have_posts() ) : the_post(); ?>
 
 <?php get_template_part( 'inc/hero' ); ?>
 
-<section class="small_cta">
+<section class="half_cta">
+  <div class="background"></div>
   <div class="container">
+  <div class="price">
+    <div class="content">
     <h3>Looking for a quick fuel price?</h3><a href="<?php the_field('order_quote_link','option'); ?>" target="_blank" class="button secondary reversed">Get a quote</a>
+    </div>
+  </div>
+  <div class="tanks">
+    <div class="content">
+    <h3>Interested in our range of fuel tanks?</h3><a href="<?php echo get_site_url(); ?>/tanks" target="_blank" class="button secondary reversed">Shop now</a>
+    </div>
+  </div>
   </div>
 </section>
 

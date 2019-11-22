@@ -9,7 +9,7 @@
   <div class="container">
     <div class="links">
     <?php if( have_rows('quick_link_one','options') ): ?>
-    <article class="quick-one one-third column">
+    <article class="quick-one three columns">
     	<?php while( have_rows('quick_link_one','options') ): the_row(); 
     		// vars
     		$imageOne = get_sub_field('image_one','options');
@@ -38,7 +38,7 @@
     <?php endif; wp_reset_postdata(); ?>
     
     <?php if( have_rows('quick_link_two','options') ): ?>
-    <article class="quick-two one-third column">
+    <article class="quick-two three columns">
     	<?php while( have_rows('quick_link_two','options') ): the_row(); 
     		// vars
     		$imageTwo = get_sub_field('image_two','options');
@@ -68,7 +68,7 @@
     <?php endif; wp_reset_postdata(); ?>
     
     <?php if( have_rows('quick_link_three','options') ): ?>
-    <article class="quick-three one-third column">
+    <article class="quick-three three columns">
     	<?php while( have_rows('quick_link_three','options') ): the_row(); 
     		// vars
     		$imageThree = get_sub_field('image_three','options');
@@ -86,6 +86,35 @@
     		?>
       		<div class="image">
             <a href="<?php echo $link; ?>"><img src="<?php echo $thumbThree; ?>" /></a>
+      		</div>
+          <div class="content">
+            <h3><a href="<?php echo $link; ?>"><?php echo $title; ?></a></h3>
+            <p><?php echo $content; ?></p>
+            <a href="<?php echo $link; ?>" class="button primary"><?php echo $linkText; ?></a>
+          </div>
+    	<?php endwhile; ?>
+    </article>
+    <?php endif; wp_reset_postdata(); ?>
+    
+    <?php if( have_rows('quick_link_four','options') ): ?>
+    <article class="quick-four three columns">
+    	<?php while( have_rows('quick_link_four','options') ): the_row(); 
+    		// vars
+    		$imageFour = get_sub_field('image_four','options');
+    		$title = get_sub_field('title','options');
+    		$content = get_sub_field('description','options');
+    		$link = get_sub_field('button_link_four','options');
+    		$linkText = get_sub_field('button_text','options');
+    		
+        // thumbnail
+      	$size = 'featured-img';
+      	$thumbFour = $imageFour['sizes'][ $size ];
+      	$width = $imageFour['sizes'][ $size . '-width' ];
+      	$height = $imageFour['sizes'][ $size . '-height' ];
+    
+    		?>
+      		<div class="image">
+            <a href="<?php echo $link; ?>"><img src="<?php echo $thumbFour; ?>" /></a>
       		</div>
           <div class="content">
             <h3><a href="<?php echo $link; ?>"><?php echo $title; ?></a></h3>

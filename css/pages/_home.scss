@@ -39,16 +39,6 @@ body.home {
   .faq_cta.small_cta {
     display: none;
   }
-  .small_cta {
-    background: $blue;
-    .button.secondary.reversed:hover {
-      border: 1px solid $white;
-      color: $blue;
-    }
-    .button.secondary.reversed:before {
-      background: $white;
-    }
-  }
 }
 
 // Hero
@@ -130,6 +120,71 @@ body.home {
     }
   }
 }
+
+.half_cta {
+  display: block;
+  position: relative;
+  
+  .background {
+    background: linear-gradient(90deg,#277be3 50%,#87c849 50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .container {
+    
+    display: flex;
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      display: block;
+      padding: 0;
+      
+    }
+    text-align: center;
+  }
+  .price {
+    color: $white;
+    
+    
+    background: $blue;
+    height: auto;
+    width: 100%;
+    @media (min-width: $breakpoint-desktop) {
+      width: 50%;
+    }
+    .button.secondary.reversed:hover {
+      border: 1px solid $white;
+      color: $blue;
+    }
+    .button.secondary.reversed:before {
+      background: $white;
+    }
+  }
+  .tanks {
+    width: 100%;
+    @media (min-width: $breakpoint-desktop) {
+      width: 50%;
+    }
+    background: $green;
+    color: $white;
+    margin-left: 0;
+  }
+  .price, .tanks {
+    .content {
+      padding: 30px 20px;
+      @media (min-width: $breakpoint-desktop) {
+        padding: 60px 20px;
+      }
+      h3 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+  
 
 // Services
 .services_slider {

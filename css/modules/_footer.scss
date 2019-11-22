@@ -19,8 +19,8 @@
       margin-bottom: 0;
     }
     
-    &:nth-child(3n+4) {
-      margin-left: 0;
+    &:nth-child(4n+4) {
+      // margin-left: 0;
       clear: left;
     }
     a {
@@ -64,7 +64,7 @@
       }
     }
   }
-  .quick-three { // Remove extra margin on mobile
+  .quick-four { // Remove extra margin on mobile
     article {
       margin-bottom: 0;
     }
