@@ -19,7 +19,7 @@ while ( have_posts() ) : the_post(); ?>
   </div>
   <div class="tanks">
     <div class="content">
-    <h3>Interested in our range of fuel tanks?</h3><a href="<?php echo get_site_url(); ?>/tanks" target="_blank" class="button secondary reversed">Shop now</a>
+    <h3>Interested in our range of fuel tanks?</h3><a href="<?php echo get_site_url(); ?>/tanks" class="button secondary reversed">Shop now</a>
     </div>
   </div>
   </div>

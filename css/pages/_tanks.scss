@@ -1,0 +1,84 @@
+// Tank Listing
+
+.basic_filters {
+  text-align: center;
+  h2 {
+    font: $normal 2.0rem/3.0rem $regular;
+  }
+  a {
+    margin: 10px;
+  }
+}
+
+.tank_listing {
+  padding: $padding-half 0 0 0;
+  .grid {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: center;
+    article {
+      border: 1px solid $border;
+      display: block;
+      width: 300px;
+      margin: 20px;
+      text-align: center;
+      .heading {
+        background: $black;
+        padding: 10px;
+        h3 {
+          color: $white;
+          margin-bottom: 0;
+        }
+      }
+      .content {
+        padding: 20px;
+        background: $buff;
+        font: $normal 1.6rem/2.0rem $regular;
+        .litres {
+          padding: 20px 0px;
+          overflow: hidden;
+          border-bottom: 1px solid $border;
+          .brimful {
+            width: 50%;
+            float: left;
+          }
+          .nominal {
+            border-left: 1px solid $border;
+            width: 49%;
+            float: left;
+          }
+        }
+        .size {
+          padding: 20px 0px;
+          overflow: hidden;
+          border-bottom: 1px solid $border;
+          .height, .width, .length {
+            width: 33%;
+            float: left;
+          }
+          .width {
+            border-left: 1px solid $border;
+            border-right: 1px solid $border;
+          }
+        }
+        .footprint {
+          padding: 20px 0px;
+        }
+        .info {
+          color: #868a8c;
+          display: block;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

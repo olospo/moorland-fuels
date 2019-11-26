@@ -50,6 +50,15 @@
         
       }
     }
+    &.bunded {
+     background: #009ab1; 
+    }
+    &.fuel {
+      background: #68367a;
+    }
+    &.enviroblu {
+      background: #01a3e2;
+    }
   }
   &.secondary {
     display: inline-block;
@@ -103,6 +112,7 @@
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
   }
+  
 }
 
 .latest-news {
