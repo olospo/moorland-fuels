@@ -215,7 +215,7 @@ function custom_post_type() {
 	);
 	register_post_type( 'services', $args );
 	
-	// Services Post Type
+	// Tanks Post Type
 	$labels = array(
 		'name'                => _x( 'Tanks', 'Post Type General Name', 'text_domain' ),
 		'singular_name'       => _x( 'Tank', 'Post Type Singular Name', 'text_domain' ),
@@ -254,6 +254,34 @@ function custom_post_type() {
 }
 // Hook into the 'init' action
 add_action( 'init', 'custom_post_type', 0 );
+
+add_action( 'init', 'custom_taxonomy', 0 );
+
+function custom_taxonomy() {
+ 
+  $labels = array(
+    'name' => _x( 'Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Types' ),
+    'all_items' => __( 'All Types' ),
+    'parent_item' => __( 'Parent Type' ),
+    'parent_item_colon' => __( 'Parent Type:' ),
+    'edit_item' => __( 'Edit Type' ), 
+    'update_item' => __( 'Update Type' ),
+    'add_new_item' => __( 'Add New Type' ),
+    'new_item_name' => __( 'New Type Name' ),
+    'menu_name' => __( 'Types' ),
+  ); 	
+ 
+  register_taxonomy('types',array('tanks'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'type' ),
+  ));
+}
 
 // CPT Menu Item
 
