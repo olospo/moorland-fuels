@@ -20,7 +20,7 @@
                 {
                     "key": "field_5ddd54bc3fe9d",
                     "label": "Tank Type",
-                    "name": "tank_type",
+                    "name": "type",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -95,6 +95,25 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_5ddd4ff522e7f",
+                    "label": "Price on request",
+                    "name": "price_on_request",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Price available on request",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_5ddd4f74e89d1",
                     "label": "Basic",
                     "name": "basic",
@@ -105,7 +124,8 @@
                         [
                             {
                                 "field": "field_5ddd4ff522e7f",
-                                "operator": "==empty"
+                                "operator": "!=",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -131,7 +151,8 @@
                         [
                             {
                                 "field": "field_5ddd4ff522e7f",
-                                "operator": "==empty"
+                                "operator": "!=",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -145,29 +166,6 @@
                     "prepend": "£",
                     "append": "",
                     "maxlength": ""
-                },
-                {
-                    "key": "field_5ddd4ff522e7f",
-                    "label": "Price on request",
-                    "name": "price_on_request",
-                    "type": "checkbox",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "Price available on request": "Price available on request"
-                    },
-                    "allow_custom": 0,
-                    "default_value": [],
-                    "layout": "vertical",
-                    "toggle": 0,
-                    "return_format": "value",
-                    "save_custom": 0
                 }
             ]
         },
@@ -374,5 +372,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1574786418
+    "modified": 1574870090
 }
