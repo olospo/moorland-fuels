@@ -10,7 +10,7 @@
   }
 }
 
-.tank_listing {
+.tank_listing, .single_tank {
   padding: $padding-half 0 0 0;
   .grid {
     padding: 0;
@@ -23,122 +23,122 @@
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: center;
-    article {
-      @include border-radius(10px);
-      border: 1px solid $border;
-      display: block;
-      width: 300px;
-      margin: 20px;
-      text-align: center;
-      .heading {
-        background: $black;
-        color: $white;
-        display: flex;
-        .name {
-          padding: 10px 15px;
-          flex-grow: 1;
-        }
-        .price {
-          padding: 10px;
-          font: $normal 1.6rem/2.0rem $regular;
-          display: flex;
-          .info {
-            display: block;
-            font: $normal 1.0rem/1.8rem $regular;
-            color: $border;
-          }
-          .cost {
-            &.single {
-              padding: 0px 10px;
-            }
-            &.double {
-              padding-right: 10px;
-              &:first-child {
-                padding-left: 10px;
-              }
-            }
-          }
-        }
+  }
+  article {
+    @include border-radius(10px);
+    border: 1px solid $border;
+    display: block;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    .heading {
+      background: $black;
+      color: $white;
+      display: flex;
+      .name {
+        padding: 10px 15px;
+        flex-grow: 1;
       }
-      &.fuel-dispensers {
-        .heading {
-          .name {
-            background: #683679;
-          }
-        } 
-      }
-      &.enviroblu-tanks {
-        .heading {
-          .name {
-            background: #00a3e1;
-          }
-        } 
-      }
-      &.bunded-tanks {
-        .heading {
-          .name {
-            background: #0099b1;
-          }
-        } 
-      }
-      .content {
-        padding: 20px;
-        background: $buff;
+      .price {
+        padding: 10px;
         font: $normal 1.6rem/2.0rem $regular;
-        .litres {
-          overflow: hidden;
-          padding: 0px 0px 20px 0px;
-          overflow: hidden;
-          border-bottom: 1px solid $border;
-          .brimful {
-            background: url('../img/brimful.svg') 0 -60px no-repeat;
-            background-size: cover;
-            width: 49%;
-            float: left;
-            padding-top: 20px;
-          }
-          .nominal {
-            background: url('../img/nominal.svg') 0 -60px no-repeat;
-            background-size: cover;
-            border-left: 1px solid $border;
-            width: 49%;
-            float: left;
-            padding-top: 20px;
-          }
-        }
-        .size {
-          padding: 20px 0px;
-          overflow: hidden;
-          border-bottom: 1px solid $border;
-          .height, .width, .length {
-            width: 33%;
-            float: left;
-          }
-          .width {
-            border-left: 1px solid $border;
-            border-right: 1px solid $border;
-          }
-        }
-        .footprint {
-          background: url('../img/footprint.svg') left no-repeat;
-          background-size: contain;
-          margin: 20px 0px;
-          padding: 5px 0px 5px 35px;
-          display: inline-block;
-          .info {
-            display: inline-block;
-            margin-left: 5px;
-          }
-        }
+        display: flex;
         .info {
-          color: #a6a9ab;
           display: block;
-          font-weight: normal;
+          font: $normal 1.0rem/1.8rem $regular;
+          color: $border;
+        }
+        .cost {
+          &.single {
+            padding: 0px 10px;
+          }
+          &.double {
+            padding-right: 10px;
+            &:first-child {
+              padding-left: 10px;
+            }
+          }
         }
       }
-      a {
-        text-decoration: none;
+    }
+    &.fuel-dispensers {
+      .heading {
+        .name {
+          background: #683679;
+        }
+      } 
+    }
+    &.enviroblu-tanks {
+      .heading {
+        .name {
+          background: #00a3e1;
+        }
+      } 
+    }
+    &.bunded-tanks {
+      .heading {
+        .name {
+          background: #0099b1;
+        }
+      } 
+    }
+    .content {
+      padding: 20px;
+      background: $buff;
+      font: $normal 1.6rem/2.0rem $regular;
+      .litres {
+        overflow: hidden;
+        padding: 0px 0px 20px 0px;
+        overflow: hidden;
+        border-bottom: 1px solid $border;
+        .brimful {
+          background: url('../img/brimful.svg') 0 -60px no-repeat;
+          background-size: cover;
+          width: 49%;
+          float: left;
+          padding-top: 20px;
+        }
+        .nominal {
+          background: url('../img/nominal.svg') 0 -60px no-repeat;
+          background-size: cover;
+          border-left: 1px solid $border;
+          width: 49%;
+          float: left;
+          padding-top: 20px;
+        }
       }
+      .size {
+        padding: 20px 0px;
+        overflow: hidden;
+        border-bottom: 1px solid $border;
+        .height, .width, .length {
+          width: 33%;
+          float: left;
+        }
+        .width {
+          border-left: 1px solid $border;
+          border-right: 1px solid $border;
+        }
+      }
+      .footprint {
+        background: url('../img/footprint.svg') left no-repeat;
+        background-size: contain;
+        margin: 20px 0px;
+        padding: 5px 0px 5px 35px;
+        display: inline-block;
+        .info {
+          display: inline-block;
+          margin-left: 5px;
+        }
+      }
+      .info {
+        color: #a6a9ab;
+        display: block;
+        font-weight: normal;
+      }
+    }
+    a {
+      text-decoration: none;
     }
   }
 }
@@ -151,4 +151,24 @@
   z-index: 100;
   color: $white;
   padding: 30px 0px;
+}
+
+.single_tank {
+  margin-top: 60px;
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 90px;
+  }
+  aside {
+    a.button {
+      display: block;
+      margin: 10px 0px;
+    }
+    .more-help {
+      margin-top: 40px;
+    }
+  }
+  article {
+    width: 100%;
+    margin: 0;
+  }
 }
