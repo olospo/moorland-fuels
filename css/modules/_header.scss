@@ -274,8 +274,7 @@ nav.primary ul ul {
 
 nav.primary ul li:hover > ul {
   min-width: 300px;
-  display: block; 
-  padding: 10px 25px;
+  display: block;
   background: $white;
   border: 1px solid $border;
   border-top: 0px;
@@ -286,6 +285,22 @@ nav.primary ul li:hover > ul {
     display: block;
     text-align: left;
     border-bottom: 1px solid #e8eaed;
+    margin: 0px 25px;
+    &.tank {
+      background: $green;
+      margin: 0px;
+      padding: 0px 25px;
+      @include border-radius(0px 0px 10px 10px);
+      a {
+        color: $black;
+      }
+      &:hover a {
+        color: $white;
+      }
+      &.current-menu-item a, &.current_page_item a {
+        color: $white;
+      }
+    }
     a {
       text-transform: none;
       font: $normal 1.8rem/2rem $regular;
