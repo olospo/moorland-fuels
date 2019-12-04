@@ -170,5 +170,20 @@
   article {
     width: 100%;
     margin: 0;
+    display: flex;
+    background: $buff;
+    .post_image {
+      padding: 20px;
+    }
   }
+  .extra {
+    margin-top: 40px;
+    .extra_sidebar {
+      margin-left: 0;
+    }
+    .extra_content {
+      
+    }
+  }
+  
 }
