@@ -22,25 +22,14 @@ get_header();
     <div class="twelve columns">
       <div class="main_content">
         <div class="twelve columns grid">
-          <?php 
-            query_posts(array( 
-              'post_type' => 'tanks',
-              'showposts' => -1,
-              'orderby'   => 'title',
-              'order'     => 'ASC',
-            ));  
-          ?>
-          <?php if ( have_posts() ) : while (have_posts()) : the_post(); 
-            
-            
 
-          ?>
+          <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           
-          <?php if( have_rows('tank_details') ): while( have_rows('tank_details') ): the_row(); 
+          <?php 
           // Tank Details
-          $type = get_sub_field('type');
-          $size = get_sub_field('size');
-          $name = get_sub_field('name'); ?>
+          $type = get_field('type');
+          $size = get_field('size');
+          $name = get_field('name'); ?>
           <article class="<?php $term = get_term( $type ); echo $term->slug; ?> <?php echo $size; ?>">
             <a href="<?php the_permalink(); ?>">
             <div class="image">
@@ -51,11 +40,11 @@ get_header();
               <div class="name">
                 <?php echo $size; ?> <?php echo $name; ?>
               </div>
-              <?php if( have_rows('price') ): while( have_rows('price') ): the_row(); 
+              <?php  
               // Price
-              $basic = get_sub_field('basic');
-              $full = get_sub_field('full_spec');
-              $request = get_sub_field('price_on_request'); ?>
+              $basic = get_field('basic');
+              $full = get_field('full_spec');
+              $request = get_field('price_on_request'); ?>
               <div class="price">
                 <?php if ($request == '1') { // Price on request ?>
                 <div class="cost single"><span class="info">On request</span>£ -</div>
@@ -68,25 +57,23 @@ get_header();
                   <?php } ?>
                 <?php } ?>
               </div>
-              <?php endwhile; endif; ?>
             </div>
             <div class="content">
-              <?php if( have_rows('capacity') ): while( have_rows('capacity') ): the_row(); 
+              <?php 
               // Capacity
-              $brimful = get_sub_field('brimful');
-              $nominal = get_sub_field('nominal'); ?>
+              $brimful = get_field('brimful');
+              $nominal = get_field('nominal'); ?>
               <div class="litres">
                 <div class="brimful"><?php echo $brimful; ?> litres<span class="info">Brimful</span></div>
                 <div class="nominal"><?php echo $nominal; ?> litres<span class="info">Nominal</span></div>
               </div>
-              <?php endwhile; endif; ?>
-              <?php if( have_rows('dimensions') ): while( have_rows('dimensions') ): the_row(); 
+              <?php 
               // Dimensions
-              $length = get_sub_field('length');
-              $width = get_sub_field('width');
-              $height = get_sub_field('height');
-              $footprint = get_sub_field('footprint');
-              $tankWidth = get_sub_field('tank_width'); ?>
+              $length = get_field('length');
+              $width = get_field('width');
+              $height = get_field('height');
+              $footprint = get_field('footprint');
+              $tankWidth = get_field('tank_width'); ?>
               <div class="size">
                 <div class="length"><?php echo $length; ?>mm<span class="info">Length</div>
                 <div class="width"><?php echo $width; ?>mm<span class="info">Width</div>
@@ -95,12 +82,11 @@ get_header();
               <div class="footprint">
                 <?php echo $footprint; ?>mm <span class="info">Footprint</span>
               </div>
-              <?php endwhile; endif; ?>
               <a href="<?php the_permalink(); ?>" class="button primary">View product</a>
             
             </div>
           </article>
-          <?php endwhile; endif; ?>
+
           
           <?php endwhile; ?>
         </div>
@@ -112,25 +98,94 @@ get_header();
   </div>
 </section>
 
-<section class="filter">
+<section id="archive-filters">
   <div class="container">
-    <div class="three columns">
-      <h3>Product Type</h3>
-      <p>All</p>
-    </div>
-    <div class="three columns">
-      <h3>Price</h3>
-      <p>£0 - £1500</p>
-    </div>
-    <div class="three columns">
-      <h3>Size</h3>
-      <p>0 - 1300</p>
-    </div>
-    <div class="three columns">
-      <h3>Tank Width</h3>
-      <p>Slimline - Horizontal</p>
-    </div>
+
+    	<div class="three columns filter" data-filter="type">
+      	<h3>Product type</h3>
+      	<select>
+        	<option value="">All</option>
+        	<option value="bunded_tanks">Bunded tanks</option>
+          <option value="fuel_dispensers">Fuel dispensers</option>
+          <option value="enviroblu_tanks">Enviroblu tanks</option>
+      	</select>
+    	</div>
+    	
+    	<div class="three columns filter" data-filter="price">
+      	<h3>Price</h3>
+      	 <input type="range" name="points" min="0" max="1300"> 
+    	</div>
+    	
+    	<div class="three columns filter" data-filter="size">
+      	<h3>Size</h3>
+      	 <input type="range" name="points" min="0" max="1500"> 
+    	</div>
+    	
+    	<div class="three columns filter" data-filter="tank_width">
+      	<h3>Tank width</h3>
+    		<label><input type="radio" id="acf-field_5ddd521d44226" name="acf[field_5ddd521d44226]" value="slimeline">Slimeline</label>
+    		<label><input type="radio" id="acf-field_5ddd521d44226-horizontal" name="acf[field_5ddd521d44226]" value="horizontal">Horizontal</label>
+    	</div>
+
   </div>
 </section>
+
+<script type="text/javascript">
+(function($) {
+	
+	// change
+	$('#archive-filters').on('change', '.filter' , function(){
+		// vars
+		var url = '<?php echo home_url('tanks'); ?>';
+			args = {};
+		
+		// loop over filters
+		$('#archive-filters .filter').each(function(){
+			
+			// vars
+			var filter = $(this).data('filter'),
+				vals = [];
+			
+			// find checked inputs
+			$(this).find('input[selected]').each(function(){
+				vals.push( $(this).val() );
+			});
+			
+			// find checked inputs
+			$(this).find('input[type=range]').each(function(){
+				vals.push( $(this).val() );
+			});
+			
+      // find checked inputs
+			$(this).find('select').each(function(){
+				vals.push( $(this).val() );
+			});
+			
+			// append to args
+			args[ filter ] = vals.join(',');
+			
+		});
+		
+		// update url
+		url += '?';
+		
+		// loop over args
+		$.each(args, function( name, value ){
+			
+			url += name + '=' + value + '&';
+			
+		});
+		
+		// remove last &
+		url = url.slice(0, -1);
+		
+		// reload page
+		window.location.replace( url );
+		
+
+	});
+
+})(jQuery);
+</script>
 
 <?php get_footer(); ?>

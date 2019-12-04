@@ -97,6 +97,7 @@
           width: 49%;
           float: left;
           padding-top: 20px;
+          display: block;
         }
         .nominal {
           background: url('../img/nominal.svg') 0 -60px no-repeat;
@@ -143,7 +144,7 @@
   }
 }
 
-.filter {
+#archive-filters {
   background: $black;
   position: fixed;
   bottom: 0;
@@ -157,6 +158,11 @@
   margin-top: 60px;
   @media (min-width: $breakpoint-tablet) {
     margin-top: 90px;
+  }
+  a.back {
+    margin-bottom: 40px;
+    display: block;
+    font: $normal 2.0rem/2.0rem $regular;
   }
   aside {
     a.button {
@@ -175,14 +181,77 @@
     .post_image {
       padding: 20px;
     }
+    &.fuel-dispensers {
+      .name {
+        color: #683679;
+      } 
+    }
+    &.enviroblu-tanks {
+      .name {
+        color: #00a3e1;
+      } 
+    }
+    &.bunded-tanks {
+      .name {
+        color: #0099b1;
+      } 
+    }
+    .details {
+      max-width: 400px;
+      .range {
+        text-align: left;
+        padding: 10px 0px 0px 0px;
+        a {
+          color: $black;
+          text-decoration: underline;
+        }
+      }
+      .name {
+        text-align: left;
+        padding: 10px 0px;
+        font: $bold 3.2rem/4.0rem $regular;
+      }
+      .litres {
+        padding: 10px 0px;
+      }
+      .price {
+        padding: 10px 0px;
+        overflow: hidden;
+        border-top: 1px solid $border;
+        border-bottom: 1px solid $border;
+        .cost.double {
+          width: 49%;
+          float: left;
+          &:first-child {
+            border-right: 1px solid $border;
+          }
+        }
+      }
+    }
   }
   .extra {
     margin-top: 40px;
     .extra_sidebar {
       margin-left: 0;
+      ul {
+        margin: 0;
+        
+        li {
+          border-bottom: 1px solid $border;
+          list-style: none;
+          margin: 0;
+          padding: 10px 0px;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
     }
     .extra_content {
-      
+      h3 {
+        color: $green;
+        margin-bottom: 20px;
+      }
     }
   }
   
