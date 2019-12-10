@@ -23,9 +23,10 @@ get_header();
       <div class="main_content">
         <div class="twelve columns grid">
           <?php 
-  
+    
             $queryType = $_GET['type'];
-            $tankWidth = $_GET['tank_width'];
+            $width = $_GET['tank_width'];
+            $price = $_GET['price'];
             
             query_posts(array( 
               'post_type' => 'tanks',
@@ -41,8 +42,13 @@ get_header();
                 ),
                 array(
                   'meta_key' => 'tank_width',
-                  'value' => $tankWidth,
-                  'compare' => 'LIKE'
+                  'value' => $width,
+                  'compare' => '='
+                ),
+                array(
+                  'meta_key' => 'basic',
+                  'value' => $price,
+                  'compare' => '='
                 )
               )
             ));  
@@ -54,23 +60,36 @@ get_header();
           // Tank Details
           $type = get_field('type');
           $size = get_field('size');
-          $name = get_field('name'); ?>
+          $name = get_field('name');
+          // Price
+          $basic = get_field('basic');
+          $full = get_field('full_spec');
+          $request = get_field('price_on_request');
+          // Capacity
+          $brimful = get_field('brimful');
+          $nominal = get_field('nominal');
+          // Dimensions
+          $length = get_field('length');
+          $width = get_field('width');
+          $height = get_field('height');
+          $footprint = get_field('footprint');
+          $tankWidth = get_field('tank_width');
+          ?>
+          
           <article class="<?php $term = get_term( $type ); echo $term->slug; ?> <?php echo $size; ?>">
+            
             <a href="<?php the_permalink(); ?>">
             <div class="image">
               <?php the_post_thumbnail('featured-img'); ?>
             </div>
             </a>
+            
             <div class="heading">
+              
               <div class="name">
-                <?php echo $type; ?>
-                <?php echo $size; ?> <?php echo $name; ?>
+                <?php echo $tankWidth; ?><?php echo $size; ?> <?php echo $name; ?>
               </div>
-              <?php  
-              // Price
-              $basic = get_field('basic');
-              $full = get_field('full_spec');
-              $request = get_field('price_on_request'); ?>
+              
               <div class="price">
                 <?php if ($request == '1') { // Price on request ?>
                 <div class="cost single"><span class="info">On request</span>£ -</div>
@@ -83,31 +102,25 @@ get_header();
                   <?php } ?>
                 <?php } ?>
               </div>
+              
             </div>
             <div class="content">
-              <?php 
-              // Capacity
-              $brimful = get_field('brimful');
-              $nominal = get_field('nominal'); ?>
+              
               <div class="litres">
                 <div class="brimful"><?php echo $brimful; ?> litres<span class="info">Brimful</span></div>
                 <div class="nominal"><?php echo $nominal; ?> litres<span class="info">Nominal</span></div>
               </div>
-              <?php 
-              // Dimensions
-              $length = get_field('length');
-              $width = get_field('width');
-              $height = get_field('height');
-              $footprint = get_field('footprint');
-              $tankWidth = get_field('tank_width'); ?>
+              
               <div class="size">
                 <div class="length"><?php echo $length; ?>mm<span class="info">Length</div>
                 <div class="width"><?php echo $width; ?>mm<span class="info">Width</div>
                 <div class="height"><?php echo $height; ?>mm<span class="info">Height</div>
               </div>
+              
               <div class="footprint">
                 <?php echo $footprint; ?>mm <span class="info">Footprint</span>
               </div>
+              
               <a href="<?php the_permalink(); ?>" class="button primary">View product</a>
             
             </div>
@@ -117,7 +130,11 @@ get_header();
           <?php endwhile; ?>
         </div>
         <?php else : ?>
-        <!-- No posts found -->
+        <div class="no_match">
+          <h3>No results found</h3>
+          <p>There are no matching Tanks based on your search filters.</p>
+          <p><a href="<?php echo get_site_url(); ?>/tanks/" class="button primary">Reset filters</a></p>
+        
         <?php endif; wp_reset_query(); ?>
       </div>
     </div>
@@ -136,38 +153,65 @@ get_header();
           <option value="14">Enviroblu tanks</option>
       	</select>
     	</div>
-    	<script>
-      $(document).ready(function() {
-        // Construct URL object using current browser URL
-        var url = new URL(document.location);
-      
-        // Get query parameters object
-        var params = url.searchParams;
-      
-        // Get value of paper
-        var type = params.get("type");
-        var width = params.get("tank_width");
-      
-        // Set it as the dropdown value
-        $("#type").val(type);
-        $(".width").val(width);
-      });
-      </script>
-    	
+      <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+          $( "#price-range" ).slider({
+            range: true,
+            min: 0,
+            max: 1500,
+            step: 50,
+            values: [ 0, 1500 ],
+            slide: function( event, ui ) {
+              $( "#min" ).val( "£" + ui.values[ 0 ])
+              $( "#max" ).val( "£" + ui.values[ 1 ] );
+            }
+          });
+          $( "#min" ).val( "£" + $( "#price-range" ).slider( "values", 0 ) );
+          $( "#max" ).val( "£" + $( "#price-range" ).slider( "values", 1 ) );
+        } );
+        </script>
+  
     	<div class="three columns filter" data-filter="price">
       	<h3>Price</h3>
-      	 <input type="range" name="points" min="0" max="1300"> 
+      	<input type="text" id="min">
+      	<input type="text" id="max">
+      	<!-- <span class="zero">0</span> <span class="max">£1500</span> -->
+        <!-- <input type="range" name="points" min="0" max="1500"> -->
+        <div id="price-range"></div>
     	</div>
+    	
+    	<script>
+        $( function() {
+          $( "#size-range" ).slider({
+            range: true,
+            min: 0,
+            max: 1300,
+            step: 50,
+            values: [ 0, 1500 ],
+            slide: function( event, ui ) {
+              $( "#min-size" ).val( ui.values[ 0 ])
+              $( "#max-size" ).val( ui.values[ 1 ] );
+            }
+          });
+          $( "#min-size" ).val( $( "#size-range" ).slider( "values", 0 ) );
+          $( "#max-size" ).val( $( "#size-range" ).slider( "values", 1 ) );
+        } );
+        </script>
+
     	
     	<div class="three columns filter" data-filter="size">
       	<h3>Size</h3>
-      	 <input type="range" name="points" min="0" max="1500"> 
+      	<input type="text" id="min-size" readonly>
+      	<input type="text" id="max-size" readonly>
+        <div id="size-range"></div>
     	</div>
     	
     	<div class="three columns filter" data-filter="tank_width">
       	<h3>Tank width</h3>
-    		<label><input type="radio" id="acf-field_5ddd521d44226" name="acf[field_5ddd521d44226]" value="slimeline">Slimeline</label>
-    		<label><input type="radio" id="acf-field_5ddd521d44226-horizontal" name="acf[field_5ddd521d44226]" value="horizontal">Horizontal</label>
+    		<label><input type="radio" id="acf-field_5ddd521d44226" name="tank_width" value="slimline">Slimline</label>
+    		<label><input type="radio" id="acf-field_5ddd521d44226" name="tank_width" value="horizontal">Horizontal</label>
     	</div>
 
   </div>
@@ -175,6 +219,28 @@ get_header();
 
 <script type="text/javascript">
 (function($) {
+
+  // Construct URL object using current browser URL
+  var url = new URL(document.location);
+
+  // Get query parameters object
+  var params = url.searchParams;
+
+  // Get value
+  var type = params.get("type");
+  var width = params.get("tank_width");
+
+  // Set it as the dropdown value
+  $("#type").val(type);
+  
+  $("input[name='tank_width']").each(function(index, elem) {
+    var $radio = $(elem);
+    if ($radio.val() === width) {
+      $radio.prop("checked", true);
+      return false;
+    }
+  });
+
 	
 	// change
 	$('#archive-filters').on('change', '.filter' , function(){
@@ -184,18 +250,16 @@ get_header();
 		
 		// loop over filters
 		$('#archive-filters .filter').each(function(){
-			
 			// vars
 			var filter = $(this).data('filter'),
 				vals = [];
-			
 			// find checked inputs
 			$(this).find('input[selected]').each(function(){
 				vals.push( $(this).val() );
 			});
 			
 			// find checked inputs
-			$(this).find('input[type=range]').each(function(){
+			$(this).find('#min').each(function(){
 				vals.push( $(this).val() );
 			});
 			
@@ -218,9 +282,7 @@ get_header();
 		
 		// loop over args
 		$.each(args, function( name, value ){
-			
 			url += name + '=' + value + '&';
-			
 		});
 		
 		// remove last &
@@ -228,8 +290,6 @@ get_header();
 		
 		// reload page
 		window.location.replace( url );
-		
-		
 
 	});
 

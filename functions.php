@@ -347,6 +347,4 @@ function cpt_search( $query ) {
   return $query;  
 }
 
-
-
 ?>

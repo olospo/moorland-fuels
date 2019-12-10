@@ -327,7 +327,7 @@
                 "id": ""
             },
             "choices": {
-                "slimeline": "Slimeline",
+                "slimline": "Slimline",
                 "horizontal": "Horizontal"
             },
             "allow_null": 0,
@@ -368,5 +368,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1575477360
+    "modified": 1576000193
 }

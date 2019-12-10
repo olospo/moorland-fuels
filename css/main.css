@@ -2209,7 +2209,7 @@ ul.archive {
     margin: 10px; }
 
 .tank_listing, .single_tank {
-  padding: 40px 0 0 0; }
+  padding: 40px 0 !important; }
   .tank_listing .grid, .single_tank .grid {
     padding: 0;
     margin: 0;
@@ -2221,6 +2221,19 @@ ul.archive {
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: center; }
+  .tank_listing .no_match, .single_tank .no_match {
+    background: #F1F2F2;
+    border: 1px solid #DCE0E4;
+    padding: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 320px; }
+    .tank_listing .no_match h3, .single_tank .no_match h3 {
+      font: 600 3.0rem/4.0rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
+      color: #87C849; }
   .tank_listing article, .single_tank article {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -2315,6 +2328,60 @@ ul.archive {
   z-index: 100;
   color: #fff;
   padding: 30px 0px; }
+  #archive-filters h3 {
+    font: 300 2.2rem/3.0rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
+    margin-bottom: 20px; }
+  #archive-filters input#min, #archive-filters input#max, #archive-filters input#min-size, #archive-filters input#max-size {
+    font: 300 1.6rem/3.0rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #0A1418;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    display: inline-block;
+    width: 49%; }
+  #archive-filters input#min, #archive-filters input#min-size {
+    float: left; }
+  #archive-filters input#max, #archive-filters input#max-size {
+    text-align: right;
+    float: left; }
+  #archive-filters #price-range, #archive-filters #size-range {
+    clear: both; }
+  #archive-filters #type {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    padding: 10px 0px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #0A1418;
+    border-bottom: 1px solid #7b7f80;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #0A1418;
+    background-image: url("../img/dropdown_arrow.svg");
+    background-repeat: no-repeat, repeat;
+    background-position: right top 50%, 0 0;
+    background-size: 1em auto, 100%; }
+  #archive-filters #type::-ms-expand {
+    display: none; }
+  #archive-filters #type:hover {
+    border-color: #888; }
+  #archive-filters #type:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #fff;
+    outline: none; }
+  #archive-filters #type option {
+    font-weight: normal; }
 
 .single_tank {
   margin-top: 60px; }
@@ -2383,6 +2450,49 @@ ul.archive {
     .single_tank .extra .extra_content h3 {
       color: #87C849;
       margin-bottom: 20px; }
+
+.ui-slider {
+  position: relative;
+  text-align: left;
+  margin-right: 15px; }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    cursor: default;
+    -ms-touch-action: none;
+    touch-action: none;
+    top: -7px;
+    background: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; }
+  .ui-slider .ui-slider-range {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    background-position: 0 0;
+    top: 0;
+    height: 100%; }
+
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+  filter: inherit; }
+
+.ui-slider-horizontal {
+  height: 2px;
+  background: #7b7f7f;
+  top: 10px; }
+  .ui-slider-horizontal .ui-slider-range-min {
+    left: 0; }
+  .ui-slider-horizontal .ui-slider-range-max {
+    right: 0 !important; }
 
 /* Slider */
 .slick-slider {
