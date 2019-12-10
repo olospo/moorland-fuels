@@ -4,9 +4,9 @@
   <div class="container flex">
     <aside class="three columns">
       <a href="<?php echo get_site_url(); ?>/tanks/" class="back">< Back to all tanks</a>
-      <a href="#" class="button primary bunded">Bunded tanks</a>
-      <a href="#" class="button primary fuel">Fuel dispensers</a>
-      <a href="#" class="button primary enviroblu">Enviroblu tanks</a>
+      <a href="<?php echo get_site_url(); ?>/tanks/?type=12" class="button primary bunded">Bunded tanks</a>
+      <a href="<?php echo get_site_url(); ?>/tanks/?type=13" class="button primary fuel">Fuel dispensers</a>
+      <a href="<?php echo get_site_url(); ?>/tanks/?type=14" class="button primary enviroblu">Enviroblu tanks</a>
       <?php get_template_part('inc/help'); ?>
     </aside>
     <div class="content nine columns extra_gutter">

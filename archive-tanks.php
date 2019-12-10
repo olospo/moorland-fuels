@@ -9,9 +9,9 @@ get_header();
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <div class="basic_filters">
         <h2>Find out more about our product ranges:</h2>
-        <a href="#" class="button primary bunded">Bunded tanks</a>
-        <a href="#" class="button primary fuel">Fuel dispensers</a>
-        <a href="#" class="button primary enviroblu">Enviroblu tanks</a>
+        <a href="<?php echo get_site_url(); ?>/tanks/?type=12&&tank_width=" class="button primary bunded">Bunded tanks</a>
+        <a href="<?php echo get_site_url(); ?>/tanks/?type=13&&tank_width=" class="button primary fuel">Fuel dispensers</a>
+        <a href="<?php echo get_site_url(); ?>/tanks/?type=14&&tank_width=" class="button primary enviroblu">Enviroblu tanks</a>
       </div>
     </div>
   </div>
@@ -22,7 +22,32 @@ get_header();
     <div class="twelve columns">
       <div class="main_content">
         <div class="twelve columns grid">
-
+          <?php 
+  
+            $queryType = $_GET['type'];
+            $tankWidth = $_GET['tank_width'];
+            
+            query_posts(array( 
+              'post_type' => 'tanks',
+              'showposts' => -1,
+              'orderby'   => 'title',
+              'order'     => 'ASC',
+              'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                  'taxonomy' => 'types',
+                  'value'   => $queryType,
+                  'compare' => '=',
+                ),
+                array(
+                  'meta_key' => 'tank_width',
+                  'value' => $tankWidth,
+                  'compare' => 'LIKE'
+                )
+              )
+            ));  
+          ?>
+          
           <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           
           <?php 
@@ -38,6 +63,7 @@ get_header();
             </a>
             <div class="heading">
               <div class="name">
+                <?php echo $type; ?>
                 <?php echo $size; ?> <?php echo $name; ?>
               </div>
               <?php  
@@ -103,13 +129,30 @@ get_header();
 
     	<div class="three columns filter" data-filter="type">
       	<h3>Product type</h3>
-      	<select>
+      	<select id="type">
         	<option value="">All</option>
-        	<option value="bunded_tanks">Bunded tanks</option>
-          <option value="fuel_dispensers">Fuel dispensers</option>
-          <option value="enviroblu_tanks">Enviroblu tanks</option>
+        	<option value="12">Bunded tanks</option>
+          <option value="13">Fuel dispensers</option>
+          <option value="14">Enviroblu tanks</option>
       	</select>
     	</div>
+    	<script>
+      $(document).ready(function() {
+        // Construct URL object using current browser URL
+        var url = new URL(document.location);
+      
+        // Get query parameters object
+        var params = url.searchParams;
+      
+        // Get value of paper
+        var type = params.get("type");
+        var width = params.get("tank_width");
+      
+        // Set it as the dropdown value
+        $("#type").val(type);
+        $(".width").val(width);
+      });
+      </script>
     	
     	<div class="three columns filter" data-filter="price">
       	<h3>Price</h3>
@@ -156,6 +199,10 @@ get_header();
 				vals.push( $(this).val() );
 			});
 			
+			$(this).find('input[type=radio]:checked').each(function(){
+				vals.push( $(this).val() );
+			});
+			
       // find checked inputs
 			$(this).find('select').each(function(){
 				vals.push( $(this).val() );
@@ -181,6 +228,7 @@ get_header();
 		
 		// reload page
 		window.location.replace( url );
+		
 		
 
 	});
