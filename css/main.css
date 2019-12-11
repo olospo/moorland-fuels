@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Skeleton V2.0.4 */
 .container {
   position: relative;
@@ -2328,9 +2329,98 @@ ul.archive {
   z-index: 100;
   color: #fff;
   padding: 30px 0px; }
+  @media (min-width: 768px) {
+    #archive-filters .filter_type, #archive-filters .filter_price, #archive-filters .filter_size {
+      width: 22.5%;
+      margin-right: 2.5%;
+      float: left; } }
+  @media (min-width: 768px) {
+    #archive-filters .filter_width {
+      width: 10%;
+      margin-right: 2.5%;
+      float: left; } }
+  #archive-filters .filter_width ul li {
+    color: #abafb0;
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 20px;
+    margin: 0 0 10px 0;
+    line-height: 1em; }
+  #archive-filters .filter_width ul li input[type=radio] {
+    position: absolute;
+    visibility: hidden; }
+  #archive-filters .filter_width ul li label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    height: 20px;
+    z-index: 9;
+    cursor: pointer;
+    -webkit-transition: all 0.25s linear; }
+  #archive-filters .filter_width ul li:hover label {
+    color: #fff; }
+  #archive-filters .filter_width ul li .check {
+    display: block;
+    position: absolute;
+    border: 2px solid #abafb0;
+    border-radius: 0%;
+    height: 14px;
+    width: 14px;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    transition: border 0.25s linear;
+    -webkit-transition: border 0.25s linear; }
+  #archive-filters .filter_width ul li:hover .check {
+    border: 2px solid #FFFFFF; }
+  #archive-filters .filter_width ul li .check::before {
+    display: block;
+    position: absolute;
+    content: '';
+    border-radius: 0%;
+    height: 8px;
+    width: 8px;
+    top: 3px;
+    left: 3px;
+    margin: auto;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear; }
+  #archive-filters .filter_width input[type=radio]:checked ~ .check {
+    border: 2px solid #fff; }
+  #archive-filters .filter_width input[type=radio]:checked ~ .check::before {
+    background: #fff; }
+  #archive-filters .filter_width input[type=radio]:checked ~ label {
+    color: #fff; }
+  #archive-filters .filter_buttons {
+    width: 12.5%;
+    float: left;
+    text-align: center; }
+    #archive-filters .filter_buttons a.filter_submit {
+      margin: 15px 0px;
+      background: #fff;
+      color: #0A1418;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      -ms-border-radius: 25px;
+      border-radius: 25px; }
+      #archive-filters .filter_buttons a.filter_submit:hover {
+        color: #fff; }
+    #archive-filters .filter_buttons a.reset {
+      display: block;
+      color: #abafb0;
+      font: 300 1.4rem/1.4rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
+      transition: color 0.25s linear;
+      -webkit-transition: color 0.25s linear; }
+      #archive-filters .filter_buttons a.reset:hover {
+        color: #fff; }
+  @media (min-width: 768px) {
+    #archive-filters .filter_width label {
+      display: block; } }
   #archive-filters h3 {
     font: 300 2.2rem/3.0rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
   #archive-filters input#min, #archive-filters input#max, #archive-filters input#min-size, #archive-filters input#max-size {
     font: 300 1.6rem/3.0rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
     color: #fff;
@@ -2340,7 +2430,9 @@ ul.archive {
     appearance: none;
     border: none;
     display: inline-block;
-    width: 49%; }
+    width: 48%; }
+  #archive-filters input#min:before, #archive-filters input#max:before {
+    content: "£"; }
   #archive-filters input#min, #archive-filters input#min-size {
     float: left; }
   #archive-filters input#max, #archive-filters input#max-size {
@@ -2373,7 +2465,8 @@ ul.archive {
   #archive-filters #type::-ms-expand {
     display: none; }
   #archive-filters #type:hover {
-    border-color: #888; }
+    border-bottom: 1px solid white;
+    cursor: pointer; }
   #archive-filters #type:focus {
     border-color: #aaa;
     box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
@@ -2469,6 +2562,8 @@ ul.archive {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%; }
+    .ui-slider .ui-slider-handle:hover {
+      cursor: pointer; }
   .ui-slider .ui-slider-range {
     background: #fff;
     position: absolute;
@@ -2478,7 +2573,7 @@ ul.archive {
     border: 0;
     background-position: 0 0;
     top: 0;
-    height: 100%; }
+    height: 3px; }
 
 /* support: IE8 - See #6727 */
 .ui-slider.ui-state-disabled .ui-slider-handle,
