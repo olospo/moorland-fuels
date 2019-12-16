@@ -286,7 +286,7 @@
     font: $normal 2.2rem/3.0rem $regular;
     margin-bottom: 10px;
   }
-  input#min, input#max, input#min-size, input#max-size {
+  input#price-min-input, input#price-max-input, input#size-min-input, input#size-max-input {
     font: $normal 1.6rem/3.0rem $regular;
     color: $white;
     background: $black;
@@ -298,15 +298,15 @@
     width: 48%;
     
   }
-  input#min, input#max {
+  input#price-min-input, input#price-max-input {
     &:before {
       content: "£";
     }
   }
-  input#min, input#min-size {
+  input#price-min-input, input#size-min-input {
     float: left;
   }
-  input#max, input#max-size {
+  input#price-max-input, input#size-max-input {
     text-align: right;
     float: left;
   }

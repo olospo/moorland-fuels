@@ -2421,7 +2421,7 @@ ul.archive {
   #archive-filters h3 {
     font: 300 2.2rem/3.0rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
     margin-bottom: 10px; }
-  #archive-filters input#min, #archive-filters input#max, #archive-filters input#min-size, #archive-filters input#max-size {
+  #archive-filters input#price-min-input, #archive-filters input#price-max-input, #archive-filters input#size-min-input, #archive-filters input#size-max-input {
     font: 300 1.6rem/3.0rem "hk_groteskmedium", Helvetica, Arial, sans-serif;
     color: #fff;
     background: #0A1418;
@@ -2431,11 +2431,11 @@ ul.archive {
     border: none;
     display: inline-block;
     width: 48%; }
-  #archive-filters input#min:before, #archive-filters input#max:before {
+  #archive-filters input#price-min-input:before, #archive-filters input#price-max-input:before {
     content: "£"; }
-  #archive-filters input#min, #archive-filters input#min-size {
+  #archive-filters input#price-min-input, #archive-filters input#size-min-input {
     float: left; }
-  #archive-filters input#max, #archive-filters input#max-size {
+  #archive-filters input#price-max-input, #archive-filters input#size-max-input {
     text-align: right;
     float: left; }
   #archive-filters #price-range, #archive-filters #size-range {

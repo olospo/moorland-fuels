@@ -1,5 +1,13 @@
 <?php /* Services Archive */
 get_header(); 
+
+$queryType = $_GET['type'];
+$width = $_GET['tank-width'];
+$min = $_GET['min-price'];
+$max = $_GET['max-price'];
+$lowSize = $_GET['min-size'];
+$highSize = $_GET['max-size'];
+
 ?>
 
 <section class="hero small">
@@ -9,9 +17,9 @@ get_header();
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <div class="basic_filters">
         <h2>Find out more about our product ranges:</h2>
-        <a href="<?php echo get_site_url(); ?>/tanks/?type=12&tank_width=" class="button primary bunded">Bunded tanks</a>
-        <a href="<?php echo get_site_url(); ?>/tanks/?type=13&tank_width=" class="button primary fuel">Fuel dispensers</a>
-        <a href="<?php echo get_site_url(); ?>/tanks/?type=14&tank_width=" class="button primary enviroblu">Enviroblu tanks</a>
+        <a href="<?php echo get_site_url(); ?>/tanks/?type=12" class="button primary bunded">Bunded tanks</a>
+        <a href="<?php echo get_site_url(); ?>/tanks/?type=13" class="button primary fuel">Fuel dispensers</a>
+        <a href="<?php echo get_site_url(); ?>/tanks/?type=14" class="button primary enviroblu">Enviroblu tanks</a>
       </div>
     </div>
   </div>
@@ -23,51 +31,14 @@ get_header();
       <div class="main_content">
         <div class="twelve columns grid">
           <?php 
-    
-            $queryType = $_GET['type'];
-            $width = $_GET['tank_width'];
-            $low = intval($_GET['price-low']);
-            $high = intval($_GET['price-high']);
-            $lowSize = intval($_GET['size-low']);
-            $highSize = intval($_GET['size-high']);
-            
-            query_posts(array( 
+            $args = array(
               'post_type'  => 'tanks',
               'showposts'  => -1,
-              'orderby'    => "tile",
+              'meta_key' => 'size',
+              'orderby'   => 'meta_value',
               'order'      => 'ASC',
               'meta_query' => array(
                 'relation' => 'AND',
-                array(
-                  'relation' => 'OR',
-                  array(
-                    'meta_key' => 'basic',
-                    'value' => array($low, $high),
-                    'type'     => 'numeric',
-                    'compare' => 'BETWEEN'
-                  ),
-                  array(
-                    'meta_key' => 'full_spec',
-                    'value' => array($low, $high),
-                    'type'     => 'numeric',
-                    'compare' => 'BETWEEN'
-                  )
-                ),
-                array(
-                  'relation' => 'OR',
-                  array(
-                    'meta_key' => 'size',
-                    'value' => array($lowSize, $highSize),
-                    'type'     => 'numeric',
-                    'compare' => 'BETWEEN'
-                  ),
-                  array(
-                    'meta_key' => 'size',
-                    'value' => array($lowSize, $highSize),
-                    'type'     => 'numeric',
-                    'compare' => 'BETWEEN'
-                  )
-                ),
                 array(
                   'taxonomy' => 'types',
                   'value'   => $queryType,
@@ -78,12 +49,41 @@ get_header();
                   'value'   => $width,
                   'compare' => '=',
                 ),
-                
+                array(
+                  'relation' => 'OR',
+                  array(
+                    'key' => 'basic',
+                    'value' => array($min, $max),
+                    'type'     => 'numeric',
+                    'compare' => 'BETWEEN'
+                  ),
+                  array(
+                    'key' => 'full_spec',
+                    'value' => array($min, $max),
+                    'type'     => 'numeric',
+                    'compare' => 'BETWEEN'
+                  ),
+                  array(
+                    'key' => 'price_on_request',
+                    'value' => 1,
+                    'type'     => 'numeric',
+                    'compare' => '='
+                  ),
+                ),
+                array(
+                  'relation' => 'OR',
+                  array(
+                    'key' => 'size',
+                    'value' => array($lowSize, $highSize),
+                    'type'     => 'numeric',
+                    'compare' => 'BETWEEN'
+                  ),
+                ),
               )
-            ));  
+            );
           ?>
           
-          <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+          <?php query_posts( $args ); if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           
           <?php 
           // Tank Details
@@ -127,7 +127,7 @@ get_header();
                   <?php } else { ?> 
                   <div class="cost single"><span class="info">Full spec</span>£<?php echo $full; ?></div>
                   <?php } ?>
-                <?php } ?>
+                <?php } if(!$basic) { $basic = get_field('full_spec'); } ?>
               </div>
               
             </div>

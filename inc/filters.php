@@ -11,8 +11,8 @@
       	</select>
     	</div>
     	
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>
+
+        <script> 
         $( function() {
           
           // Construct URL object using current browser URL
@@ -21,34 +21,66 @@
           // Get query parameters object
           var params = url.searchParams;
           
-          var low = params.get("price-low");
-          var high = params.get("price-high");
+          
+          
+          var low = params.get("min-price");
+          var high = params.get("max-price");
 
           $( "#price-range" ).slider({
             range: true,
             min: 0,
             max: 1500,
-            step: 50,
+            step: 100,
             values: [ 0, 1500 ],
             slide: function( event, ui ) {
               console.log("Price From: "+ui.values[0],"To: "+ui.values[1]);
-              $( "#min" ).val(ui.values[ 0 ] );
-              $( "#max" ).val(ui.values[ 1 ] );
+              $( "#price-min-input" ).val(ui.values[ 0 ] );
+              $( "#price-max-input" ).val(ui.values[ 1 ] );
             }
           });
           
           if (low) {
-            $( "#min" ).val(low);
+            $( "#price-min-input" ).val(low);
             $( "#price-range" ).slider( "values", 0, low );
           } else {
-            $("#min").val(0);  
+            $("#price-min-input").val(0);  
           }
           
           if (high) {
-            $( "#max" ).val(high);
+            $( "#price-max-input" ).val(high);
             $( "#price-range" ).slider( "values", 1, high );
           } else {
-            $("#max").val(1500);
+            $("#price-max-input").val(1500);
+          }
+          
+          var lowS = params.get("min-size");
+          var highS = params.get("max-size");
+          
+          $( "#size-range" ).slider({
+            range: true,
+            min: 0,
+            max: 1400,
+            step: 100,
+            values: [ 0, 1400 ],
+            slide: function( event, ui ) {
+              console.log("Size From: "+ui.values[0],"To: "+ui.values[1]);
+              $( "#size-min-input" ).val( ui.values[ 0 ] );
+              $( "#size-max-input" ).val( ui.values[ 1 ] );
+            }
+          });
+
+          if (lowS) {
+            $( "#size-min-input" ).val(lowS);
+            $( "#size-range" ).slider( "values", 0, lowS );
+          } else {
+            $("#size-min-input").val(0);  
+          }
+          
+          if (highS) {
+            $( "#size-max-input" ).val(highS);
+            $( "#size-range" ).slider( "values", 1, highS );
+          } else {
+            $("#size-max-input").val(1400);
           }
           
         } );
@@ -56,70 +88,28 @@
   
     	<div class="filter_price">
       	<h3>Price</h3>
-      	<div class="input-group-text filter" data-filter="price-low"><input type="text" id="min" readonly></div>
-      	<div class="input-group-text filter" data-filter="price-high"><input type="text" id="max" readonly></div>
+      	<div class="input-group-price filter" data-filter="min-price"><input type="text" id="price-min-input" readonly></div>
+      	<div class="input-group-price filter" data-filter="max-price"><input type="text" id="price-max-input" readonly></div>
         <div id="price-range"></div>
     	</div>
     	
-    	<script>
-        $( function() {
-          
-          // Construct URL object using current browser URL
-          var url = new URL(document.location);
-
-          // Get query parameters object
-          var params = url.searchParams;
-          
-          var lowS = params.get("size-low");
-          var highS = params.get("size-high");
-          
-          $( "#size-range" ).slider({
-            range: true,
-            min: 0,
-            max: 1400,
-            step: 50,
-            values: [ 0, 1400 ],
-            slide: function( event, ui ) {
-              console.log("Size From: "+ui.values[0],"To: "+ui.values[1]);
-              $( "#min-size" ).val( ui.values[ 0 ] );
-              $( "#max-size" ).val( ui.values[ 1 ] );
-            }
-          });
-
-          if (lowS) {
-            $( "#min-size" ).val(lowS);
-            $( "#size-range" ).slider( "values", 0, lowS );
-          } else {
-            $("#min-size").val(0);  
-          }
-          
-          if (highS) {
-            $( "#max-size" ).val(highS);
-            $( "#size-range" ).slider( "values", 1, highS );
-          } else {
-            $("#max-size").val(1400);
-          }
-          
-        } );
-      </script>
-    	
     	<div class="filter_size">
       	<h3>Size</h3>
-      	<div class="input-group-text filter" data-filter="size-low"><input type="text" id="min-size" readonly></div>
-      	<div class="input-group-text filter" data-filter="size-high"><input type="text" id="max-size" readonly></div>
+      	<div class="input-group-size filter" data-filter="min-size"><input type="text" id="size-min-input" readonly></div>
+      	<div class="input-group-size filter" data-filter="max-size"><input type="text" id="size-max-input" readonly></div>
         <div id="size-range"></div>
     	</div>
     	
-    	<div class="filter filter_width" data-filter="tank_width">
+    	<div class="filter filter_width" data-filter="tank-width">
       	<h3>Tank width</h3>
       	<ul>
           <li>
-            <input type="radio" id="slimline" name="tank_width" value="slimline">
+            <input type="radio" id="slimline" name="tank-width" value="slimline">
             <label for="slimline">Slimline</label>
             <div class="check"></div>
           </li>
           <li>
-            <input type="radio" id="horizontal" name="tank_width" value="horizontal">
+            <input type="radio" id="horizontal" name="tank-width" value="horizontal">
             <label for="horizontal">Horizontal</label>
             <div class="check"></div>
           </li>
@@ -145,12 +135,12 @@
 
   // Get value
   var type = params.get("type");
-  var width = params.get("tank_width");
+  var width = params.get("tank-width");
 
   // Set it as the dropdown value
   $("#type").val(type);
 
-  $("input[name='tank_width']").each(function(index, elem) {
+  $("input[name='tank-width']").each(function(index, elem) {
     var $radio = $(elem);
     if ($radio.val() === width) {
       $radio.prop("checked", true);
@@ -173,22 +163,22 @@
 
 			
 			// find checked inputs
-			$(this).find('#min').each(function(){
+			$(this).find('#price-min-input').each(function(){
 				vals.push( $(this).val() );
 			});
 			
 			// find checked inputs
-			$(this).find('#max').each(function(){
+			$(this).find('#price-max-input').each(function(){
 				vals.push( $(this).val() );
 			});
 			
 			// find checked inputs
-			$(this).find('#min-size').each(function(){
+			$(this).find('#size-min-input').each(function(){
 				vals.push( $(this).val() );
 			});
 			
 			// find checked inputs
-			$(this).find('#max-size').each(function(){
+			$(this).find('#size-max-input').each(function(){
 				vals.push( $(this).val() );
 			});
 			
