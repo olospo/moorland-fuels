@@ -246,7 +246,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -265,7 +265,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -284,7 +284,53 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "mm",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5df9039843818",
+            "label": "Height to Lid",
+            "name": "lid_height",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5df903b0aad16",
+            "label": "Height to lid",
+            "name": "height_to_lid",
+            "type": "text",
+            "instructions": "Displayed underneath the main tank height",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5df9039843818",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
                 "class": "",
                 "id": ""
             },
@@ -303,7 +349,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "60",
                 "class": "",
                 "id": ""
             },
@@ -322,7 +368,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "40",
                 "class": "",
                 "id": ""
             },
@@ -368,5 +414,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1576000193
+    "modified": 1576600803
 }

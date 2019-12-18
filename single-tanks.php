@@ -15,7 +15,23 @@
         // Tank Details
         $type = get_field('type');
         $size = get_field('size');
-        $name = get_field('name'); ?>
+        $name = get_field('name');
+        // Price
+        $basic = get_field('basic');
+        $full = get_field('full_spec');
+        $request = get_field('price_on_request');
+        // Capacity
+        $brimful = get_field('brimful');
+        $nominal = get_field('nominal');
+        // Dimensions
+        $length = get_field('length');
+        $width = get_field('width');
+        $height = get_field('height');
+        $lid_height = get_field('lid_height');
+        $height_to_lid = get_field('height_to_lid');
+        $footprint = get_field('footprint');
+        $tankWidth = get_field('tank_width');
+        ?>
         <article class="<?php $term = get_term( $type ); echo $term->slug; ?> <?php echo $size; ?>">
           <div class="post_image">
             <?php the_post_thumbnail('large-thumb'); ?>
@@ -25,11 +41,7 @@
             <div class="content">
               <div class="range">Product range: <?php echo '<a href="'.get_term_link($term).'">'.$term->name.'</a>'; ?></div>
               <div class="name"><?php echo $size; ?> <?php echo $name; ?></div>
-              <?php 
-              // Price
-              $basic = get_field('basic');
-              $full = get_field('full_spec');
-              $request = get_field('price_on_request'); ?>
+
               <div class="price">
                 <?php if ($request == '1') { // Price on request ?>
                 <div class="cost single"><span class="info">Price on request</span>£ -</div>
@@ -42,26 +54,29 @@
                   <?php } ?>
                 <?php } ?>
               </div>
-              <?php 
-              // Capacity
-              $brimful = get_field('brimful');
-              $nominal = get_field('nominal'); ?>
+
               <div class="litres">
-                <div class="brimful"><?php echo $brimful; ?> litres<span class="info">Brimful</span></div>
-                <div class="nominal"><?php echo $nominal; ?> litres<span class="info">Nominal</span></div>
+                <div class="brimful"><span class="value"><?php echo $brimful; ?> litres</span><span class="info">Brimful</span></div>
+                <div class="divide"></div>
+                <div class="nominal"><span class="value"><?php echo $nominal; ?> litres</span><span class="info">Nominal</span></div>
               </div>
               
-              <?php
-              // Dimensions
-              $length = get_field('length');
-              $width = get_field('width');
-              $height = get_field('height');
-              $footprint = get_field('footprint');
-              $tankWidth = get_field('tank_width'); ?>
               <div class="size">
-                <div class="length"><?php echo $length; ?>mm<span class="info">Length</div>
-                <div class="width"><?php echo $width; ?>mm<span class="info">Width</div>
-                <div class="height"><?php echo $height; ?>mm<span class="info">Height</div>
+                <div class="length">
+                  <?php echo $length; ?>mm
+                  <span class="info">Length</span>
+                </div>
+                <div class="width">
+                  <?php echo $width; ?>mm
+                  <span class="info">Width</span>
+                </div>
+                <div class="height">
+                  <?php echo $height; ?>mm
+                  <span class="info">Height</span>
+                  <?php if ($lid_height == '1') { // Lid Height ?>
+                  <span class="lid_height">(<?php echo $height_to_lid; ?>mm to lid)</span>
+                  <?php } ?>
+                </div>
               </div>
               <div class="footprint">
                 <?php echo $footprint; ?>mm <span class="info">Footprint</span>

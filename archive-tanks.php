@@ -29,9 +29,8 @@ $highSize = $_GET['max-size'];
   <div class="container">
     <div class="twelve columns">
       <div class="main_content">
-        <div class="twelve columns grid">
-          <?php 
-            $args = array(
+        <?php if ( isset( $min ) OR isset( $max ) OR isset( $lowSize ) OR isset( $highSize ) ) {
+            $query_args = array(
               'post_type'  => 'tanks',
               'showposts'  => -1,
               'meta_key' => 'size',
@@ -71,19 +70,45 @@ $highSize = $_GET['max-size'];
                   ),
                 ),
                 array(
-                  'relation' => 'OR',
-                  array(
-                    'key' => 'size',
-                    'value' => array($lowSize, $highSize),
-                    'type'     => 'numeric',
-                    'compare' => 'BETWEEN'
-                  ),
+                  'key' => 'size',
+                  'value' => array($lowSize, $highSize),
+                  'type'     => 'numeric',
+                  'compare' => 'BETWEEN'
                 ),
               )
             );
-          ?>
-          
-          <?php query_posts( $args ); if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+            } else {
+            $query_args = array(
+              'post_type'  => 'tanks',
+              'showposts'  => -1,
+              'meta_key' => 'size',
+              'orderby'   => 'meta_value',
+              'order'      => 'ASC',
+              'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                  'taxonomy' => 'types',
+                  'value'   => $queryType,
+                  'compare' => '=',
+                ),
+                array(
+                  'taxonomy' => 'tank_width',
+                  'value'   => $width,
+                  'compare' => '=',
+                ),
+              )
+              );
+            }
+        ?>
+        <div class="product_count six columns">
+          <p>Showing <?php echo "X" // $wp_query->post_count ?> of <?php echo $wp_query->found_posts ?> products</p>
+        </div>
+        <div class="product_order six columns">
+          <p>Products are ordered in ascending size</p>
+        </div>
+        
+        <div class="twelve columns grid">
+          <?php query_posts( $query_args );  if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           
           <?php 
           // Tank Details
@@ -101,6 +126,8 @@ $highSize = $_GET['max-size'];
           $length = get_field('length');
           $width = get_field('width');
           $height = get_field('height');
+          $lid_height = get_field('lid_height');
+          $height_to_lid = get_field('height_to_lid');
           $footprint = get_field('footprint');
           $tankWidth = get_field('tank_width');
           ?>
@@ -121,27 +148,40 @@ $highSize = $_GET['max-size'];
                 <?php if ($request == '1') { // Price on request ?>
                 <div class="cost single"><span class="info">On request</span>£ -</div>
                 <?php } else { ?>
-                  <?php if($full && $basic) { ?>
-                  <div class="cost double"><span class="info">Basic</span>£<?php echo $basic; ?></div>
+                  <?php if($full AND $basic) { ?>
                   <div class="cost double"><span class="info">Full spec</span>£<?php echo $full; ?></div>
-                  <?php } else { ?> 
+                  <div class="cost double"><span class="info">Basic</span>£<?php echo $basic; ?></div>
+                  <?php } else {  ?>
                   <div class="cost single"><span class="info">Full spec</span>£<?php echo $full; ?></div>
                   <?php } ?>
-                <?php } if(!$basic) { $basic = get_field('full_spec'); } ?>
+                <?php }  ?>
               </div>
               
             </div>
             <div class="content">
               
               <div class="litres">
-                <div class="brimful"><?php echo $brimful; ?> litres<span class="info">Brimful</span></div>
-                <div class="nominal"><?php echo $nominal; ?> litres<span class="info">Nominal</span></div>
+                <div class="brimful"><span class="value"><?php echo $brimful; ?> litres</span><span class="info">Brimful</span></div>
+                <div class="divide"></div>
+                <div class="nominal"><span class="value"><?php echo $nominal; ?> litres</span><span class="info">Nominal</span></div>
               </div>
               
               <div class="size">
-                <div class="length"><?php echo $length; ?>mm<span class="info">Length</div>
-                <div class="width"><?php echo $width; ?>mm<span class="info">Width</div>
-                <div class="height"><?php echo $height; ?>mm<span class="info">Height</div>
+                <div class="length">
+                  <?php echo $length; ?>mm
+                  <span class="info">Length</span>
+                </div>
+                <div class="width">
+                  <?php echo $width; ?>mm
+                  <span class="info">Width</span>
+                </div>
+                <div class="height">
+                  <?php echo $height; ?>mm
+                  <span class="info">Height</span>
+                  <?php if ($lid_height == '1') { // Lid Height ?>
+                  <span class="lid_height">(<?php echo $height_to_lid; ?>mm to lid)</span>
+                  <?php } ?>
+                </div>
               </div>
               
               <div class="footprint">

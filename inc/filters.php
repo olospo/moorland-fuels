@@ -21,8 +21,6 @@
           // Get query parameters object
           var params = url.searchParams;
           
-          
-          
           var low = params.get("min-price");
           var high = params.get("max-price");
 
