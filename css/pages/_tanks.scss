@@ -145,6 +145,22 @@
       img {
         @include border-radius(10px 10px 0 0);
       }
+      .type {
+        color: $white;
+        position: absolute;
+        font: $normal 1.6rem/2.0rem $regular;
+        @include border-radius(10px 0 0 0);
+        padding: 10px;
+        &.fuel-dispensers {
+          background: #683679;
+        }
+        &.enviroblu-tanks {
+          background: #00a3e1;
+        }
+        &.bunded-tanks {
+          background: #0099b1;
+        }
+      }
     }
     .content {
       padding: 20px;
@@ -227,16 +243,29 @@
 
 #archive-filters {
   background: $black;
+  @media (min-width: $breakpoint-tablet) {
   position: fixed;
+  }
   bottom: 0;
   width: 100%;
   z-index: 100;
   color: $white;
   padding: 30px 0px;
-  .filter_type, .filter_price, .filter_size {
+  .filter_type {
+    margin-bottom: 20px;
     @media (min-width: $breakpoint-tablet) {
     width: 22.5%;
     margin-right: 2.5%;
+    margin-bottom: 0;
+    float: left;
+    }
+  }
+  .filter_price, .filter_size {
+    margin-bottom: 40px;
+    @media (min-width: $breakpoint-tablet) {
+    width: 22.5%;
+    margin-right: 2.5%;
+    margin-bottom: 0;
     float: left;
     }
   }
@@ -320,7 +349,9 @@
     }
   }
   .filter_buttons {
+    @media (min-width: $breakpoint-tablet) {
     width:12.5%;
+    }
     float: left;
     text-align: center;
     a.filter_submit {
@@ -467,7 +498,7 @@
       } 
     }
     .details {
-      max-width: 400px;
+      // max-width: 400px;
       .range {
         text-align: left;
         padding: 10px 0px 0px 0px;

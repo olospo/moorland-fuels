@@ -158,6 +158,9 @@ $highSize = $_GET['max-size'];
           <article class="<?php $term = get_term( $type ); echo $term->slug; ?> <?php echo $size; ?>">
             <a href="<?php the_permalink(); ?>">
             <div class="image">
+              <div class="type <?php $term = get_term( $type ); echo $term->slug; ?> ">
+              <?php $term = get_term( $type ); echo $term->name; ?>
+              </div>
               <?php the_post_thumbnail('featured-img'); ?>
             </div>
             </a>

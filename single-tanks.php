@@ -39,7 +39,7 @@
 
           <div class="details">
             <div class="content">
-              <div class="range">Product range: <?php echo '<a href="'.get_term_link($term).'">'.$term->name.'</a>'; ?></div>
+              <div class="range">Product range: <?php echo $term->name // echo '<a href="'.get_term_link($term).'">'.$term->name.'</a>'; ?></div>
               <div class="name"><?php echo $size; ?> <?php echo $name; ?></div>
 
               <div class="price">
