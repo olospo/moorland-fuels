@@ -33,7 +33,7 @@ $highSize = $_GET['max-size'];
             $query_args = array(
               'post_type'  => 'tanks',
               'showposts'  => -1,
-              'meta_key' => 'size',
+              'key' => 'size',
               'orderby'   => 'meta_value',
               'order'      => 'ASC',
               'meta_query' => array(
@@ -61,6 +61,26 @@ $highSize = $_GET['max-size'];
                     'value' => array($min, $max),
                     'type'     => 'numeric',
                     'compare' => 'BETWEEN'
+                  ),
+                  array(
+                    'key' => 'price_on_request',
+                    'value' => 1,
+                    'type'     => 'numeric',
+                    'compare' => '='
+                  ),
+                ),
+                array(
+                  'relation' => 'OR',
+                  array(
+                    'key' => 'full_spec',
+                    'value' => array($min, $max),
+                    'type'     => 'numeric',
+                    'compare' => 'BETWEEN'
+                  ),
+                  array(
+                    'key' => 'basic',
+                    'value' => '',
+                    'compare' => '!=',
                   ),
                   array(
                     'key' => 'price_on_request',
@@ -108,6 +128,7 @@ $highSize = $_GET['max-size'];
         </div>
         
         <div class="twelve columns grid">
+          
           <?php query_posts( $query_args );  if ( have_posts() ) : while (have_posts()) : the_post(); ?>
           
           <?php 
@@ -116,7 +137,9 @@ $highSize = $_GET['max-size'];
           $size = get_field('size');
           $name = get_field('name');
           // Price
+          
           $basic = get_field('basic');
+
           $full = get_field('full_spec');
           $request = get_field('price_on_request');
           // Capacity
@@ -133,7 +156,6 @@ $highSize = $_GET['max-size'];
           ?>
           
           <article class="<?php $term = get_term( $type ); echo $term->slug; ?> <?php echo $size; ?>">
-            
             <a href="<?php the_permalink(); ?>">
             <div class="image">
               <?php the_post_thumbnail('featured-img'); ?>
