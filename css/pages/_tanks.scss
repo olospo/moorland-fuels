@@ -10,7 +10,7 @@
   }
 }
 
-.tank_listing, .single_tank {
+.tank_listing, .single_tank, .related_products {
   padding: $padding-half 0 !important;
   .grid {
     padding: 0;
@@ -94,6 +94,7 @@
         padding: 10px 20px;
         flex-grow: 1;
         text-align: left;
+        font: $bold 2.4rem/4.0rem $regular;
       }
       .price {
         padding: 10px;
@@ -477,7 +478,9 @@
   article {
     width: 100%;
     margin: 0;
+    @media (min-width: $breakpoint-tablet) {
     display: flex;
+    }
     background: $buff;
     .post_image {
       padding: 20px;
@@ -544,18 +547,110 @@
           padding: 10px 0px;
           a {
             text-decoration: none;
+            &:hover {
+              color: $green;
+            }
+            &.non-active {
+              color: $black;
+              &:hover {
+                color: $green;
+              }
+            }
           }
         }
       }
     }
     .extra_content {
+      @media (max-width: $breakpoint-tablet) {
+        margin-top: 40px;
+      }
       h3 {
         color: $green;
         margin-bottom: 20px;
+        font: $bold 3.2rem/4.0rem $regular;
       }
     }
   }
-  
+}
+
+
+.overlay {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.form_popup {
+  z-index: 9999;
+  margin: 120px auto 20px auto;
+  padding: 30px;
+  background: #fbfcfc;
+  @include border-radius(10px);
+  width: 80%;
+  position: relative;
+  form {
+    label, input {
+      font: $normal 1.8rem/2.2rem $regular !important;
+    }
+    input {
+      background: $white;
+      border: 1px solid #fbfbfb;
+    }
+    .label-above .nf-field-label {
+      margin-bottom: 5px;
+    }
+    .nf-field-element textarea {
+      height: 100px;
+    }
+    .nf-cell:last-child {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+.form_popup h2 {
+  color: $green;
+}
+.form_popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.form_popup .close:hover {
+  color: $green;
+}
+
+@media screen and (min-width: 700px){
+  .form_popup {
+    width: 70%;
+  }
+}
+
+.related_products {
+  .container {
+    border-top: 1px solid $border;
+    padding-top: 40px;
+  }
+  h2 {
+    text-align: center;
+    color: $green;
+  }
 }
 
 .ui-slider {

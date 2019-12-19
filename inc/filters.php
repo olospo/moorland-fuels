@@ -31,7 +31,6 @@
             step: 100,
             values: [ 0, 1500 ],
             slide: function( event, ui ) {
-              console.log("Price From: "+ui.values[0],"To: "+ui.values[1]);
               $( "#price-min-input" ).val(ui.values[ 0 ] );
               $( "#price-max-input" ).val(ui.values[ 1 ] );
             }
@@ -61,7 +60,6 @@
             step: 100,
             values: [ 0, 1400 ],
             slide: function( event, ui ) {
-              console.log("Size From: "+ui.values[0],"To: "+ui.values[1]);
               $( "#size-min-input" ).val( ui.values[ 0 ] );
               $( "#size-max-input" ).val( ui.values[ 1 ] );
             }
@@ -148,12 +146,18 @@
 	
 	// change
 	$('#archive-filters').on('click', '.filter_submit' , function(){
+  	
+  	$(this).text("Loading...");
 		// vars
 		var url = '<?php echo home_url('tanks'); ?>';
 			args = {};
 		
 		// loop over filters
 		$('#archive-filters .filter').each(function(){
+  		
+  		
+  		
+  		
 			// vars
 			var filter = $(this).data('filter'),
 				vals = [];

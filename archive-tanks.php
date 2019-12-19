@@ -34,7 +34,7 @@ $highSize = $_GET['max-size'];
               'post_type'  => 'tanks',
               'showposts'  => -1,
               'key' => 'size',
-              'orderby'   => 'meta_value',
+              'orderby'   => 'value',
               'order'      => 'ASC',
               'meta_query' => array(
                 'relation' => 'AND',
@@ -102,7 +102,7 @@ $highSize = $_GET['max-size'];
               'post_type'  => 'tanks',
               'showposts'  => -1,
               'meta_key' => 'size',
-              'orderby'   => 'meta_value',
+              'orderby'   => 'value',
               'order'      => 'ASC',
               'meta_query' => array(
                 'relation' => 'AND',
@@ -118,10 +118,10 @@ $highSize = $_GET['max-size'];
                 ),
               )
               );
-            }
-        ?>
+            } query_posts( $query_args );
+        ?> 
         <div class="product_count six columns">
-          <p>Showing <?php echo "X" // $wp_query->post_count ?> of <?php echo $wp_query->found_posts ?> products</p>
+          <p>Showing <?php echo $wp_query->found_posts ?> of <?php wp_reset_query(); echo $wp_query->found_posts ?> products</p>
         </div>
         <div class="product_order six columns">
           <p>Products are ordered in ascending size</p>
