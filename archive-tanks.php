@@ -95,15 +95,18 @@ $highSize = $_GET['max-size'];
                   'type'     => 'numeric',
                   'compare' => 'BETWEEN'
                 ),
+                array (
+                  'key' => 'size',
+                  'orderby'   => 'value',
+                  'order'      => 'ASC',
+                )
               )
             );
             } else {
             $query_args = array(
               'post_type'  => 'tanks',
               'showposts'  => -1,
-              'meta_key' => 'size',
-              'orderby'   => 'value',
-              'order'      => 'ASC',
+              
               'meta_query' => array(
                 'relation' => 'AND',
                 array(
@@ -116,6 +119,11 @@ $highSize = $_GET['max-size'];
                   'value'   => $width,
                   'compare' => '=',
                 ),
+                array (
+                  'key' => 'size',
+                  'orderby'   => 'value',
+                  'order'      => 'ASC',
+                )
               )
               );
             } query_posts( $query_args );

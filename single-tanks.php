@@ -156,16 +156,18 @@ $('[class^=link]').click(function() {
   <div class="container">
   <h2>Related Products</h2>
   <div class="twelve columns grid">
-    <?php $currentID = get_the_ID();
+    <?php $currentID = get_the_ID(); $type = get_field('type');
     $args = array(
       'post_type'  => 'tanks',
       'showposts'  => 3,
-      'orderby'    => 'rand', // Random posts
-      'order'      => 'ASC',
       'post__not_in' => array($currentID),
-      'taxonomy' => 'types',
-      'value'   => $type,
-      'compare' => '=',
+      'meta_query' => array(
+        array(
+          'taxonomy' => 'types',
+          'value'   => $type,
+          'compare' => '=',
+        ),
+      )
     );
    
   $related = new wp_query( $args );
