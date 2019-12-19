@@ -106,7 +106,9 @@ $highSize = $_GET['max-size'];
             $query_args = array(
               'post_type'  => 'tanks',
               'showposts'  => -1,
-              
+              'key' => 'size',
+              'orderby'   => 'value',
+              'order'      => 'ASC',
               'meta_query' => array(
                 'relation' => 'AND',
                 array(
