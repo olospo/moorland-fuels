@@ -84,8 +84,8 @@
   
     	<div class="filter_price">
       	<h3>Price</h3>
-      	<div class="input-group-price filter" data-filter="min-price"><input type="text" id="price-min-input" readonly></div>
-      	<div class="input-group-price filter" data-filter="max-price"><input type="text" id="price-max-input" readonly></div>
+      	<div class="input-group-price filter" data-filter="min-price"><div class="input-group-prepend"><span class="input-group-text">£</span></div><input type="text" id="price-min-input" readonly></div>
+      	<div class="input-group-price filter" data-filter="max-price"><div class="input-group-prepend-right"><span class="input-group-text">£</span></div><input type="text" id="price-max-input" readonly></div>
         <div id="price-range"></div>
     	</div>
     	

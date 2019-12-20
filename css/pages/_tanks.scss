@@ -268,6 +268,7 @@
     margin-right: 2.5%;
     margin-bottom: 0;
     float: left;
+    position: relative;
     }
   }
   .filter_width {
@@ -387,6 +388,22 @@
     font: $normal 2.2rem/3.0rem $regular;
     margin-bottom: 10px;
   }
+  .input-group-prepend {
+    position: absolute;
+    line-height: 3.2rem;
+  }
+  .input-group-prepend-right {
+    position: absolute;
+    right: 60px;
+    line-height: 3.2rem;
+    @media (min-width: $breakpoint-mobile) {
+      right: 50px;
+    }
+    @media (min-width: $breakpoint-tablet) {
+      right: 35px;
+    }
+  }
+  
   input#price-min-input, input#price-max-input, input#size-min-input, input#size-max-input {
     font: $normal 1.6rem/3.0rem $regular;
     color: $white;
@@ -399,10 +416,12 @@
     width: 48%;
     
   }
-  input#price-min-input, input#price-max-input {
-    &:before {
-      content: "£";
-    }
+  input#price-min-input {
+    margin-left: 8px;
+  }
+  
+  input#price-max-input {
+    margin-right: -10px;
   }
   input#price-min-input, input#size-min-input {
     float: left;
