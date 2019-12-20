@@ -4,9 +4,9 @@
   <div class="container flex">
     <aside class="three columns">
       <a href="<?php echo get_site_url(); ?>/tanks/" class="back">< Back to all tanks</a>
-      <a href="<?php echo get_site_url(); ?>/tanks/?type=12" class="button primary bunded">Bunded tanks</a>
-      <a href="<?php echo get_site_url(); ?>/tanks/?type=13" class="button primary fuel">Fuel dispensers</a>
-      <a href="<?php echo get_site_url(); ?>/tanks/?type=14" class="button primary enviroblu">Enviroblu tanks</a>
+      <a href="<?php echo get_site_url(); ?>/bunded-tanks" class="button primary bunded">Bunded tanks</a>
+      <a href="<?php echo get_site_url(); ?>/fuel-dispensers" class="button primary fuel">Fuel dispensers</a>
+      <a href="<?php echo get_site_url(); ?>/enviroblu-tanks" class="button primary enviroblu">Enviroblu tanks</a>
       <?php get_template_part('inc/help'); ?>
     </aside>
     <div class="content nine columns extra_gutter">
@@ -117,16 +117,45 @@
       		?>
           <div class="toggle-item-link<?php echo $i; ?>">
     			
-          <h3><?php echo $header; ?></h3>
-          <?php echo $content; ?>
-          <?php if( $uploads ): ?>
-    				<p>Uploads</p>
+            <h3><?php echo $header; ?></h3>
+            <?php echo $content; ?>
+            <?php if( $uploads ): ?>
+              <div class="related">
+              <ul>
+              <?php while( have_rows('upload') ): the_row(); 
+    
+          		// vars
+          		$select = get_sub_field('url_or_upload');
+          		$title = get_sub_field('title');
+          		$url = get_sub_field('url');
+          		$upload = get_sub_field('upload');
+          		
+          		$ext = pathinfo($upload, PATHINFO_EXTENSION);
+          
+          		?>
+          		
+          		<?php if( $select == 'url' ): ?>
+              <li class="link">
+                <a href="<?php echo $url; ?>" target="_blank">
+                  <?php echo $title; ?>
+    				    </a>
+              </li>
+              <?php endif; ?>
+              
+              <?php if( $select == 'upload' ): ?>
+              <li class="<?php echo $ext; ?>">
+                <a href="<?php echo $upload; ?>">
+                  <?php echo $title; ?>
+    				    </a>
+              </li>
+              <?php endif; ?>
+              <?php endwhile; ?>
+      	    </ul>
+            </div>
     			<?php endif; ?>
           </div>
-          
           <?php $i++; endwhile; ?>
 
-	      </div>
         <?php endif; ?>
         </div>
     </div>

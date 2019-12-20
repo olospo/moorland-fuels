@@ -17,9 +17,9 @@ $highSize = $_GET['max-size'];
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <div class="basic_filters">
         <h2>Find out more about our product ranges:</h2>
-        <a href="<?php echo get_site_url(); ?>/tanks/?type=12" class="button primary bunded">Bunded tanks</a>
-        <a href="<?php echo get_site_url(); ?>/tanks/?type=13" class="button primary fuel">Fuel dispensers</a>
-        <a href="<?php echo get_site_url(); ?>/tanks/?type=14" class="button primary enviroblu">Enviroblu tanks</a>
+        <a href="<?php echo get_site_url(); ?>/bunded-tanks" class="button primary bunded">Bunded tanks</a>
+        <a href="<?php echo get_site_url(); ?>/fuel-dispensers" class="button primary fuel">Fuel dispensers</a>
+        <a href="<?php echo get_site_url(); ?>/enviroblu-tanks" class="button primary enviroblu">Enviroblu tanks</a>
       </div>
     </div>
   </div>
