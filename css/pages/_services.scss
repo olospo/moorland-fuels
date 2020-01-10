@@ -11,8 +11,10 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex-flow: row wrap;  
   -webkit-flex-flow: row wrap;
   justify-content: center;
+  flex-direction: row;
   article {
     display: block;
     padding: 5px;
