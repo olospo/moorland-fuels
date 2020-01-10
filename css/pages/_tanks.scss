@@ -243,7 +243,7 @@
 }
 
 #archive-filters {
-  background: $black;
+  background: $blue;
   @media (min-width: $breakpoint-tablet) {
   position: fixed;
   }
@@ -278,7 +278,7 @@
     float: left;
     }
     ul li {
-      color: #abafb0;
+      color: $white;
       display: block;
       position: relative;
       float: left;
@@ -309,7 +309,7 @@
     ul li .check{
       display: block;
       position: absolute;
-      border: 2px solid #abafb0;
+      border: 2px solid $white;
       border-radius: 0%;
       height: 14px;
       width: 14px;
@@ -367,7 +367,7 @@
     }
     a.reset {
       display: block;
-      color: #abafb0;
+      color: $white;
       font: $normal 1.4rem/1.4rem $regular;
       transition: color 0.25s linear;
       -webkit-transition: color 0.25s linear;
@@ -407,7 +407,7 @@
   input#price-min-input, input#price-max-input, input#size-min-input, input#size-max-input {
     font: $normal 1.6rem/3.0rem $regular;
     color: $white;
-    background: $black;
+    background: $blue;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
@@ -445,12 +445,12 @@
     max-width: 100%; 
     box-sizing: border-box;
     margin: 0;
-    border: 1px solid $black;
-    border-bottom: 1px solid #7b7f80;
+    border: 1px solid $blue;
+    border-bottom: 1px solid $white;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    background-color: $black;
+    background-color: $blue;
     background-image: url('../img/dropdown_arrow.svg');
     background-repeat: no-repeat, repeat;
     background-position: right top 50%, 0 0;
