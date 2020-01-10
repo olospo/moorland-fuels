@@ -56,9 +56,9 @@
           $( "#size-range" ).slider({
             range: true,
             min: 0,
-            max: 1400,
-            step: 100,
-            values: [ 0, 1400 ],
+            max: 8050,
+            step: 50,
+            values: [ 0, 8050 ],
             slide: function( event, ui ) {
               $( "#size-min-input" ).val( ui.values[ 0 ] );
               $( "#size-max-input" ).val( ui.values[ 1 ] );
@@ -76,7 +76,7 @@
             $( "#size-max-input" ).val(highS);
             $( "#size-range" ).slider( "values", 1, highS );
           } else {
-            $("#size-max-input").val(1400);
+            $("#size-max-input").val(8050);
           }
           
         } );
