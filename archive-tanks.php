@@ -33,9 +33,9 @@ $highSize = $_GET['max-size'];
             $query_args = array(
               'post_type'  => 'tanks',
               'showposts'  => -1,
-              'key' => 'size',
-              'orderby'   => 'value',
+              'orderby'   => 'meta_value_num',
               'order'      => 'ASC',
+              'meta_key' => 'size',
               'meta_query' => array(
                 'relation' => 'AND',
                 array(
@@ -106,9 +106,9 @@ $highSize = $_GET['max-size'];
             $query_args = array(
               'post_type'  => 'tanks',
               'showposts'  => -1,
-              'key' => 'size',
-              'orderby'   => 'value',
+              'orderby'   => 'meta_value_num',
               'order'      => 'ASC',
+              'meta_key' => 'size',
               'meta_query' => array(
                 'relation' => 'AND',
                 array(
