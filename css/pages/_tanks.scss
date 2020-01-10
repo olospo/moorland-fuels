@@ -21,8 +21,10 @@
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    flex-flow: row wrap;  
     -webkit-flex-flow: row wrap;
     justify-content: center;
+    flex-direction: row;
   }
   .product_count, .product_order {
     color: #85898b;
