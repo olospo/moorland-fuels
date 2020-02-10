@@ -10,6 +10,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory'); ?>/img/favicon-16x16.png"/>
 <?php if( get_field('social_metadata', 'options') ): the_field('social_metadata', 'options'); endif; // Social Metadata ?>
 <?php if( get_field('google_analytics', 'options') ): the_field('google_analytics', 'options'); endif; // Google Analytics Code ?>
+<meta name="google-site-verification" content="OnoVmuGmDEHfWEFYL1JciAPoXOp9tRBvFnc4xMpg8lI" />
 </head>
 <body <?php body_class(); ?>>
 <div class="fixed_header">
