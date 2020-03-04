@@ -1,7 +1,7 @@
 <?php /* Footer */ ?>
 <section class="faq_cta small_cta">
   <div class="container">
-    <h3>Couldn’t find an answer to your query?</h3><a href="<?php echo get_site_url(); ?>/faqs" class="button secondary reversed">Visit our FAQs</a>
+    <h3>Couldn’t find an answer to your query?</h3><a href="<?php echo get_site_url(); ?>/faqs/ordering/" class="button secondary reversed">Visit our FAQs</a>
   </div>
 </section>
 
