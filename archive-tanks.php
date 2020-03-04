@@ -13,7 +13,7 @@ $highSize = $_GET['max-size'];
 <section class="hero small">
   <div class="container">
     <div class="content ten columns offset-by-one">
-      <h1>Tank orders</h1>
+      <h1>Tank service</h1>
       <p>Moorland Fuels can supply a range of Envirostore fuel tanks for domestic, agricultural and commercial use throughout the United Kingdom. We offer delivery within 7 working days and can provide next day delivery if the order is placed before 10:30 a.m. The Envirostore range of tanks comes with a 10 year warranty and a 20 year life expectancy.</p>
       <p>Live in Devon or East Cornwall and need your oil tank installed? Call us for a competitive quote from our OFTEC-registered engineers.</p>
       <div class="basic_filters">
