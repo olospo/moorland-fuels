@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<title><?php bloginfo('name'); ?><?php wp_title( '|', true, 'left' ); ?></title>
+<title><?php bloginfo('name'); ?> <?php wp_title( '|', true, 'left' ); ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimal-ui" />
 <?php wp_head(); ?>
 <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory'); ?>/img/apple-touch-icon.png"/>

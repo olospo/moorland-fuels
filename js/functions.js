@@ -25,22 +25,22 @@ $(window).resize(function() { // Hide Mobile Menu if Browser window goes above 7
 });
 
 // Back to Top Scroll 
-    var amountScrolled = 100;
-    
-    $(window).scroll(function() {
-    	if ( $(window).scrollTop() > amountScrolled ) {
-    		$('a.back_to_top').fadeIn('slow');
-    	} else {
-    		$('a.back_to_top').fadeOut('slow');
-    	}
-    });
-    
-    $('a.back_to_top').click(function() {
-    	$('html, body').animate({
-    		scrollTop: 0
-    	}, 400);
-    	return false;
-    });
+var amountScrolled = 100;
+
+$(window).scroll(function() {
+	if ( $(window).scrollTop() > amountScrolled ) {
+		$('a.back_to_top').fadeIn('slow');
+	} else {
+		$('a.back_to_top').fadeOut('slow');
+	}
+});
+
+$('a.back_to_top').click(function() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 400);
+	return false;
+});
 
 $(function () {
   $(document).scroll(function () {
@@ -177,3 +177,21 @@ var componentVisible = (function ($) {
 
   
 })(jQuery);
+
+
+$('[class^=toggle-item]').hide();
+$('.toggle-item-link1').show();
+$('[class^=link]').addClass("non-active");
+$('.link1').removeClass("non-active");
+
+$('[class^=link]').click(function() {
+  
+  $("ul.content_menu li a").addClass("non-active");
+  $(this).removeClass("non-active");
+  
+  $('[class^=toggle-item]').hide();
+  $('.toggle-item-' + this.className).toggle();
+  
+});
+
+// Filtering

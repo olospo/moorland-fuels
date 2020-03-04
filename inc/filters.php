@@ -10,9 +10,7 @@
           <option value="14">Enviroblu tanks</option>
       	</select>
     	</div>
-    	
-
-        <script> 
+      <script> 
         $( function() {
           
           // Construct URL object using current browser URL
@@ -27,9 +25,9 @@
           $( "#price-range" ).slider({
             range: true,
             min: 0,
-            max: 1500,
+            max: 3000,
             step: 100,
-            values: [ 0, 1500 ],
+            values: [ 0, 3000 ],
             slide: function( event, ui ) {
               $( "#price-min-input" ).val(ui.values[ 0 ] );
               $( "#price-max-input" ).val(ui.values[ 1 ] );
@@ -47,7 +45,7 @@
             $( "#price-max-input" ).val(high);
             $( "#price-range" ).slider( "values", 1, high );
           } else {
-            $("#price-max-input").val(1500);
+            $("#price-max-input").val(3000);
           }
           
           var lowS = params.get("min-size");
@@ -114,7 +112,7 @@
     	
     	
     	<div class="filter_buttons">
-    	  <a href="#" class="filter_submit button primary">Filter</a>
+    	  <a href="#" class="filter_submit button primary reversed">Filter</a>
         <a href="<?php echo get_site_url(); ?>/tanks/" class="reset">Reset filters</a>
     	</div>
   </div>

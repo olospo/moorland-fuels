@@ -162,23 +162,6 @@
   </div>
 </section>
 
-<script>
-$('[class^=toggle-item]').hide();
-$('.toggle-item-link1').show();
-$('[class^=link]').addClass("non-active");
-$('.link1').removeClass("non-active");
-
-$('[class^=link]').click(function() {
-  
-  $("ul.content_menu li a").addClass("non-active");
-  $(this).removeClass("non-active");
-  
-  $('[class^=toggle-item]').hide();
-  $('.toggle-item-' + this.className).toggle();
-  
-});
-</script>
-
 <?php get_template_part( 'inc/popup' ); ?>
 
 <section class="related_products">

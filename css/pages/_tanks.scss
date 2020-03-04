@@ -363,8 +363,12 @@
       background: $white;
       color: $black;
       @include border-radius(25px);
+      border: none;
       &:hover {
         color: $white;
+      }
+      &:before {
+        background: $black;
       }
     }
     a.reset {
@@ -396,14 +400,15 @@
   }
   .input-group-prepend-right {
     position: absolute;
-    right: 60px;
+    right: 40px;
     line-height: 3.2rem;
-    @media (min-width: $breakpoint-mobile) {
+    @media (max-width: $breakpoint-tablet) {
       right: 50px;
     }
-    @media (min-width: $breakpoint-tablet) {
-      right: 35px;
+    @media (max-width: $breakpoint-mobile) {
+      right: 60px;
     }
+    
   }
   
   input#price-min-input, input#price-max-input, input#size-min-input, input#size-max-input {
