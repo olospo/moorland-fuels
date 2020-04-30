@@ -5,9 +5,9 @@
       	<h3>Product type</h3>
       	<select id="type">
         	<option value="">All</option>
-        	<option value="12">Bunded tanks</option>
-          <option value="13">Fuel dispensers</option>
-          <option value="14">Enviroblu tanks</option>
+        	<option value="16">Bunded tanks</option>
+          <option value="17">Fuel dispensers</option>
+          <option value="18">Enviroblu tanks</option>
       	</select>
     	</div>
       <script> 
