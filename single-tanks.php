@@ -20,6 +20,7 @@
         $basic = get_field('basic');
         $full = get_field('full_spec');
         $request = get_field('price_on_request');
+        $vat = get_field('includes_vat');
         // Capacity
         $brimful = get_field('brimful');
         $nominal = get_field('nominal');
@@ -47,10 +48,10 @@
                 <div class="cost single"><span class="info">Price on request</span>£ -</div>
                 <?php } else { ?>
                   <?php if($full && $basic) { ?>
-                  <div class="cost double"><span class="info">Basic</span>£<?php echo $basic; ?></div>
-                  <div class="cost double"><span class="info">Full spec</span>£<?php echo $full; ?></div>
+                  <div class="cost double"><span class="info">Basic</span>£<?php echo $basic; ?> <?php if($vat) { echo "<span class='vat'>(inc VAT)</span>"; } ?></div>
+                  <div class="cost double"><span class="info">Full spec</span>£<?php echo $full; ?> <?php if($vat) { echo "<span class='vat'>(inc VAT)</span>"; } ?></div>
                   <?php } else { ?> 
-                  <div class="cost single"><span class="info">Full spec</span>£<?php echo $full; ?></div>
+                  <div class="cost single"><span class="info">Full spec</span>£<?php echo $full; ?> <?php if($vat) { echo "<span class='vat'>(inc VAT)</span>"; } ?></div>
                   <?php } ?>
                 <?php } ?>
               </div>

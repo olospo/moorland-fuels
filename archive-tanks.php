@@ -148,11 +148,10 @@ $highSize = $_GET['max-size'];
           $size = get_field('size');
           $name = get_field('name');
           // Price
-          
           $basic = get_field('basic');
-
           $full = get_field('full_spec');
           $request = get_field('price_on_request');
+          $vat = get_field('includes_vat');
           // Capacity
           $brimful = get_field('brimful');
           $nominal = get_field('nominal');
@@ -185,14 +184,14 @@ $highSize = $_GET['max-size'];
                 <div class="cost single"><span class="info">On request</span>£ -</div>
                 <?php } else { ?>
                   <?php if($full AND $basic) { ?>
-                  <div class="cost double"><span class="info">Full spec</span>£<?php echo $full; ?></div>
-                  <div class="cost double"><span class="info">Basic</span>£<?php echo $basic; ?></div>
+                  <div class="cost double"><span class="info">Full spec</span>£<?php echo $full; ?> <?php if($vat) { echo "<span class='vat'>(inc VAT)</span>"; } ?></div>
+                  <div class="cost double"><span class="info">Basic</span>£<?php echo $basic; ?> <?php if($vat) { echo "<span class='vat'>(inc VAT)</span>"; } ?></div>
                   <?php } else {  ?>
-                  <div class="cost single"><span class="info">Full spec</span>£<?php echo $full; ?></div>
+                  <div class="cost single"><span class="info">Full spec</span>£<?php echo $full; ?> <?php if($vat) { echo "<span class='vat'>(inc VAT)</span>"; } ?></div>
                   <?php } ?>
                 <?php }  ?>
               </div>
-              
+
             </div>
             <div class="content">
               

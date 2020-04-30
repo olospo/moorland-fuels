@@ -168,6 +168,33 @@
             "maxlength": ""
         },
         {
+            "key": "field_5eaae72392b4d",
+            "label": "Includes VAT",
+            "name": "includes_vat",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ddd4ff522e7f",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Price includes VAT",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5de7e03a77882",
             "label": "Volume",
             "name": "",
@@ -414,5 +441,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1576600803
+    "modified": 1588258758
 }

@@ -158,8 +158,8 @@ var accItem = document.getElementsByClassName('accordionItem');
           this.parentNode.className = 'accordionItem open';
       }
   }
-  
-  
+
+
 // ------------------------------------------------------------
 // Animation Javascript
 // ------------------------------------------------------------
@@ -194,4 +194,3 @@ $('[class^=link]').click(function() {
   
 });
 
-// Filtering
