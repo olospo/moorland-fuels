@@ -117,8 +117,8 @@
             "key": "field_5ddd4f74e89d1",
             "label": "Basic",
             "name": "basic",
-            "type": "text",
-            "instructions": "",
+            "type": "number",
+            "instructions": "Please use numbers only",
             "required": 0,
             "conditional_logic": [
                 [
@@ -135,17 +135,19 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "£",
+            "placeholder": "£",
+            "prepend": "",
             "append": "",
-            "maxlength": ""
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_5ddd4f87e89d2",
             "label": "Full spec",
             "name": "full_spec",
-            "type": "text",
-            "instructions": "",
+            "type": "number",
+            "instructions": "Please use numbers only",
             "required": 0,
             "conditional_logic": [
                 [
@@ -163,9 +165,11 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "£",
+            "prepend": "",
             "append": "",
-            "maxlength": ""
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_5eaae72392b4d",
@@ -441,5 +445,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1588258758
+    "modified": 1590654455
 }
