@@ -1,0 +1,22 @@
+name: Deploying to Live
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Deploy Site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 2
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          ftp-server: ftp://${{ secrets.SERVER_IP }}/wp-content/themes/moorland-fuels
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          # Requires secrets to be added to the repo (Settings > Secrets)
