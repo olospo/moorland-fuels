@@ -41,7 +41,8 @@ gulp.task('scripts', function () {
 });
 
 //Watch task
-gulp.task('watch',function() {
-  gulp.watch(input,['styles']);
-  gulp.watch(jsinput, ['scripts']);
+gulp.task('watch', function(done) {
+  gulp.watch(input, gulp.series('styles'));
+  gulp.watch(jsinput, gulp.series('scripts'));
+  done();
 });
