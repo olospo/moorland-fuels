@@ -1,9 +1,55 @@
 
 // Header
-.fixed_header {
+.top_bar {
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+  font: $normal 1.4rem/2rem $regular;
+  background: $black;
+  
   position: fixed;
   width: 100%;
   top:0px;
+  z-index: 9999;
+  color: $white;
+  a {
+    color: $white;
+  }
+  .sales {
+    float: left;
+    padding: 10px 20px;
+  }
+  .social {
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+    float: right;
+    padding: 7px 10px;
+    a.button {
+      &.fb {
+        font: $normal 1.2rem/1.6rem $regular;
+        color: $black;
+        display: inline-block;
+        background: $green url('../img/fb_icon_header.svg') no-repeat 10px center;
+        padding: 5px 20px 5px 40px;
+        &:hover {
+          background: #3a5899 url('../img/fb_icon_header_hover.svg') no-repeat 10px center;
+          &:before {
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+.fixed_header {
+  position: fixed;
+  width: 100%;
+  top: 40px;
   z-index: 9999;
 }
 header {
@@ -74,13 +120,13 @@ header {
           // padding: 15px 22px 15px 5px;
         }
         a {
-          font: $normal 1.8rem/3.0rem $regular;
+          font: $normal 1.6rem/3.0rem $regular;
           @include transition(all 0.2s ease-out);
           line-height:1em;
           display: block;
           color: $white;
           text-decoration: none;
-          margin: 25px 5px;
+          margin: 26px 5px;
           padding: 10px 5px;
           border-bottom: 2px solid transparent;
           text-transform: uppercase;
@@ -126,7 +172,7 @@ header {
       li {
         a {
           margin: 0;
-          padding: 35px 30px;
+          padding: 36px 15px;
           @media (max-width: $breakpoint-tablet) {
             padding: 0;
             width: 70px;
@@ -211,7 +257,7 @@ header {
 nav.mobile {
   display: none;
   position: fixed;
-  top: 60px;
+  top: 100px;
   background: $white;
   z-index: 1000;
   width: 100%;

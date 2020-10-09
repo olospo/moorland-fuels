@@ -13,9 +13,21 @@
 <meta name="google-site-verification" content="OnoVmuGmDEHfWEFYL1JciAPoXOp9tRBvFnc4xMpg8lI" />
 </head>
 <body <?php body_class(); ?>>
+
+<div class="top_bar">
+  <div class="container"> 
+    <div class="sales">
+      Sales: <a href="tel:<?php the_field('phone_number','options'); ?>"><?php the_field('phone_number','options'); ?></a>
+    </div>
+    <div class="social">
+      <a href="<?php the_field('facebook_link','options'); ?>" class="button primary fb">Follow us on Facebook</a>
+    </div>
+  </div>
+</div>
 <div class="fixed_header">
 <header>
   <div class="container"> 
+    
     <div class="logo three columns">  
       <?php if ( is_front_page() ) { echo '<h1 class="site-title">'; } else { echo '<p class="site-title">'; } ?>
       <a href="<?php echo get_site_url(); ?>">
