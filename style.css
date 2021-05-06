@@ -6,3 +6,8 @@
 * Description: WordPress Theme for Moorland Fuels.
 * Version: 1.2.3
 */
+
+nav.primary ul li:hover > ul {
+    max-height: 400px;
+    overflow: auto;
+}
